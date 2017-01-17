@@ -5,3 +5,47 @@ input.form-control {
 body {
     padding-top: 36px;
 }
+
+.navbar.navbar-default.navbar-fixed-top {
+    background: #337ab7;;
+}
+
+.navbar.navbar-info.navbar-fixed-top {
+    background: darkgrey;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+
+span.glyphicon.glyphicon-ok {
+    color: white;
+    margin-right: 15px;
+}
+.navbar.navbar-default.navbar-fixed-bottom {
+    background: #337ab7;
+}
+span.glyphicon.glyphicon-user {
+    color: white;
+    margin-right: 15px;
+}
+
+span.glyphicon.glyphicon-plus {
+    color: white;
+    margin-right: 15px;
+}
+
+span.glyphicon.glyphicon-menu-left {
+    color: white;
+    margin-left: 15px;
+}
+
+.table {
+    margin-top: 2%;
+}
+
+.borderless td, .borderless th {
+    border: none;
+}
+

@@ -2,29 +2,142 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Web Dev Course Home Page</title>
+    <title>Tabitha Kadima Home Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://github.com/kswedberg/jquery-smooth-scroll/blob/master/jquery.smooth-scroll.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <style>
+        #menu {
+            background: transparent;
+            color: #F9F6F4;
+
+        }
+        ul.navbar-nav.navbar-right>li:hover {
+            background: white;
+            color: black;
+        }
+
+        #heading {
+            display: block;
+            width: 100%;
+            height: 600px;
+            padding: 5px 0;
+            background: url(boston-1099418_1920.jpg) no-repeat center center fixed;
+            background-size: cover;
+
+        }
+        #heading h1, #heading h2, #heading h3, #heading h4, #heading h5, #heading p {
+
+            margin-top: 100px;
+        }
+
+        #heading h1 {
+            margin-top: 30px; !important;
+            font-size: 90px;
+            line-height: 105px;
+            letter-spacing: -1px;
+            color: whitesmoke;
+        }
+
+        #heading h4 {
+            margin-top: 30px; !important;
+            font-size: 30px;
+            line-height: 40px;
+            color: whitesmoke;
+            margin-bottom: 25px;
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: inherit;
+            transition: all .5s;
+        }
+
+        .btn.btn-success.btn-outline {
+            color: #32CD32;
+        }
+
+        .btn.btn-success.btn-outline:hover{
+            color: white;
+            background: #32CD32;
+        }
+
+        .jumbotron {
+            background: rgba(20, 10, 54, 0.5);
+        !important;
+            background-size: cover;
+            height: 500px;
+            width: 100%;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Web Dev Course Home Page</h1>
+<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html"> Tabitha <strong></strong></a> </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#home" class="page-scroll"/>About</a></li>
+                <li><a href="#works-section" class="page-scroll">Education</a></li>
+                <li><a href="#about-section" class="page-scroll">Projects</a></li>
+                <li><a href="#contact-section" class="page-scroll">Contact</a></li>
+            </ul>
+
+    </div>
+</nav>
+
+<header id="heading">
+    <div class="container text-center">
+        <div class="jumbotron">
+            <h1>Tabitha Kadima</h1>/
+            <img src="profpic.jpg" height="100" class="img-circle">
+            <h4>software development.web applications.full-stack</h4>
+            <a class="btn btn-success btn-outline">Download Resume</a>
+        </div>
+    </div>
+</header>
+<div class="container">
+
+    <h1>About Me</h1>
 
     <p>
-        Customize this home page to your linking.
+        Caramels tiramisu cake soufflé cake sweet bonbon. Biscuit dragée sugar plum carrot cake dragée sweet chocolate candy cake. Gummi bears dragée jelly beans bonbon fruitcake bear claw croissant cake.
+        Icing carrot cake toffee sweet roll. Powder carrot cake macaroon tootsie roll icing. Powder liquorice sweet roll candy canes candy cheesecake caramels. Cotton candy marzipan marshmallow biscuit gingerbread jujubes.
+        Lollipop candy icing cheesecake biscuit fruitcake chocolate. Macaroon tart pie jujubes jelly beans. Danish soufflé muffin bonbon croissant.
+        Sweet chocolate bar topping danish cupcake croissant. Croissant soufflé pie chupa chups jujubes ice cream brownie. Pie cotton candy soufflé bear claw halvah sweet roll biscuit croissant bonbon.
+        Chupa chups halvah apple pie pudding gummies pastry. Topping lemon drops bonbon ice cream danish sweet halvah halvah. Icing candy canes chocolate cake caramels chocolate cake cake marshmallow sweet roll.
     </p>
 
+    <br>
+    <br>
+    <br>
+    <br>
     <h2>Required links</h2>
     <ul>
-        <li>
-            <a href="project/index.html">Project</a>
-        </li>
-        <li>
-            <a href="assignment/index.html">Assignment</a>
-        </li>
-        <li>
-            <a href="test/index.html">Test MongoDB</a>
-        </li>
-        <li>
-            <a href="https://github.com/jannunzi/web-dev-template">Your public repository at GitHub.com</a>
-        </li>
+    <li>
+    <a href="project/index.html">Project</a>
+    </li>
+    <li>
+    <a href="assignment/index.html">Assignment</a>
+    </li>
+    <li>
+    <a href="test/index.html">Test MongoDB</a>
+    </li>
+    <li>
+    <a href="https://github.com/jannunzi/web-dev-template">Your public repository at GitHub.com</a>
+    </li>
+    <li>
+    Download My Resume
+    </li>
     </ul>
+
+
+    </div>
 </body>
 </html>

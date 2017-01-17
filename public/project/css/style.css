@@ -1,0 +1,87 @@
+body {
+    background: white !important;
+}
+
+.wrapper {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.form-signin {
+    max-width: 380px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 30px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.btn .btn-success {
+    margin-top: 50px;
+}
+
+.navbar-brand {
+    color: #99ccff;
+}
+
+.nav.navbar-nav.navbar-right li .profile-section {
+    color: #fea3aa;
+}
+.nav.navbar-nav.navbar-right li   .account-section {
+    color: #f8b88b;
+}
+
+.nav.navbar-nav.navbar-right li  .assign-section {
+    color: #faf884;
+}
+
+.nav.navbar-nav.navbar-right li .projects-section {
+    color: #baed91
+}
+
+.nav.navbar-nav.navbar-right li .classes-section {
+    color: #b2cefe;
+}
+
+.nav.navbar-nav.navbar-right li .help-section{
+    color: #f2a2e8;
+}
+
+.row {
+    margin-top: 100px;
+}
+
+.panel-danger>.panel-heading {
+    background-color: #fea3aa;
+}
+table.borderless td,table.borderless th{
+    border: none !important;
+}
