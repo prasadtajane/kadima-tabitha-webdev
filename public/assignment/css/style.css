@@ -45,7 +45,7 @@ span.glyphicon.glyphicon-menu-left {
     margin-top: 2%;
 }
 
-.borderless td, .borderless th {
-    border: none;
+table.borderless td,table.borderless th{
+    border: none !important;
 }
 

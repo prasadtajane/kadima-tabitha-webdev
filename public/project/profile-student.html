@@ -8,105 +8,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
+
+<nav class="navbar ">
+
+    <button type="button" class="navbar-toggle"
+            data-toggle="collapse"
+            data-target=".navbar-collapse">
+        <span class="sr-only"> Toggle navigation</span>
+        <span class="icon-bar"> </span>
+        <span class="icon-bar"> </span>
+        <span class="icon-bar"> </span>
+    </button>
+    <a class="navbar-brand" href="#"> Classroom</a>
+
+</nav>
 <div class="container">
-    <nav class="navbar navbar-fixed-top">
-        <div class="container">
-            <button type="button" class="navbar-toggle"
-                    data-toggle="collapse"
-                    data-target=".navbar-collapse">
-                <span class="sr-only"> Toggle navigation</span>
-                <span class="icon-bar"> </span>
-                <span class="icon-bar"> </span>
-                <span class="icon-bar"> </span>
-            </button>
+    <!--Profile section  -->
+    <div class="panel panel-default pull-left">
+        <div class="panel-heading">
+            <h2 class="panel-title">Tabitha Kadima</h2>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-3 col-lg-3">
+                <img src="../profpic.jpg" width="125" height="120" class="img-circle">
+            </div>
+            <div class="col-md-9 col-lg-9 ">
+                <!--TODO allow user to upload new photo and change profile info -->
+                <table class="table table-info borderless">
+                    <tr>
+                        <td><strong>Student ID </strong></td>
+                        <td>001140807</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Graduation Date</strong></td>
+                        <td>May 2017</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Major</strong></td>
+                        <td>Computer Science</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Minor</strong></td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email(s)</strong></td>
+                        <td>kadima.t@husky.neu.edu</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phone Number(s)</strong></td>
+                        <td></td>
+                    </tr>
 
-            <a class="navbar-brand" href="#"> Classroom</a>
-
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="profile-section" href="#">Profile</a></li>
-                    <li><a class="account-section">Account</a></li>
-                    <li><a class="assign-section" href="assignments-students.html"> Assignments</a></li>
-                    <li><a class="projects-section" href="#">Projects</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle classes-section"
-                           data-toggle="dropdown"> Classes</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#"> Math </a></li>
-                            <li><a href="#"> Science</a></li>
-                            <li><a href="#"> English</a></li>
-                            <li><a href="#"> History</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" class="help-section"> Help</a></li>
-                </ul>
+                </table>
+            </div>
+            <div class="panel-footer">
+                <div class="pull-left">
+                    <a href="mailto:kadima.t@husky.neu.edu" class="btn btn-sm btn-social btn-email">
+                        <span class="glyphicon glyphicon-envelope"></span> </a>
+                </div>
+                <div class="pull-right">
+                    <a href="#" class="btn btn-sm btn-edit">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                </div>
             </div>
         </div>
-    </nav>
-    <br>
-    <div class="row">
-        <div class="panel panel-danger">
-            <div class="panel-heading">Belcher, Bob
-            </div>
-            <div class="panel-body">
-                <div class="col-md-4">
-                    <img src="https://ih1.redbubble.net/image.235003942.8868/raf,750x1000,075,t,fafafa:ca443f4786.u1.jpg"
-                         height="300" width="200">
-                    <div class="row">
-                        My Name is Bob. I'm a senior in Food Science. I enjoy cooking creating burger puns, assembling miniature train sets,
-                        and spending time with my family
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <table class="table borderless">
-                        <tbody>
-                        <tr>
-                            <td><strong>Student Id</strong></td>
-                            <td>123456789</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Birthday</strong></td>
-                            <td>November 17, 1987</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Preferred Method of Communication</strong></td>
-                            <td>Email</td>
-                        </tr>
+        <div>
 
-                        <tr>
-                            <td><strong>Graduation Date</strong></td>
-                            <td> May 2017</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Major</strong></td>
-                            <td>Food Science</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Minor</strong></td>
-                            <td>Economics</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Classes</strong></td>
-                            <td><a href="#"> Chemical Principles I </a><br>
-                                <a href="#"> Food Plant Sanitation</a><br>
-                                <a href="#">Probability and Statistics</a><br>
-                                <a href="#"> The Works of Shakespeare</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>Email(s)</strong></td>
-                            <td>belcher.t@husky.neu.edu<br>
-                            burgerbob@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Phone Number(s)</strong></td>
-                            <td>555-612-8561</td>
-                        </tr>
+        </div>
 
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+    </div>
+    <!--Classes section make sure this is fixed-->
+    <div class="well pull-right">
+        <div class="addon">
+            <p>Your Classes</p>
+            <ul>
+                <li class="clearfix">
+                    <a href="#" target="_blank">
+                        <img class="round" src="http://placehold.it/48x49">
+                        <div class="legend-info">
+                            <strong>CS2500 Fundamentals of Computer Science I </strong>Olin Shivers
+                            <!--<p class="help">This course also has a lab</p>-->
+                        </div>
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="#" target="_blank">
+                        <img class="round" src="http://placehold.it/48x49">
+                        <div class="legend-info">
+                            <strong>College Writing</strong>Amanda Wilson
+                        </div>
+                    </a>
+                </li>
+                <li class="clearfix">
+                    <a href="#" target="_blank">
+                        <img class="round" src="http://placehold.it/48x49">
+                        <div class="legend-info">
+                            <strong>CS1800</strong>Harriet Fell
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
         </div>
     </div>
 </div>

@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tabitha Kadima Home Page</title>
+    <title>Homepage</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://github.com/kswedberg/jquery-smooth-scroll/blob/master/jquery.smooth-scroll.min.js"></script>
+    <script src="https://use.fontawesome.com/4e769605e6.js"></script>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     <style>
-        #menu {
-            background: transparent;
+        nav.navbar.navbar-inverse.navbar-fixed-top {
+            background: black;
             color: #F9F6F4;
-
         }
-        ul.navbar-nav.navbar-right>li:hover {
+
+        ul.navbar-nav.navbar-right > li:hover {
             background: white;
             color: black;
+        }
+
+        p {
+            text-indent: 50px;
         }
 
         #heading {
@@ -29,13 +32,15 @@
             background-size: cover;
 
         }
+
         #heading h1, #heading h2, #heading h3, #heading h4, #heading h5, #heading p {
 
             margin-top: 100px;
         }
 
         #heading h1 {
-            margin-top: 30px; !important;
+            margin-top: 30px;
+        !important;
             font-size: 90px;
             line-height: 105px;
             letter-spacing: -1px;
@@ -43,12 +48,14 @@
         }
 
         #heading h4 {
-            margin-top: 30px; !important;
+            margin-top: 30px;
+        !important;
             font-size: 30px;
             line-height: 40px;
             color: whitesmoke;
             margin-bottom: 25px;
         }
+
         .btn-outline {
             background-color: transparent;
             color: inherit;
@@ -59,7 +66,7 @@
             color: #32CD32;
         }
 
-        .btn.btn-success.btn-outline:hover{
+        .btn.btn-success.btn-outline:hover {
             color: white;
             background: #32CD32;
         }
@@ -72,72 +79,285 @@
             width: 100%;
         }
 
+        body {
+            margin-top: 50px;
+        }
+
+        .headline h1 {
+            font-size: 130px;
+            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .headline h2 {
+            font-size: 77px;
+            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .featurette-divider {
+            margin: 80px 0;
+        }
+
+        .featurette {
+            overflow: hidden;
+        }
+
+        footer {
+            margin: 50px 0;
+        }
+
+        @media (max-width: 1200px) {
+            .headline h1 {
+                font-size: 140px;
+            }
+
+            .headline h2 {
+                font-size: 63px;
+            }
+
+            .featurette-divider {
+                margin: 50px 0;
+            }
+
+        }
+
+        @media (max-width: 991px) {
+            .headline h1 {
+                font-size: 105px;
+            }
+
+            .headline h2 {
+                font-size: 50px;
+            }
+
+            .featurette-divider {
+                margin: 40px 0;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0 15px;
+            }
+
+            .featurette-divider {
+                margin: 40px 0;
+            }
+
+        }
+
+        @media (max-width: 668px) {
+            .headline h1 {
+                font-size: 70px;
+            }
+
+            .headline h2 {
+                font-size: 32px;
+            }
+
+            .featurette-divider {
+                margin: 30px 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            .headline h1 {
+                font-size: 60px;
+            }
+
+            .headline h2 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .featurette-divider {
+                margin: 10px 0;
+            }
+
+        }
+
+        .muted {
+            margin-top: 10px;
+            font-size: large;
+            width: 95%;
+        }
+
+        .btn-linkedin {
+            background: #007BB6;
+            color: white;
+        }
+
+        .btn-github {
+            background: #444444;
+            color: white;
+        }
+
+        .btn-google {
+            background: #DD4B39;
+            color: white;
+        }
+
+        .btn-email, .glyphicon-star {
+            background: #F5D04C;
+            color: white;
+        }
+
+        .borderless .list-group-item {
+            border-top-right-radius: 0px !important;
+            border-top-left-radius: 0px !important;
+        }
+
     </style>
 </head>
 <body>
-<nav id="menu" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a class="navbar-brand" href="index.html"> Tabitha <strong></strong></a> </div>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#home" class="page-scroll"/>About</a></li>
-                <li><a href="#works-section" class="page-scroll">Education</a></li>
-                <li><a href="#about-section" class="page-scroll">Projects</a></li>
-                <li><a href="#contact-section" class="page-scroll">Contact</a></li>
-            </ul>
-
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
     </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#skills">Technical Skills</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
 </nav>
-
+<!-- Header -->
 <header id="heading">
     <div class="container text-center">
         <div class="jumbotron">
             <h1>Tabitha Kadima</h1>/
             <img src="profpic.jpg" height="100" class="img-circle">
-            <h4>software development.web applications.full-stack</h4>
+            <h4>software development - web applications - full-stack</h4>
             <a class="btn btn-success btn-outline">Download Resume</a>
         </div>
     </div>
 </header>
 <div class="container">
 
-    <h1>About Me</h1>
+    <hr class="featurette-divider">
 
-    <p>
-        Caramels tiramisu cake soufflé cake sweet bonbon. Biscuit dragée sugar plum carrot cake dragée sweet chocolate candy cake. Gummi bears dragée jelly beans bonbon fruitcake bear claw croissant cake.
-        Icing carrot cake toffee sweet roll. Powder carrot cake macaroon tootsie roll icing. Powder liquorice sweet roll candy canes candy cheesecake caramels. Cotton candy marzipan marshmallow biscuit gingerbread jujubes.
-        Lollipop candy icing cheesecake biscuit fruitcake chocolate. Macaroon tart pie jujubes jelly beans. Danish soufflé muffin bonbon croissant.
-        Sweet chocolate bar topping danish cupcake croissant. Croissant soufflé pie chupa chups jujubes ice cream brownie. Pie cotton candy soufflé bear claw halvah sweet roll biscuit croissant bonbon.
-        Chupa chups halvah apple pie pudding gummies pastry. Topping lemon drops bonbon ice cream danish sweet halvah halvah. Icing candy canes chocolate cake caramels chocolate cake cake marshmallow sweet roll.
-    </p>
+    <!-- First Featurette - About-->
+    <div class="featurette" id="about">
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <h2>Required links</h2>
-    <ul>
-    <li>
-    <a href="project/index.html">Project</a>
-    </li>
-    <li>
-    <a href="assignment/index.html">Assignment</a>
-    </li>
-    <li>
-    <a href="test/index.html">Test MongoDB</a>
-    </li>
-    <li>
-    <a href="https://github.com/jannunzi/web-dev-template">Your public repository at GitHub.com</a>
-    </li>
-    <li>
-    Download My Resume
-    </li>
-    </ul>
+        <div class="text-center"><h2>About Me</h2></div>
+
+        <p class="muted">
+            My name is Tabitha Kadima. I am a senior at Northeastern University studying computer science. After having
+            multiple co-ops, I realized that my passion is in Web Applications Development. I hope to continue to pursue
+            that after my graduation. During the five years I spent at the University, I've grown familiar with database
+            design, both relational and document-oriented. I've also invested time in familiarizing myself with
+            important architecture software design patterns such as Model-View-Controller.
+
+        </p>
+        <p class="muted">
+            I've also had experience working in Agile work environment. I enjoy collaborative work but I can also be
+            thrive working independently. I hoping to work for a company in the Boston area that will help me grow as a
+            developer. I'm also willing to venture outside of the Boston area in cities such as Seattle, Portland,
+            Denver, or even London.
+        </p>
+        <p class="muted">
+            When I'm not in school or at work, I like to frequent comedy clubs around Boston such as Improv Asylum.
+            I am a big fan of old Hollywood silver screen films and I enjoy watching them with friends. When I find a
+            time of solitude, I enjoy writing both poetry and prose. Occasionally, when the weather is nice, I'll take a
+            hike or nature walk along a trail. If I not doing any of those things, I'm likely to be at the gym.
+
+        </p>
+
+    </div>
+    <hr class="featurette-divider">
+
+    <!--Second featurette - Education and Skills -->
+    <div class="featurette" id="skills">
+        <div class="text-center"><h2>Technical Skills</h2></div>
+        <div class="col-lg-4">
+            Programming Languages
+            <div class="list-group borderless">
+                <a class="list-group-item">Java<span class="glyphicon glyphicon-star"></span></a>
+                <a class="list-group-item"> Javascript<span class="glyphicon glyphicon-star"></span></a>
+                <a class="list-group-item">Racket</a>
+                <a class="list-group-item">C#</a>
+                <a class="list-group-item">Python<span class="glyphicon glyphicon-star"></span></a>
+                <a class="list-group-item">C</a>
+                <a class="list-group-item">Ruby</a>
+                <a class="list-group-item">C++</a>
+                <a class="list-group-item">ACL2</a>
+            </div>
+        </div>
 
 
     </div>
+    <hr class="featurette-divider">
+    <!-- Third Featurette - Project-->
+    <div class="featurette" id="projects">
+
+        <div class="text-center"><h2>Projects and Assignments</h2></div>
+        <ul>
+            <li>
+                <a href="project/index.html">Project</a>
+            </li>
+            <li>
+                <a href="assignment/login.html">Assignment</a>
+            </li>
+            <li>
+                <a href="test/index.html">Test MongoDB</a>
+            </li>
+            <li>
+                <a href="https://github.com/tkadima/kadima-tabitha-webdev">Git Repository</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <hr class="featurette-divider">
+
+
+    <!-- Last featurette - Contact -->
+    <div class="featurette" id="contact">
+        <div class="text-center"><h2>Contact Info</h2></div>
+
+        <div class="in-line text-center">
+            <a href="https://www.linkedin.com/in/tabitha-kadima-2527058a" class="btn btn-lg btn-social btn-linkedin">
+                <span class="fa fa-linkedin"></span>
+            </a>
+            <a href="www.github.com/tkadima" class="btn btn-lg btn-social btn-github">
+                <span class="fa fa-github"></span>
+            </a>
+            <a href="https://aboutme.google.com/u/0/?referer=gplus" class="btn btn-lg btn-social btn-google">
+                <span class="fa fa-google"></span>
+            </a>
+            <a href="mailto:kadima.t@husky.neu.edu" class="btn btn-lg btn-social btn-email">
+                <span class="glyphicon glyphicon-envelope"></span> </a>
+        </div>
+
+        <br>
+        <br>
+    </div>
+    <hr class="featurette-divider">
+
+</div>
 </body>
 </html>
