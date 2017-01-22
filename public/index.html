@@ -143,7 +143,7 @@
             }
 
             .featurette-divider {
-                margin: 40px 0;
+                margin: 30px 0;
             }
 
         }
@@ -201,15 +201,89 @@
             color: white;
         }
 
-        .btn-email, .glyphicon-star {
+        .btn-email {
             background: #F5D04C;
             color: white;
         }
 
-        .borderless .list-group-item {
-            border-top-right-radius: 0px !important;
-            border-top-left-radius: 0px !important;
+        .container {
+            margin-top: 42px;
         }
+
+        .inactive {
+            visibility: hidden;
+        }
+
+        .col-list .col-head {
+            color: white;
+            border-bottom: thick solid rgba(0, 0, 0, 0.2);
+            border-radius: 5px 5px 0 0;
+            margin-top: 45px;
+        }
+
+        .col-list .col-head span {
+            color: white;
+            font-size: 3em;
+            padding: 15px;
+            border: thick solid white;
+            border-radius: 50%;
+            margin-top: -45px;
+            background-color: #BE1E2D;
+        }
+
+        .col-list .col-head h2 {
+            margin-top: 7px;
+            margin-bottom: 5px;
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        .col-list .t1 .col-head {
+            background-color: #FFB748;
+        }
+
+        .col-list .t2 .col-head {
+            background-color: #16CAC8;
+        }
+
+        .col-list .t3 .col-head {
+            background-color: #F87152;
+        }
+
+        .col-list .t1 li {
+            border-bottom: 1px solid rgba(255, 183, 72, .4);
+        }
+
+        .col-list .t2 li {
+            border-bottom: 1px solid rgba(22, 202, 200, .4);
+        }
+
+        .col-list .t3 li {
+            border-bottom: 1px solid rgba(248, 113, 82, .4)
+        }
+
+        .col-list .t1 li:last-child,
+        .col-list .t2 li:last-child,
+        .col-list .t3 li:last-child {
+            border-bottom: 0;
+        }
+
+        .col-list li p {
+            font-size: 1.2em;
+            padding: 7px;
+            margin: 0;
+        }
+
+        .col-list li:hover {
+            background-color: #F7F7F9;
+        }
+
+        .option span {
+            color: rgba(162, 213, 0, 1);
+            margin-left: 7px;
+            margin-right: 7px;
+        }
+
 
     </style>
 </head>
@@ -270,7 +344,9 @@
             multiple co-ops, I realized that my passion is in Web Applications Development. I hope to continue to pursue
             that after my graduation. During the five years I spent at the University, I've grown familiar with database
             design, both relational and document-oriented. I've also invested time in familiarizing myself with
-            important architecture software design patterns such as Model-View-Controller.
+            important architecture software design patterns such as Model-View-Controller and using the MEAN stack. I
+            also
+            have more than 6 months experience using Java Server Pages for web development.
 
         </p>
         <p class="muted">
@@ -295,38 +371,92 @@
         <!-- make this into an image grid -->
         <div class="text-center"><h2>Technical Skills</h2></div>
         <div class="col-lg-4">
-            Programming Languages
-            <div class="list-group borderless">
-                <a class="list-group-item">Java<span class="glyphicon glyphicon-star"></span></a>
-                <a class="list-group-item"> Javascript<span class="glyphicon glyphicon-star"></span></a>
-                <a class="list-group-item">Racket</a>
-                <a class="list-group-item">C#</a>
-                <a class="list-group-item">Python<span class="glyphicon glyphicon-star"></span></a>
-                <a class="list-group-item">C</a>
-                <a class="list-group-item">Ruby</a>
-                <a class="list-group-item">C++</a>
-                <a class="list-group-item">ACL2</a>
+            <div class="container">
+                <div class="row col-list">
+                    <div class="col-md-4 t1">
+                        <div class="col-head text-center">
+                            <h4>Front-End</h4>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>HTML/CSS</p>
+                            </li>
+                            <li>
+                                <p>Bootstrap</p>
+                            </li>
+                            <li>
+
+                                <p>Jquery</p>
+                            </li>
+                            <li>
+                                <p>Angular JS</p>
+                            </li>
+                            <li>
+                                <p>Knockout JS</p>
+                            </li>
+                            <li>
+                                <p>AJAX</p>
+                            </li>
+                            <li>
+                                <p>JSON</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 t2">
+                        <div class="col-head text-center">
+                            <h4>Back-End</h4>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>Java</p>
+                            </li>
+                            <li>
+                                <p>Node JS</p>
+                            </li>
+                            <li>
+                                <p>Python</p>
+                            </li>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 t3">
+                        <div class="col-head text-center">
+                            <h4>Database</h4>
+                        </div>
+                        <ul class="list-unstyled">
+
+                            <li>
+                                <p>MySql</p>
+                            </li>
+                            <li>
+                                <p>Oracle SQL</p>
+                            </li>
+                            <li>
+                                <p>MongoDB</p>
+                        </ul>
+                    </div>
+                </div>
             </div>
+
         </div>
-
-
     </div>
     <hr class="featurette-divider">
     <!-- Third Featurette - Project-->
     <div class="featurette" id="projects">
 
         <div class="text-center"><h2>Projects and Assignments</h2></div>
-        <ul>
-            <li>
+        <ul class="list-group list-hover">
+            <li class="list-group-item">
                 <a href="project/index.html">Project</a>
             </li>
-            <li>
+            <li class="list-group-item">
                 <a href="assignment/login.html">Assignment</a>
             </li>
-            <li>
+            <li class="list-group-item">
                 <a href="test/index.html">Test MongoDB</a>
             </li>
-            <li>
+            <li class="list-group-item">
                 <a href="https://github.com/tkadima/kadima-tabitha-webdev">Git Repository</a>
             </li>
         </ul>
