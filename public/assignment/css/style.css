@@ -26,19 +26,9 @@ span.glyphicon.glyphicon-ok {
 .navbar.navbar-default.navbar-fixed-bottom {
     background: #337ab7;
 }
-span.glyphicon.glyphicon-user {
+span.glyphicon {
     color: white;
     margin-right: 15px;
-}
-
-span.glyphicon.glyphicon-plus {
-    color: white;
-    margin-right: 15px;
-}
-
-span.glyphicon.glyphicon-menu-left {
-    color: white;
-    margin-left: 15px;
 }
 
 .table {
@@ -53,6 +43,13 @@ table.borderless td,table.borderless th{
     border-left: thick solid #000000;
 }
 
-.new-page, .new-web {
+.new-page, .new-web, ul.list-group.list-hover{
     margin-top: 30px;
+}
+.glyphicon-align-justify.widget-list {
+    color: black;
+}
+
+.glyphicon-cog.widget-list {
+    color: #337ab7;
 }
