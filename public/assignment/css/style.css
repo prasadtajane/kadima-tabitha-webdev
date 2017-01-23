@@ -49,3 +49,10 @@ table.borderless td,table.borderless th{
     border: none !important;
 }
 
+.verticalLine {
+    border-left: thick solid #000000;
+}
+
+.new-page, .new-web {
+    margin-top: 30px;
+}
