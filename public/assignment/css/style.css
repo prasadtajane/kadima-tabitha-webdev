@@ -45,10 +45,16 @@ table.borderless td,table.borderless th{
 .new-page, .new-web, ul.list-group.list-hover{
     margin-top: 30px;
 }
-.glyphicon-align-justify.widget-list {
+span.pull-right.glyphicon.glyphicon-menu-hamburger {
     color: black;
+    font-size: large;
 }
 
-.glyphicon-cog.widget-list {
+span.pull-right.glyphicon.glyphicon-cog {
     color: #337ab7;
+    font-size: large;
+}
+
+.media {
+    margin-left: 25px;
 }
