@@ -6,24 +6,16 @@ body {
     padding-top: 36px;
 }
 
-.navbar.navbar-default.navbar-fixed-top {
+.navbar.navbar-primary.navbar-fixed-top {
     background: #337ab7;;
 }
 
-.navbar.navbar-info.navbar-fixed-top {
-    background: darkgrey;
-}
-
-.navbar-default .navbar-brand {
+.navbar-primary .navbar-brand {
     color: white;
 }
 
 
-span.glyphicon.glyphicon-ok {
-    color: white;
-    margin-right: 15px;
-}
-.navbar.navbar-default.navbar-fixed-bottom {
+.navbar.navbar-primary.navbar-fixed-bottom {
     background: #337ab7;
 }
 span.glyphicon {
@@ -31,6 +23,13 @@ span.glyphicon {
     margin-right: 15px;
 }
 
+span.page.glyphicon {
+    color: #777;
+}
+
+span.page.glyphicon.glyphicon-user, .web-edit.glyphicon.glyphicon-cog, .page-edit.glyphicon {
+    color: #337ab7;
+}
 .table {
     margin-top: 2%;
 }
