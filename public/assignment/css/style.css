@@ -3,7 +3,7 @@ input.form-control {
 }
 
 body {
-    padding-top: 36px;
+    padding-top: 60px;
 }
 
 .navbar.navbar-primary.navbar-fixed-top {
@@ -30,9 +30,6 @@ span.page.glyphicon {
 span.page.glyphicon.glyphicon-user, .web-edit.glyphicon.glyphicon-cog, .page-edit.glyphicon {
     color: #337ab7;
 }
-.table {
-    margin-top: 2%;
-}
 
 table.borderless td,table.borderless th{
     border: none !important;
@@ -55,6 +52,23 @@ span.pull-right.glyphicon.glyphicon-cog {
     font-size: large;
 }
 
-.media {
-    margin-left: 25px;
+.main .page-header {
+    margin-top: 0;
+}
+
+@media (min-width: 800px) {
+    .sidebar {
+        position: fixed;
+        top: 50px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 20px;
+        border-right: 1px solid #000;
+    }
+}
+
+li > div.container-fluid {
+    padding: 5px;
 }

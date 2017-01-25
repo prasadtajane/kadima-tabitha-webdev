@@ -8,46 +8,119 @@
 </head>
 
 <body>
-<!-- TODO this is a grid problem that will be attached to website-list.html edit later-->
 <nav class="navbar navbar-primary navbar-fixed-top">
-    <p class="navbar-text pull-left">
-        <a class="navbar-link" href="website-list.html">
-                <span class="glyphicon glyphicon-menu-left">
+    <div class=" container-fluid row">
+        <div class="col-xs-3 hidden-xs">
+            <div class="navbar-header">
+                <a href="website-list.html" class="navbar-brand pull-left">
+          <span class="glyphicon glyphicon-menu-left">
+          </span>
+                </a>
+                <a class="navbar-brand" href="#">
+                    Websites
+                </a>
+            </div>
+            <a class="navbar-brand pull-right" href="website-new.html">
+            <span class="glyphicon glyphicon-plus ">
+          </span>
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand pull-left visible-xs">
+          <span class="glyphicon glyphicon-menu-left">
+          </span>
+                </a>
+                <a class="navbar-brand" href="#">
+                    Edit Website
+                </a>
+                <a href="website-list.html" class="navbar-link navbar-text pull-right visible-xs">
+          <span class="glyphicon glyphicon-ok">
+          </span>
+                </a>
+            </div>
+            <a href="website-list.html" class="navbar-link navbar-text pull-right hidden-xs">
+          <span class="glyphicon glyphicon-ok">
+          </span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 sidebar">
+            <ul class="nav nav-sidebar">
+                <li>
+                    <div class="container-fluid">
+                        <a href="../page/page-list.html">
+                            Blogging App
+                        </a>
+                        <a href="website-edit.html" class="pull-right">
+                      <span class="web-edit glyphicon glyphicon-cog">
+                      </span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="container-fluid">
+                        <a href="../page/page-list.html">
+                            Address Book App
+                        </a>
+                        <a href="website-edit.html" class="pull-right">
+                      <span class="web-edit glyphicon glyphicon-cog">
+                      </span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="container-fluid">
+                        <a href="../page/page-list.html">
+                            Script Testing App
+                        </a>
+                        <a href="website-edit.html" class="pull-right">
+                      <span class="web-edit glyphicon glyphicon-cog">
+                      </span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="container-fluid">
+                        <a href="../page/page-list.html">
+                            Blogger
+                        </a>
+                        <a href="website-edit.html" class="pull-right">
+                      <span class="web-edit glyphicon glyphicon-cog">
+                      </span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 main">
+            <div class="form-group">
+                <label for="webName">Website Name:</label>
+                <input type="text" class="form-control" id="webName" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="desc">Description:</label>
+                <textarea class="form-control" rows="4" id="desc" placeholder="Description"></textarea>
+            </div>
+            <a class="btn btn-danger btn-block"
+               href="website-list.html">Delete</a>
+            <nav class="navbar navbar-primary navbar-fixed-bottom">
+                <div class="container-fluid">
+                    <p class="navbar-text pull-right">
+                        <a href="../user/profile.html" class="navbar-link">
+                <span class="glyphicon glyphicon-user">
                 </span>
-        </a>
-    </p>
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-            Edit Website
-        </a>
+                        </a>
+                    </p>
+                </div>
+            </nav>
+        </div>
     </div>
-    <p class="navbar-text pull-right">
-        <a href="website-list.html" class="navbar-link">
-                    <span class="glyphicon glyphicon-ok">
-                    </span>
-        </a>
-    </p>
-</nav>
-
-<div class="container">
-    <br>
-    <h4>Name</h4>
-    <input class="form-control" type="text" placeholder="Name" value="Blogger">
-    <h4>Description</h4>
-    <textarea class="form-control" style="min-width: 100%; min-height: 200px">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor.
-    </textarea>
-    <a class="btn btn-danger btn-block"
-       href="website-list.html">Delete</a>
 </div>
-
-<nav class="navbar navbar-primary navbar-fixed-bottom">
-    <div class="navbar-text pull-right">
-        <a href="../user/profile.html">
-            <span class="glyphicon glyphicon-user"></span>
-        </a>
-    </div>
-</nav>
 
 </body>
 </html>
