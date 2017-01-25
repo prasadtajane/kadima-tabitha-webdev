@@ -7,285 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/4e769605e6.js"></script>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
-    <style>
-        nav.navbar.navbar-inverse.navbar-fixed-top {
-            background: black;
-            color: #F9F6F4;
-        }
-
-        ul.navbar-nav.navbar-right > li:hover {
-            background: white;
-            color: black;
-        }
-
-        p {
-            text-indent: 50px;
-        }
-
-        #heading {
-            display: block;
-            width: 100%;
-            height: 600px;
-            padding: 5px 0;
-            background: url(images/boston-1099418_1920.jpg) no-repeat center center fixed;
-            background-size: cover;
-
-        }
-
-        #heading h1, #heading h2, #heading h3, #heading h4, #heading h5, #heading p {
-
-            margin-top: 100px;
-        }
-
-        #heading h1 {
-            margin-top: 30px;
-        !important;
-            font-size: 90px;
-            line-height: 105px;
-            letter-spacing: -1px;
-            color: whitesmoke;
-        }
-
-        #heading h4 {
-            margin-top: 30px;
-        !important;
-            font-size: 30px;
-            line-height: 40px;
-            color: whitesmoke;
-            margin-bottom: 25px;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: inherit;
-            transition: all .5s;
-        }
-
-        .btn.btn-success.btn-outline {
-            color: #32CD32;
-        }
-
-        .btn.btn-success.btn-outline:hover {
-            color: white;
-            background: #32CD32;
-        }
-
-        .jumbotron {
-            background: rgba(20, 10, 54, 0.5);
-        !important;
-            background-size: cover;
-            height: 500px;
-            width: 100%;
-        }
-
-        body {
-            margin-top: 50px;
-        }
-
-        .headline h1 {
-            font-size: 130px;
-            background: #fff;
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .headline h2 {
-            font-size: 77px;
-            background: #fff;
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .featurette-divider {
-            margin: 80px 0;
-        }
-
-        .featurette {
-            overflow: hidden;
-        }
-
-        footer {
-            margin: 50px 0;
-        }
-
-        @media (max-width: 1200px) {
-            .headline h1 {
-                font-size: 140px;
-            }
-
-            .headline h2 {
-                font-size: 63px;
-            }
-
-            .featurette-divider {
-                margin: 50px 0;
-            }
-
-        }
-
-        @media (max-width: 991px) {
-            .headline h1 {
-                font-size: 105px;
-            }
-
-            .headline h2 {
-                font-size: 50px;
-            }
-
-            .featurette-divider {
-                margin: 40px 0;
-            }
-
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 0 15px;
-            }
-
-            .featurette-divider {
-                margin: 30px 0;
-            }
-
-        }
-
-        @media (max-width: 668px) {
-            .headline h1 {
-                font-size: 70px;
-            }
-
-            .headline h2 {
-                font-size: 32px;
-            }
-
-            .featurette-divider {
-                margin: 30px 0;
-            }
-        }
-
-        @media (max-width: 640px) {
-
-            .headline h1 {
-                font-size: 60px;
-            }
-
-            .headline h2 {
-                font-size: 30px;
-            }
-        }
-
-        @media (max-width: 375px) {
-            .featurette-divider {
-                margin: 10px 0;
-            }
-
-        }
-
-        .muted {
-            margin-top: 10px;
-            font-size: large;
-            width: 95%;
-        }
-
-        .btn-linkedin {
-            background: #007BB6;
-            color: white;
-        }
-
-        .btn-github {
-            background: #444444;
-            color: white;
-        }
-
-        .btn-google {
-            background: #DD4B39;
-            color: white;
-        }
-
-        .btn-email {
-            background: #F5D04C;
-            color: white;
-        }
-
-        .container {
-            margin-top: 42px;
-        }
-
-        .inactive {
-            visibility: hidden;
-        }
-
-        .col-list .col-head {
-            color: white;
-            border-bottom: thick solid rgba(0, 0, 0, 0.2);
-            border-radius: 5px 5px 0 0;
-            margin-top: 45px;
-        }
-
-        .col-list .col-head span {
-            color: white;
-            font-size: 3em;
-            padding: 15px;
-            border: thick solid white;
-            border-radius: 50%;
-            margin-top: -45px;
-            background-color: #BE1E2D;
-        }
-
-        .col-list .col-head h2 {
-            margin-top: 7px;
-            margin-bottom: 5px;
-            font-size: 2em;
-            font-weight: 700;
-        }
-
-        .col-list .t1 .col-head {
-            background-color: #FFB748;
-        }
-
-        .col-list .t2 .col-head {
-            background-color: #16CAC8;
-        }
-
-        .col-list .t3 .col-head {
-            background-color: #F87152;
-        }
-
-        .col-list .t1 li {
-            border-bottom: 1px solid rgba(255, 183, 72, .4);
-        }
-
-        .col-list .t2 li {
-            border-bottom: 1px solid rgba(22, 202, 200, .4);
-        }
-
-        .col-list .t3 li {
-            border-bottom: 1px solid rgba(248, 113, 82, .4)
-        }
-
-        .col-list .t1 li:last-child,
-        .col-list .t2 li:last-child,
-        .col-list .t3 li:last-child {
-            border-bottom: 0;
-        }
-
-        .col-list li p {
-            font-size: 1.2em;
-            padding: 7px;
-            margin: 0;
-        }
-
-        .col-list li:hover {
-            background-color: #F7F7F9;
-        }
-
-        .option span {
-            color: rgba(162, 213, 0, 1);
-            margin-left: 7px;
-            margin-right: 7px;
-        }
-
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 <!-- Navigation -->
@@ -307,10 +29,10 @@
                 <a href="#about">About</a>
             </li>
             <li>
-                <a href="#skills">Technical Skills</a>
+                <a href="#portfolio">Portfolio</a>
             </li>
             <li>
-                <a href="#projects">Projects</a>
+                <a href="#skills">Technical Skills</a>
             </li>
             <li>
                 <a href="#contact">Contact</a>
@@ -340,10 +62,17 @@
         <div class="text-center"><h2>About Me</h2></div>
 
         <p class="muted">
-            My name is Tabitha Kadima. I am a senior at Northeastern University studying computer science. After having multiple co-ops, I realized that my passion is in Web Applications Development. I hope to continue to pursue that after my graduation. My co-ops at Novartis, Paypal and Boston Children's Hospital and my academic courses allowed me to solidify my knowledge of the field. I have extensive experience implementing web applications using the MVC software architectural pattern of design.
+            My name is Tabitha Kadima. I am a senior at Northeastern University studying computer science. After having
+            multiple co-ops, I realized that my passion is in Web Applications Development. I hope to continue to pursue
+            that after my graduation. My co-ops at Novartis, Paypal and Boston Children's Hospital and my academic
+            courses allowed me to solidify my knowledge of the field. I have extensive experience implementing web
+            applications using the MVC software architectural pattern of design.
         </p>
         <p class="muted">
-            I've also had experience working in the Agile work environment. I prefer a work  but I can also be thrive working independently. I hoping to work for a company in the Boston area where I can be a valuable asset and that will help me grow in my career. I'm also willing to venture outside of the Boston area in cities such as Seattle, Portland, Denver, or even London.
+            I've also had experience working in the Agile work environment. I prefer a work but I can also be thrive
+            working independently. I hoping to work for a company in the Boston area where I can be a valuable asset and
+            that will help me grow in my career. I'm also willing to venture outside of the Boston area in cities such
+            as Seattle, Portland, Denver, or even London.
         </p>
         <p class="muted">
             When I'm not in school or at work, I like to frequent comedy clubs around Boston such as Improv Asylum.
@@ -355,18 +84,63 @@
 
     </div>
     <hr class="featurette-divider">
+    <!-- Third Featurette - Project-->
+    <div class="featurette" id="portfolio">
+
+        <div class="text-center"><h2>Portfolio</h2></div>
+
+        <form>
+            <div id="gallery text-center">
+                <figure class="col-md-3 col-sm-3 col-xs-12 ">
+                    <a href="project/index.html">
+                        <img class="img" src="http://placehold.it/350x250" alt=""/>
+                        <figcaption>
+                            <h2>Project</h2>
+                            <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses
+                                differently than mine. You don't get sick, I do. That's also clear. But for some reason,
+                                you and I react the exact same way to water. We swallow it too fast, we choke. We get
+                                some in our lungs, we drown. However unreal it may seem, we are connected, you and I.
+                                We're on the same curve, just on opposite ends.</p>
+                        </figcaption>
+                    </a>
+                </figure>
+                <figure class="col-md-3 col-sm-3 col-xs-12 ">
+                    <a href="assignment/user/login.html">
+                        <img class="img" src="http://placehold.it/350x250" alt=""/>
+                        <figcaption>
+                            <h2>Assignment</h2>
+                            <p>And you will know My name is the Lord when I lay My vengeance upon thee.</p>
+                        </figcaption>
+                    </a>
+                </figure>
+                <figure class="col-md-3 col-sm-3 col-xs-12 ">
+                    <a href="https://github.com/tkadima/kadima-tabitha-webdev">
+                        <img class="img" src="http://placehold.it/350x250" alt=""/>
+                        <figcaption>
+                            <h2>Git Projects</h2>
+                            <p>Lorem ipsum dolor sit amet, dui vestibulum diam aliquam orci,
+                                adipiscing tincidunt fermentum dolor purus, ligula facilisis quis litora elementum,
+                                praesent
+                                aliquet per quis. Suspendisse varius in amet, curabitur scelerisque pede netus.
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+        </form>
+
+    </div>
+    <hr class="featurette-divider">
 
     <!--Second featurette - Education and Skills -->
     <div class="featurette" id="skills">
         <!-- make this into an image grid -->
         <div class="text-center"><h2>Technical Skills</h2></div>
-        <p class="help">The following lists, enumerate the programs/</p>
         <div class="col-lg-4">
             <div class="container">
                 <div class="row col-list">
                     <div class="col-md-4 t1">
                         <div class="col-head text-center">
-                            <h4>Front-End</h4>
+                            <h4>Front-End Development</h4>
                         </div>
                         <ul class="list-unstyled">
                             <li>
@@ -395,11 +169,11 @@
                     </div>
                     <div class="col-md-4 t2">
                         <div class="col-head text-center">
-                            <h4>Back-End</h4>
+                            <h4>Back-End Development</h4>
                         </div>
                         <ul class="list-unstyled">
                             <li>
-                                <p>Java</p>
+                                <p>Java7/8</p>
                             </li>
                             <li>
                                 <p>Node JS</p>
@@ -411,14 +185,12 @@
                             <li>
                                 <p>C/C#/C++</p>
                             </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 t3">
-                        <div class="col-head text-center">
-                            <h4>Database</h4>
-                        </div>
-                        <ul class="list-unstyled">
-
+                            <li>
+                                <p>Hibernate</p>
+                            </li>
+                            <li>
+                                <p>Spring Framework</p>
+                            </li>
                             <li>
                                 <p>MySql</p>
                             </li>
@@ -427,32 +199,39 @@
                             </li>
                             <li>
                                 <p>MongoDB</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 t3">
+                        <div class="col-head text-center">
+                            <h4>Tools/Platforms</h4>
+                        </div>
+                        <ul class="list-unstyled">
+
+                            <li>
+                                <p>Version Control: Git & SVN</p>
+                            </li>
+                            <li>
+                                <p>Tomcat Server</p>
+                            </li>
+                            <li>
+                                <p>Android Studio</p>
+                            </li>
+                            <li>
+                                <p>IntelliJ</p>
+                            </li>
+                            <li>
+                                <p>WebStorm</p>
+                            </li>
+                            <li>
+                                <p>JasperSoft</p>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
 
         </div>
-    </div>
-    <hr class="featurette-divider">
-    <!-- Third Featurette - Project-->
-    <div class="featurette" id="projects">
-
-        <div class="text-center"><h2>Projects and Assignments</h2></div>
-        <ul class="list-group list-hover">
-            <li class="list-group-item">
-                <a href="project/index.html">Project</a>
-            </li>
-            <li class="list-group-item">
-                <a href="assignment/user/login.html">Assignment</a>
-            </li>
-            <li class="list-group-item">
-                <a href="test/index.html">Test MongoDB</a>
-            </li>
-            <li class="list-group-item">
-                <a href="https://github.com/tkadima/kadima-tabitha-webdev">Git Repository</a>
-            </li>
-        </ul>
     </div>
 
 
@@ -467,7 +246,7 @@
             <a href="https://www.linkedin.com/in/tabitha-kadima-2527058a" class="btn btn-lg btn-social btn-linkedin">
                 <span class="fa fa-linkedin"></span>
             </a>
-            <a href="www.github.com/tkadima" class="btn btn-lg btn-social btn-github">
+            <a href="https://github.com/tkadima/kadima-tabitha-webdev" class="btn btn-lg btn-social btn-github">
                 <span class="fa fa-github"></span>
             </a>
             <a href="https://aboutme.google.com/u/0/?referer=gplus" class="btn btn-lg btn-social btn-google">
@@ -477,8 +256,6 @@
                 <span class="glyphicon glyphicon-envelope"></span> </a>
         </div>
 
-        <br>
-        <br>
     </div>
     <hr class="featurette-divider">
 
