@@ -72,3 +72,6 @@ span.pull-right.glyphicon.glyphicon-cog {
 li > div.container-fluid {
     padding: 5px;
 }
+.container-fluid {
+    margin: 5px;
+}
