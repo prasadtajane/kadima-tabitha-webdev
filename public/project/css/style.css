@@ -39,6 +39,6 @@ label {
     font-weight: 400;
 }
 
-/*#submit-registr {*/
-   /*margin-top: 10px;*/
-/*}*/
+ul.nav.navbar-nav {
+    margin-right: 30px;
+}
