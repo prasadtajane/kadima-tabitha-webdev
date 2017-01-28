@@ -39,6 +39,16 @@ label {
     font-weight: 400;
 }
 
-ul.nav.navbar-nav {
-    margin-right: 30px;
+
+.button-group{
+    width: 50%;
+    margin: 0 auto;
+}
+
+#filter-sidebar {
+    margin-top: 40px;
+}
+
+#custom-search-input {
+    margin-top: 90px;
 }

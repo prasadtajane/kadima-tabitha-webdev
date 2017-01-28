@@ -17,7 +17,7 @@ ul.navbar-nav.navbar-right > li:hover {
     display: block;
     width: 100%;
     height: 630px;
-    padding: 5px 0;
+    /*padding: 5px 0;*/
     background: url(../images/boston-1099418_1920.jpg) no-repeat center center fixed;
     background-size: cover;
 
@@ -258,6 +258,8 @@ footer {
 
 #contact {
     margin-bottom: 20px;
+    width: 100%;
+
 }
 
 #portfolio {
@@ -266,7 +268,7 @@ footer {
 }
 
 body {
-    margin-top: 60px;
+    /*margin-top: 60px;*/
 }
 
 figure {
@@ -302,3 +304,5 @@ a:hover figcaption {
     color: #fff;
     transition: all 0.7s;
 }
+
+
