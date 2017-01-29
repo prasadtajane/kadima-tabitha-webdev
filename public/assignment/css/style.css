@@ -75,3 +75,7 @@ li > div.container-fluid {
 .container-fluid {
     margin: 5px;
 }
+
+li .borderless {
+    border-top: 0 none;
+}
