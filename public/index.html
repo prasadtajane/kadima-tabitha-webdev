@@ -7,74 +7,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/4e769605e6.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+    <link href="css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about">About</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#portfolio">Portfolio</a>
-            </li>
-            <li>
-                <a href="#skills">Technical Skills</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </div>
-    <!-- /.navbar-collapse -->
+    <!-- /.container-fluid -->
 </nav>
 <!-- Header -->
-<header id="heading">
-    <div class="container text-center">
-        <div class="jumbotron">
-            <h1>Tabitha Kadima</h1>/
-            <img src="images/profpic.jpg" height="100" class="img-circle">
-            <h4>software development - web applications - full-stack</h4>
-            <a class="btn btn-success btn-outline">Download Resume</a>
+<header>
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-heading">Tabitha Kadima</div>
+            <a href="" class="page-scroll btn btn-lg btn-warning">Download Resume</a>
         </div>
     </div>
 </header>
-<div class="container">
-
-    <hr class="featurette-divider">
-
-    <!-- First Featurette - About-->
-    <div class="featurette" id="about">
-
-        <div class="text-center"><h2>About Me</h2></div>
-
-        <p class="muted">
+<!-- Services Section -->
+<section id="about" class="bg-light-gray">
+    <div class="container">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading">About Me</h2>
+            <img src="images/profpic.jpg" height="200" class="img-circle">
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+        <p>
             My name is Tabitha Kadima. I am a senior at Northeastern University studying computer science. After having
             multiple co-ops, I realized that my passion is in Web Applications Development. I hope to continue to pursue
             that after my graduation. My co-ops at Novartis, Paypal and Boston Children's Hospital and my academic
             courses allowed me to solidify my knowledge of the field. I have extensive experience implementing web
             applications using the MVC software architectural pattern of design.
-        </p>
-        <p class="muted">
             I've also had experience working in the Agile work environment. I prefer a work but I can also be thrive
             working independently. I hoping to work for a company in the Boston area where I can be a valuable asset and
             that will help me grow in my career. I'm also willing to venture outside of the Boston area in cities such
             as Seattle, Portland, Denver, or even London.
-        </p>
-        <p class="muted">
             When I'm not in school or at work, I like to frequent comedy clubs around Boston such as Improv Asylum.
             I am a big fan of old Hollywood silver screen films and I enjoy watching them with friends. When I find a
             time of solitude, I enjoy writing both poetry and prose. Occasionally, when the weather is nice, I'll take a
@@ -83,182 +72,188 @@
         </p>
 
     </div>
-    <hr class="featurette-divider">
-    <!-- Third Featurette - Project-->
-    <div class="featurette" id="portfolio">
-
-        <div class="text-center"><h2>Portfolio</h2></div>
-
-        <form>
-            <div id="gallery text-center">
-                <figure class="col-md-3 col-sm-3 col-xs-12 ">
-                    <a href="project/index.html">
-                        <img class="img" src="http://www.adaquest.com/wp-content/uploads/2012/01/project_management-1.jpg" width="350" height="250"alt=""/>
-                        <figcaption>
-                            <h2>Project</h2>
-                            <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses
-                                differently than mine. You don't get sick, I do. That's also clear. But for some reason,
-                                you and I react the exact same way to water. We swallow it too fast, we choke. We get
-                                some in our lungs, we drown. However unreal it may seem, we are connected, you and I.
-                                We're on the same curve, just on opposite ends.</p>
-                        </figcaption>
-                    </a>
-                </figure>
-                <figure class="col-md-3 col-sm-3 col-xs-12 ">
-                    <a href="assignment/user/login.html">
-                        <img class="img" src="http://isites.harvard.edu/fs/docs/icb.topic1142374.files/to-do_150x.jpg" width="350" height="250"alt=""/>
-                        <figcaption>
-                            <h2>Assignment</h2>
-                            <p>And you will know My name is the Lord when I lay My vengeance upon thee.</p>
-                        </figcaption>
-                    </a>
-                </figure>
-                <figure class="col-md-3 col-sm-3 col-xs-12 ">
-                    <a href="https://github.com/tkadima/kadima-tabitha-webdev">
-                        <img class="img" src="https://avatars2.githubusercontent.com/u/17463346?v=3&s=96" width="350" height="250"alt=""/>
-                        <figcaption>
-                            <h2>Git Projects</h2>
-                            <p>Lorem ipsum dolor sit amet, dui vestibulum diam aliquam orci,
-                                adipiscing tincidunt fermentum dolor purus, ligula facilisis quis litora elementum,
-                                praesent
-                                aliquet per quis. Suspendisse varius in amet, curabitur scelerisque pede netus.
-                        </figcaption>
-                    </a>
-                </figure>
-            </div>
-        </form>
-
-    </div>
-    <hr class="featurette-divider">
-
-    <!--Second featurette - Education and Skills -->
-    <div class="featurette" id="skills">
-        <!-- make this into an image grid -->
-        <div class="text-center"><h2>Technical Skills</h2></div>
-        <div class="col-lg-4">
-            <div class="container">
-                <div class="row col-list">
-                    <div class="col-md-4 t1">
-                        <div class="col-head text-center">
-                            <h4>Front-End Development</h4>
+</section>
+<!-- Portfolio Grid Section -->
+<section id="portfolio" class="bg-darkest-gray">
+    <div class="container">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Portfolio</h2>
+            <h3 class="section-subheading text-muted">Project and Assignment are in BETA</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="project/index.html" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
-                        <ul class="list-unstyled">
-                            <li>
-                                <p>HTML/CSS</p>
-                            </li>
-                            <li>
-                                <p>Bootstrap</p>
-                            </li>
-                            <li>
-
-                                <p>Jquery</p>
-                            </li>
-                            <li>
-                                <p>Angular JS</p>
-                            </li>
-                            <li>
-                                <p>Knockout JS</p>
-                            </li>
-                            <li>
-                                <p>AJAX</p>
-                            </li>
-                            <li>
-                                <p>JSON</p>
-                            </li>
-                        </ul>
                     </div>
-                    <div class="col-md-4 t2">
-                        <div class="col-head text-center">
-                            <h4>Back-End Development</h4>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li>
-                                <p>Java7/8</p>
-                            </li>
-                            <li>
-                                <p>Node JS</p>
-                            </li>
-                            <li>
-                                <p>Python</p>
-                            </li>
-
-                            <li>
-                                <p>C/C#/C++</p>
-                            </li>
-                            <li>
-                                <p>Hibernate</p>
-                            </li>
-                            <li>
-                                <p>Spring Framework</p>
-                            </li>
-                            <li>
-                                <p>MySql</p>
-                            </li>
-                            <li>
-                                <p>Oracle SQL</p>
-                            </li>
-                            <li>
-                                <p>MongoDB</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 t3">
-                        <div class="col-head text-center">
-                            <h4>Tools/Platforms</h4>
-                        </div>
-                        <ul class="list-unstyled">
-
-                            <li>
-                                <p>Version Control: Git & SVN</p>
-                            </li>
-                            <li>
-                                <p>Tomcat Server</p>
-                            </li>
-                            <li>
-                                <p>Android Studio</p>
-                            </li>
-                            <li>
-                                <p>IntelliJ</p>
-                            </li>
-                            <li>
-                                <p>WebStorm</p>
-                            </li>
-                            <li>
-                                <p>JasperSoft</p>
-                            </li>
-                        </ul>
-                    </div>
+                    <img src="http://www.adaquest.com/wp-content/uploads/2012/01/project_management-1.jpg"
+                         class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Project</h4>
+                    <p class="text-muted">Boston-Based doctor search application</p>
                 </div>
             </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="assignment/user/login.html" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="http://www.phpworldamritsar.com/wp-content/uploads/2015/09/web-design-training.jpg"
+                         class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Assignments</h4>
+                    <p class="text-muted">Blog application developed for CS4550</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="https://github.com/tkadima/kadima-tabitha-webdev" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="http://lucasbardella.com/media/lucasbardella/blog/github.jpg" class="img-responsive">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Other Projects</h4>
+                    <p class="text-muted">Private projects can be viewed on Github</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="bg-light-gray">
+    <div class="container">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Technical Skills</h2>
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+        <div class="row col-list">
+            <div class="col-md-4 t1">
+                <div class="col-head text-center">
+                    <h4>Front-End Development</h4>
+                </div>
+                <ul class="list-unstyled">
+                    <li>
+                        <p>HTML/CSS</p>
+                    </li>
+                    <li>
+                        <p>Bootstrap</p>
+                    </li>
+                    <li>
+
+                        <p>Jquery</p>
+                    </li>
+                    <li>
+                        <p>Angular JS</p>
+                    </li>
+                    <li>
+                        <p>Knockout JS</p>
+                    </li>
+                    <li>
+                        <p>AJAX</p>
+                    </li>
+                    <li>
+                        <p>JSON</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 t2">
+                <div class="col-head text-center">
+                    <h4>Back-End Development</h4>
+                </div>
+                <ul class="list-unstyled">
+                    <li>
+                        <p>Java7/8</p>
+                    </li>
+                    <li>
+                        <p>Node JS</p>
+                    </li>
+                    <li>
+                        <p>Python</p>
+                    </li>
+
+                    <li>
+                        <p>C/C#/C++</p>
+                    </li>
+                    <li>
+                        <p>Hibernate</p>
+                    </li>
+                    <li>
+                        <p>Spring Framework</p>
+                    </li>
+                    <li>
+                        <p>MySql</p>
+                    </li>
+                    <li>
+                        <p>Oracle SQL</p>
+                    </li>
+                    <li>
+                        <p>MongoDB</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 t3">
+                <div class="col-head text-center">
+                    <h4>Tools/Platforms</h4>
+                </div>
+                <ul class="list-unstyled">
+
+                    <li>
+                        <p>Version Control: Git & SVN</p>
+                    </li>
+                    <li>
+                        <p>Tomcat Server</p>
+                    </li>
+                    <li>
+                        <p>Android Studio</p>
+                    </li>
+                    <li>
+                        <p>IntelliJ</p>
+                    </li>
+                    <li>
+                        <p>WebStorm</p>
+                    </li>
+                    <li>
+                        <p>JasperSoft</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="bg-darkest-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Contact Me</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="in-line text-center">
+                <a href="https://www.linkedin.com/in/tabitha-kadima-2527058a" class="btn btn-lg btn-social btn-linkedin">
+                    <span class="fa fa-linkedin"></span>
+                </a>
+                <a href="https://github.com/tkadima/kadima-tabitha-webdev" class="btn btn-lg btn-social btn-github">
+                    <span class="fa fa-github"></span>
+                </a>
+                <a href="https://aboutme.google.com/u/0/?referer=gplus" class="btn btn-lg btn-social btn-google">
+                    <span class="fa fa-google"></span>
+                </a>
+                <a href="mailto:kadima.t@husky.neu.edu" class="btn btn-lg btn-social btn-email">
+                    <span class="glyphicon glyphicon-envelope"></span> </a>
+            </div>
 
         </div>
     </div>
-
-
-    <hr class="featurette-divider">
-
-
-    <!-- Last featurette - Contact -->
-    <div class="featurette" id="contact">
-        <div class="text-center"><h2>Contact Info</h2></div>
-
-        <div class="in-line text-center">
-            <a href="https://www.linkedin.com/in/tabitha-kadima-2527058a" class="btn btn-lg btn-social btn-linkedin">
-                <span class="fa fa-linkedin"></span>
-            </a>
-            <a href="https://github.com/tkadima/kadima-tabitha-webdev" class="btn btn-lg btn-social btn-github">
-                <span class="fa fa-github"></span>
-            </a>
-            <a href="https://aboutme.google.com/u/0/?referer=gplus" class="btn btn-lg btn-social btn-google">
-                <span class="fa fa-google"></span>
-            </a>
-            <a href="mailto:kadima.t@husky.neu.edu" class="btn btn-lg btn-social btn-email">
-                <span class="glyphicon glyphicon-envelope"></span> </a>
-        </div>
-
-    </div>
-    <hr class="featurette-divider">
-
-</div>
+</section>
 </body>
-</html>
