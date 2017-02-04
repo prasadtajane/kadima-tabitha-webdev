@@ -8,6 +8,10 @@ body {
     font-size: large;
 }
 
+.navbar-custom {
+    background: white;
+}
+
 .btn-lg {
     margin-bottom: 10px;
     margin-top: 10px;
@@ -46,20 +50,71 @@ label {
 }
 
 
-.button-group{
-    width: 50%;
-    margin: 0 auto;
-}
-
 #filter-sidebar {
     margin-top: 40px;
 }
 
-#custom-search-input {
-    margin-top: 90px;
-}
 
 h2 {
     text-align: center;
 }
 
+a.list-group-item {
+    height:auto;
+    min-height:220px;
+}
+a.list-group-item.active small {
+    color:#fff;
+}
+
+.doctor-list {
+    margin-top: 30px;
+}
+
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
+
+span.tags
+{
+    border-style: dashed;
+    background: white;
+    border-radius: 2px;
+    color: #4ACCD1;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 25px;
+
+}
+
+.fa-phone {
+    margin-right: 40px;
+}

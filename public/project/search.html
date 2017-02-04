@@ -8,31 +8,22 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="Medicio/css/style.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <script src="Medicio/js/jquery.min.js"></script>
     <script src="Medicio/js/bootstrap.min.js"></script>
+    <script src="Medicio/js/jquery.min.js"></script>
     <link id="bodybg" href="Medicio/bodybg/bg1.css" rel="stylesheet" type="text/css"/>
     <link id="t-colors" href="Medicio/color/default.css" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid">
-
+    <!-- TODO pagination -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-
         <div class="navbar-header">
+            <!--TODO back button-->
             <a class="navbar-brand" href="#">Boston<span class="color">Health</span></a>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar navbar-right ">
-            <ul class="nav navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li class="active"><a href="search.html">Find Doctor</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="#">Account</a></li>
-            </ul>
+
         </div>
-        <!-- /.navbar-collapse -->
-        <!-- /.container -->
     </nav>
     <div class="navbar navbar-default visible-xs">
         <div class="container-fluid">
@@ -41,254 +32,180 @@
             </button>
         </div>
     </div>
-
-    <div class="container-fluid">
-
+    <div class="container">
         <div id="custom-search-input">
             <div class="input-group col-md-12">
-                <input type="text" class="  search-query form-control" placeholder="Search by Name"/>
-                                <span class="input-group-btn">
-                                    <button class="btn btn-warning" type="button">
-                                        <span class=" glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
+                <input type="text" class="form-control input-lg" placeholder="Search Doctor By Name"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
             </div>
         </div>
+        <!-- TODO advance search modal, make link sexier -->
+        <a href="#">Advanced Search</a>
+        <!-- Doctor List -->
+        <div class="row doctor-list">
+            <div class="well">
+                <div class="list-group">
+                    <a href="doctor-profile.html" class="list-group-item">
+                        <div class="media col-md-2">
+                            <figure class="pull-left">
+                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
+                                     alt="placehold.it/350x250">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="list-group-item-heading"> Gregory House MD </h4>
+                            <p class="list-group-item-text">
+                                Massachusetts General Hospital
+                                55 Fruit St<br> Boston, MA 02114
+                            </p>
+                            <hr>
+                            <!-- TODO special formatting. specialties should be clickable and lead to another search -->
+                            <span class="tags">Neurology</span>
+                            <span class="tags">Child Neurology</span>
+                            <span class="tags">Neuromuscular Medicine </span>
 
-        <div class="row">
-
-            <!-- filter sidebar -->
-            <div id="filter-sidebar"
-                 class="col-xs-6 col-sm-3 visible-sm visible-md visible-lg collapse sliding-sidebar">
-
-                <div>
-                    <h4 data-toggle="collapse" data-target="#group-1">
-                        <i class="fa fa-fw fa-caret-down parent-expanded"></i>
-                        <i class="fa fa-fw fa-caret-right parent-collapsed"></i>
-                        Specialties
-                    </h4>
-                    <div id="group-1" class="list-group collapse in">
-                        <a class="list-group-item" href="#">
-                            <span class="badge">3</span> General Practice
-                        </a>
-                        <a class="list-group-item" href="#">
-                            <span class="badge">3</span> Oncology
-                        </a>
-                        <a class="list-group-item" href="#">
-                            <span class="badge">3</span> Dentist
-                        </a>
-                        <a class="list-group-item" href="#">
-                            <span class="badge">3</span> Orthopedic
-                        </a>
-                    </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <button type="button" class="btn btn-lg btn-skin"> Make Appointment</button>
+                        </div>
+                    </a>
+                    <a href="doctor-profile.html" class="list-group-item">
+                        <div class="media col-md-2">
+                            <figure class="pull-left">
+                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
+                                     alt="placehold.it/350x250">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="list-group-item-heading"> Doogie Hoser MD </h4>
+                            <p class="list-group-item-text">
+                                Boston Children's Hospital<br>
+                                300 Longwood Ave <br>
+                                Boston, MA 02115
+                            </p>
+                            <hr>
+                            <span class="tags">Pediatrics</span>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <button type="button" class="btn btn-lg btn-skin">Make Appointment</button>
+                        </div>
+                    </a>
+                    <a href="doctor-profile.html" class="list-group-item">
+                        <div class="media col-md-2">
+                            <figure class="pull-left">
+                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
+                                     alt="placehold.it/350x250">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="list-group-item-heading"> List group heading </h4>
+                            <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata
+                                consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id,
+                                nam
+                                quot populo ea.
+                                Falli urbanitas ei pri, eu est enim volumus, mei no volutpat periculis. Est errem
+                                iudicabit
+                                cu. At usu vocibus officiis, ad ius eros tibique appellantur.
+                            </p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <button type="button" class="btn btn-lg btn-skin">Make Appointment!</button>
+                        </div>
+                    </a>
+                    <a href="doctor-profile.html" class="list-group-item">
+                        <div class="media col-md-2">
+                            <figure class="pull-left">
+                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
+                                     alt="placehold.it/350x250">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="list-group-item-heading"> List group heading </h4>
+                            <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata
+                                consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id,
+                                nam
+                                quot populo ea.
+                                Falli urbanitas ei pri, eu est enim volumus, mei no volutpat periculis. Est errem
+                                iudicabit
+                                cu. At usu vocibus officiis, ad ius eros tibique appellantur.
+                            </p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <button type="button" class="btn btn-lg btn-skin">Make Appointment!</button>
+                        </div>
+                    </a>
+                    <a href="doctor-profile.html" class="list-group-item">
+                        <div class="media col-md-2">
+                            <figure class="pull-left">
+                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
+                                     alt="placehold.it/350x250">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="list-group-item-heading"> List group heading </h4>
+                            <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata
+                                consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id,
+                                nam
+                                quot populo ea.
+                                Falli urbanitas ei pri, eu est enim volumus, mei no volutpat periculis. Est errem
+                                iudicabit
+                                cu. At usu vocibus officiis, ad ius eros tibique appellantur.
+                            </p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <button type="button" class="btn btn-lg btn-skin">Make Appointment!</button>
+                        </div>
+                    </a>
+                    <a href=doctor-profile.html#" class="list-group-item">
+                        <div class="media col-md-2">
+                            <figure class="pull-left">
+                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
+                                     alt="placehold.it/350x250">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="list-group-item-heading"> List group heading </h4>
+                            <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata
+                                consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id,
+                                nam
+                                quot populo ea.
+                                Falli urbanitas ei pri, eu est enim volumus, mei no volutpat periculis. Est errem
+                                iudicabit
+                                cu. At usu vocibus officiis, ad ius eros tibique appellantur.
+                            </p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <button type="button" class="btn btn-lg btn-skin">Make Appointment!</button>
+                        </div>
+                    </a>
+                    <a href="doctor-profile.html" class="list-group-item">
+                        <div class="media col-md-2">
+                            <figure class="pull-left">
+                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
+                                     alt="placehold.it/350x250">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="list-group-item-heading"> List group heading </h4>
+                            <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata
+                                consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id,
+                                nam
+                                quot populo ea.
+                                Falli urbanitas ei pri, eu est enim volumus, mei no volutpat periculis. Est errem
+                                iudicabit
+                                cu. At usu vocibus officiis, ad ius eros tibique appellantur.
+                            </p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <button type="button" class="btn btn-lg btn-skin">Make Appointment!</button>
+                        </div>
+                    </a>
                 </div>
-
-                <div>
-                    <h4 data-toggle="collapse" data-target="#group-2">
-                        <i class="fa fa-fw fa-caret-down parent-expanded"></i>
-                        <i class="fa fa-fw fa-caret-right parent-collapsed"></i>
-                        Area (By Zipcode)
-                    </h4>
-                    <div id="group-2" class="list-group collapse in">
-                        <a class="list-group-item" href="#">
-                            <span class="badge">3</span> 02115
-                        </a>
-                        <a class="list-group-item" href="#">
-                            <span class="badge">3</span> 02120
-                        </a>
-                        <a class="list-group-item" href="#">
-                            <span class="badge">3</span> 02210
-                        </a>
-                        <a class="list-group-item" href="#">
-                            <span class="badge">3</span> 02232
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 data-toggle="collapse" data-target="#group-3">
-                        <i class="fa fa-fw fa-caret-down parent-expanded"></i>
-                        <i class="fa fa-fw fa-caret-right parent-collapsed"></i>
-                        Hospitals
-                    </h4>
-                    <div id="group-3" class="list-group collapse in">
-                        <a class="list-group-item" href="#">
-                            <span class="badge">3</span> Beth Israel
-                        </a>
-                        <a class="list-group-item" href="#">
-                            <span class="badge">3</span> MGH
-                        </a>
-                        <a class="list-group-item" href="#">
-                            <span class="badge">3</span> Boston Children's Hospital
-                        </a>
-                        <a class="list-group-item" href="#">
-                            <span class="badge">3</span> Tufts Medical Center
-                        </a>
-                    </div>
-                </div>
-
             </div>
-            <!-- table container -->
-            <div class="col-sm-9" id="doctor-list">
-
-                <table class="table table-striped table-hover table-responsive">
-                    <thead>
-                    <tr>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Specialities</th>
-                        <th>Practice Name</th>
-                        <th>Practice Address</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <img width="150" height="100"
-                                 src="http://amahighlights.com/wp-content/uploads/gordon-ramsay-480x270.jpg">
-                        </td>
-                        <td>
-                            Gordon Ramsay MD
-                        </td>
-                        <td>
-                            General Practice, Nutrition
-                        </td>
-                        <td>
-                            Beth Israel
-                        </td>
-                        <td>
-                            60 Oak Lane Street
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img width="150" height="100" src="https://cfmedia.deadline.com/2015/10/drphil.png?w=397">
-                        </td>
-                        <td>
-                            Phil McGraw Psy D
-                        </td>
-                        <td>
-                            Psycharitry
-                        </td>
-                        <td>
-                            Washington Memorial Hospital
-                        </td>
-                        <td>
-                            78 Hollywood Rd
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img width="150" height="100"
-                                 src="http://www.medindia.net/patients/doctor_search/images/doctor.jpg">
-                        </td>
-                        <td>
-                            Angela Murphy MD
-                        </td>
-                        <td>
-                            Oncology
-                        </td>
-                        <td>
-                            Lakeville General
-                        </td>
-                        <td>
-                            678 January St
-                        </td>
-                    </tr>
-                    <td>
-                        <img width="150" height="100"
-                             src="http://images.fanpop.com/images/image_uploads/Jennifer-Morrison-jennifer-morrison-572948_1280_1024.jpg">
-                    </td>
-                    <td>
-                        Jennifer Morrison MD
-
-                    </td>
-                    <td>
-                        Anesthesia
-                    </td>
-                    <td>
-                        Boston Children's Hospital
-                    </td>
-                    <td>
-                        320 Binney St
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img width="150" height="100"
-                                 src="http://amahighlights.com/wp-content/uploads/gordon-ramsay-480x270.jpg">
-                        </td>
-                        <td>
-                            Gordon Ramsay MD
-                        </td>
-                        <td>
-                            General Practice, Nutrition
-                        </td>
-                        <td>
-                            Beth Israel
-                        </td>
-                        <td>
-                            60 Oak Lane Street
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img width="150" height="100" src="https://cfmedia.deadline.com/2015/10/drphil.png?w=397">
-                        </td>
-                        <td>
-                            Phil McGraw Psy D
-                        </td>
-                        <td>
-                            Psycharitry
-                        </td>
-                        <td>
-                            Washington Memorial Hospital
-                        </td>
-                        <td>
-                            78 Hollywood Rd
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img width="150" height="100"
-                                 src="http://www.medindia.net/patients/doctor_search/images/doctor.jpg">
-                        </td>
-                        <td>
-                            Angela Murphy MD
-                        </td>
-                        <td>
-                            Oncology
-                        </td>
-                        <td>
-                            Lakeville General
-                        </td>
-                        <td>
-                            678 January St
-                        </td>
-                    </tr>
-                    <td>
-                        <img width="150" height="100"
-                             src="http://images.fanpop.com/images/image_uploads/Jennifer-Morrison-jennifer-morrison-572948_1280_1024.jpg">
-                    </td>
-                    <td>
-                        Jennifer Morrison MD
-
-                    </td>
-                    <td>
-                        Anesthesia
-                    </td>
-                    <td>
-                        Boston Children's Hospital
-                    </td>
-                    <td>
-                        320 Binney St
-                    </td>
-                    </tr>
-                    </tbody>
-                </table>
-
-            </div>
-
         </div>
     </div>
 </div>
