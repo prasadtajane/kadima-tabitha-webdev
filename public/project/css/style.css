@@ -103,18 +103,22 @@ a.list-group-item.active small {
     font-size: 23px;
 }
 
-span.tags
+div.tags a
 {
-    border-style: dashed;
-    background: white;
+    background: #4ACCD1;
     border-radius: 2px;
-    color: #4ACCD1;
+    color: whitesmoke;
     padding: 5px;
     margin-right: 5px;
     border-radius: 25px;
 
 }
-
-.fa-phone {
-    margin-right: 40px;
+div.tags a:hover {
+    background: whitesmoke;
+    color: #4ACCD1;
 }
+
+.contact-doctor a {
+    margin: 5px;
+}
+

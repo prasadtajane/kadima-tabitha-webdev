@@ -8,11 +8,10 @@
     <title>Boston Health - Register </title>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="Medicio/css/style.css" rel="stylesheet">
+    <link href="css/template.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <script src="Medicio/js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="Medicio/js/bootstrap.min.js"></script>
-    <link id="bodybg" href="Medicio/bodybg/bg1.css" rel="stylesheet" type="text/css"/>
     <link id="t-colors" href="Medicio/color/default.css" rel="stylesheet">
 </head>
 <body>
@@ -22,150 +21,148 @@
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Boston<span class="color">Health</span></a>
+                <a class="navbar-brand" href="index.html">Boston<span class="color">Health</span></a>
             </div>
         </div>
     </nav>
     <div class="container">
 
-        <div class="registration">
-            <div role="form">
-                <h2>Patient Registration
-                    <small>It's free and always will be.</small>
-                </h2>
+        <div role="form">
+            <h2>Patient Registration
+                <small>It's free and always will be.</small>
+            </h2>
+            <div class="row">
+                <!-- Contact form section -->
+                <h4>Contact Information</h4>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="first_name" id="first_name" class="form-control input-md"
+                               placeholder="First Name" tabindex="1">
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="last_name" id="last_name" class="form-control input-md"
+                               placeholder="Last Name" tabindex="2">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" class="form-control input-md"
+                           placeholder="Email Address" tabindex="4">
+                </div>
                 <div class="row">
-                    <!-- Contact form section -->
-                    <h4>Contact Information</h4>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="first_name" id="first_name" class="form-control input-md"
-                                   placeholder="First Name" tabindex="1">
+                            <input type="password" name="password" id="password" class="form-control input-md"
+                                   placeholder="Password" tabindex="5">
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="last_name" id="last_name" class="form-control input-md"
-                                   placeholder="Last Name" tabindex="2">
+                            <input type="password" name="password_confirmation" id="password_confirmation"
+                                   class="form-control input-md" placeholder="Confirm Password" tabindex="6">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <input type="email" name="email" id="email" class="form-control input-md"
-                               placeholder="Email Address" tabindex="4">
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <div class="form-group">
-                                <input type="password" name="password" id="password" class="form-control input-md"
-                                       placeholder="Password" tabindex="5">
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <div class="form-group">
-                                <input type="password" name="password_confirmation" id="password_confirmation"
-                                       class="form-control input-md" placeholder="Confirm Password" tabindex="6">
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="form-group">
+                            <input type="tel" name="cell" id="cell" class="form-control input-md"
+                                   placeholder="Cell phone">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-3 col-sm-3 col-md-3">
-                            <div class="form-group">
-                                <input type="tel" name="cell" id="cell" class="form-control input-md"
-                                       placeholder="Cell phone">
-                            </div>
-                        </div>
-                        <div class="col-xs-3 col-sm-3 col-md-3">
-                            <div class="form-group">
-                                <input type="tel" name="home" id="home" class="form-control input-md"
-                                       placeholder="Home Phone">
-                            </div>
-                        </div>
-                        <div class="col-xs-3 col-sm-3 col-md-3">
-                            <div class="form-group">
-                                <input type="tel" name="work" id="work" class="form-control input-md"
-                                       placeholder="Work phone">
-                            </div>
-                        </div>
-                        <div class="col-xs-3 col-sm-3 col-md-3">
-                            <select>
-                                <option value="" class="disabled">Select Primary Phone</option>
-                                <option value="cellphone">Cell</option>
-                                <option value="homephone">Home</option>
-                                <option value="workphone">Work</option>
-                            </select>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="form-group">
+                            <input type="tel" name="home" id="home" class="form-control input-md"
+                                   placeholder="Home Phone">
                         </div>
                     </div>
-                    <!--/Contact form section -->
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="form-group">
+                            <input type="tel" name="work" id="work" class="form-control input-md"
+                                   placeholder="Work phone">
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <select>
+                            <option value="" class="disabled">Select Primary Phone</option>
+                            <option value="cellphone">Cell</option>
+                            <option value="homephone">Home</option>
+                            <option value="workphone">Work</option>
+                        </select>
+                    </div>
+                </div>
+                <!--/Contact form section -->
+            </div>
+
+            <hr>
+            <div class="row">
+                <!-- Demographics form section -->
+                <h4>Demographics</h4>
+                <label for="dob">Date of Birth</label>
+                <div class="form-group">
+                    <input type="date" name="dob" id="dob" class="form-control input-md date-select">
                 </div>
 
-                <hr>
-                <div class="row">
-                    <!-- Demographics form section -->
-                    <h4>Demographics</h4>
-                    <label for="dob">Date of Birth</label>
-                    <div class="form-group">
-                        <input type="date" name="dob" id="dob" class="form-control input-md date-select">
-                    </div>
-
-                    <div class="col-xs-6 col-sm-6 col-md-6">
-                        <p class="instruction">Indicate Your <strong>Sex</strong></p>
-                        <label class="radio-inline">
-                            <input type="radio" name="sex"> Male
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="sex"> Female
-                        </label>
-                    </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6">
-                        <p class="instruction">Please enter your gender here if it differs from your sex</p>
-                        <input type="text" name="gender" class="form-control input-md">
-                    </div>
-                    <!-- /Demographics form section --->
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p class="instruction">Indicate Your <strong>Sex</strong></p>
+                    <label class="radio-inline">
+                        <input type="radio" name="sex"> Male
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="sex"> Female
+                    </label>
                 </div>
-                <hr>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p class="instruction">Please enter your gender here if it differs from your sex</p>
+                    <input type="text" name="gender" class="form-control input-md">
+                </div>
+                <!-- /Demographics form section --->
+            </div>
+            <hr>
+            <div class="row">
+                <!-- Medical History Form section -->
+                <h4>Medical History</h4>
                 <div class="row">
-                    <!-- Medical History Form section -->
-                    <h4>Medical History</h4>
-                    <div class="row">
-                        <p class="instruction">Please check to indicate if you have ever had the following
-                            conditions</p>
-                        <div class="condition-grid">
+                    <p class="instruction">Please check to indicate if you have ever had the following
+                        conditions</p>
+                    <div class="condition-grid">
 
-                            <div class="row">
-                                <div class="col"><input type="checkbox"/><label>Diabetes</label></div>
-                                <div class="col"><input type="checkbox"/><label>Kidney Disease</label></div>
-                                <div class="col"><input type="checkbox"/><label>Stroke</label></div>
-                                <div class="col"><input type="checkbox"/><label>Tuberculosis</label></div>
-                                <div class="col"><input type="checkbox"/><label>High Blood Pressure</label></div>
-                                <div class="col"><input type="checkbox"/><label>Hepatitis</label></div>
-                            </div>
-                            <div class="row">
-
-                                <div class="col"><input type="checkbox"/><label>Depression</label></div>
-                                <div class="col"><input type="checkbox"/><label>Coronary Artery Disease</label></div>
-                                <div class="col"><input type="checkbox"/><label>Asthma </label></div>
-                                <div class="col"><input type="checkbox"/><label>Thyroid Disease</label></div>
-                                <div class="col"><input type="checkbox"/><label>Emphysema </label></div>
-                            </div>
-                            <div class="row">
-                                <div class="col"><input type="checkbox"><label>Seizures</label></div>
-                                <div class="col"><input type="checkbox"><label>Heart Attack</label></div>
-                                <div class="col"><input type="checkbox"><label>Anxiety</label></div>
-                                <div class="col"><input type="checkbox"><label>Coagulation problem</label></div>
-                                <div class="col"><input type="checkbox"/><label>Congestive Heart Failure</label></div>
-
-                            </div>
-                            <!-- User must elaborate if they check off one of these -->
-                            <div class="row">
-                                <div class="col"><input type="checkbox"/><label>Eye Problems </label></div>
-                                <div class="col"><input type="checkbox"/><label>Sexually Transmitted Disease</label>
-                                </div>
-                                <div class="col"><input type="checkbox"/><label>Cancer </label></div>
-                                <div class="col"><input type="checkbox"/><label>Congestive Heart Failure</label></div>
-                                <div class="col"><input type="checkbox"><label>Other</label></div>
-                            </div>
+                        <div class="row">
+                            <div class="col"><input type="checkbox"/><label>Diabetes</label></div>
+                            <div class="col"><input type="checkbox"/><label>Kidney Disease</label></div>
+                            <div class="col"><input type="checkbox"/><label>Stroke</label></div>
+                            <div class="col"><input type="checkbox"/><label>Tuberculosis</label></div>
+                            <div class="col"><input type="checkbox"/><label>High Blood Pressure</label></div>
+                            <div class="col"><input type="checkbox"/><label>Hepatitis</label></div>
                         </div>
-                        <!-- /Medical history form section -->
+                        <div class="row">
+
+                            <div class="col"><input type="checkbox"/><label>Depression</label></div>
+                            <div class="col"><input type="checkbox"/><label>Coronary Artery Disease</label></div>
+                            <div class="col"><input type="checkbox"/><label>Asthma </label></div>
+                            <div class="col"><input type="checkbox"/><label>Thyroid Disease</label></div>
+                            <div class="col"><input type="checkbox"/><label>Emphysema </label></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><input type="checkbox"><label>Seizures</label></div>
+                            <div class="col"><input type="checkbox"><label>Heart Attack</label></div>
+                            <div class="col"><input type="checkbox"><label>Anxiety</label></div>
+                            <div class="col"><input type="checkbox"><label>Coagulation problem</label></div>
+                            <div class="col"><input type="checkbox"/><label>Congestive Heart Failure</label></div>
+
+                        </div>
+                        <!-- User must elaborate if they check off one of these -->
+                        <div class="row">
+                            <div class="col"><input type="checkbox"/><label>Eye Problems </label></div>
+                            <div class="col"><input type="checkbox"/><label>Sexually Transmitted Disease</label>
+                            </div>
+                            <div class="col"><input type="checkbox"/><label>Cancer </label></div>
+                            <div class="col"><input type="checkbox"/><label>Congestive Heart Failure</label></div>
+                            <div class="col"><input type="checkbox"><label>Other</label></div>
+                        </div>
                     </div>
+                    <!-- /Medical history form section -->
                 </div>
                 </form>
             </div>

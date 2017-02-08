@@ -6,11 +6,11 @@
     <meta name="description" content="">
     <title>Boston Health Doctor Search</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="Medicio/css/style.css" rel="stylesheet">
+    <link href="css/template.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="Medicio/js/bootstrap.min.js"></script>
-    <script src="Medicio/js/jquery.min.js"></script>
-    <link id="bodybg" href="Medicio/bodybg/bg1.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bostonhealth.js"></script>
     <link id="t-colors" href="Medicio/color/default.css" rel="stylesheet">
 </head>
 <body>
@@ -19,20 +19,8 @@
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="navbar-header">
             <!--TODO back button-->
-            <a class="navbar-brand" href="#">Boston<span class="color">Health</span></a>
+            <a class="navbar-brand" href="index.html">Boston<span class="color">Health</span></a>
         </div>
-        <div class="navbar navbar-right ">
-
-        </div>
-    </nav>
-    <div class="navbar navbar-default visible-xs">
-        <div class="container-fluid">
-            <button class="btn btn-default navbar-btn" data-toggle="collapse" data-target="#filter-sidebar">
-                <i class="fa fa-tasks"></i> Toggle Sidebar
-            </button>
-        </div>
-    </div>
-    <div class="container">
         <div id="custom-search-input">
             <div class="input-group col-md-12">
                 <input type="text" class="form-control input-lg" placeholder="Search Doctor By Name"/>
@@ -43,167 +31,179 @@
                     </span>
             </div>
         </div>
-        <!-- TODO advance search modal, make link sexier -->
+    </nav>
+    <!-- TODO advance search modal, make link sexier -->
+    <div class="container">
+        <br>
+        <br>
         <a href="#">Advanced Search</a>
-        <!-- Doctor List -->
-        <div class="row doctor-list">
-            <div class="well">
-                <div class="list-group">
-                    <a href="doctor-profile.html" class="list-group-item">
-                        <div class="media col-md-2">
-                            <figure class="pull-left">
-                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
-                                     alt="placehold.it/350x250">
-                            </figure>
+        <div class="row">
+            <div class="span12">
+                <ul class="thumbnails list-unstyled">
+                    <li class="span5 clearfix">
+                        <div class="thumbnail clearfix">
+                            <img src="http://placehold.it/320x200" class="pull-left span2 clearfix"
+                                 style='margin-right:10px'>
+                            <div class="caption" class="pull-left">
+                                <button class="btn btn-info pull-right" data-toggle="modal" data-target="#squarespaceModal">
+                                    Make An Appointment
+                                </button>
+                                <h4>
+                                    <a href="doctor-profile.html">Gregory House MD</a>
+                                </h4>
+                                <p>Massachusettts General Hospital<br>55 Fruit St<br> Boston, MA 02114</p>
+                                <div class="tags">
+                                    <a href="#">Neurology</a>
+                                    <a href="#">Neurological Medicine</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <h4 class="list-group-item-heading"> Gregory House MD </h4>
-                            <p class="list-group-item-text">
-                                Massachusetts General Hospital
-                                55 Fruit St<br> Boston, MA 02114
-                            </p>
-                            <hr>
-                            <!-- TODO special formatting. specialties should be clickable and lead to another search -->
-                            <span class="tags">Neurology</span>
-                            <span class="tags">Child Neurology</span>
-                            <span class="tags">Neuromuscular Medicine </span>
+                    </li>
+                    <li class="span5 clearfix">
+                        <div class="thumbnail clearfix">
+                            <img src="http://placehold.it/320x200" class="pull-left span2 clearfix"
+                                 style='margin-right:10px'>
+                            <div class="caption" class="pull-left">
+                                <button class="btn btn-info pull-right" data-toggle="modal" data-target="#squarespaceModal">
+                                    Make An Appointment
+                                </button>
+                                <h4>
+                                    <a href="doctor-profile.html">Doogie Hosier MD</a>
+                                </h4>
+                                <p>Boston Children's Hospital<br> 300 Longwood Ave</p>
+                                <div class="tags">
+                                    <a href="#">Pediatrics</a>
+                                    <a href="#">Pediatric Allergy & Immunology</a>
+                                    <a href="#">Pediatric Nephrology</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="span5 clearfix">
+                        <div class="thumbnail clearfix">
+                            <img src="http://placehold.it/320x200" class="pull-left span2 clearfix"
+                                 style='margin-right:10px'>
+                            <div class="caption" class="pull-left">
+                                <button class="btn btn-info pull-right" data-toggle="modal" data-target="#squarespaceModal">
+                                    Make An Appointment
+                                </button>
+                                <h4>
+                                    <a href="#">Hannah Smith MD, FACOG</a>
+                                </h4>
+                                <p>Brigham Women's Hospital <br> 360 Longwood Ave</p>
+                                <div class="tags">
+                                    <a href="#">Gynecologic Oncology</a>
+                                    <a href="#">Obstetrics & Gynecology</a>
+                                    <a href="#">Women's Health</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="span5 clearfix">
+                        <div class="thumbnail clearfix">
+                            <img src="http://placehold.it/320x200" class="pull-left span2 clearfix"
+                                 style='margin-right:10px'>
+                            <div class="caption" class="pull-left">
+                                <button class="btn btn-info pull-right" data-toggle="modal" data-target="#squarespaceModal">
+                                    Make An Appointment
+                                </button>                                <h4>
+                                    <a href="doctor-profile.html">Jenny Craig ANP</a>
+                                </h4>
+                                <p>Washington Memorial Hospital<br> 500 Dartmouth Rd</p>
+                                <div class="tags">
+                                    <a href="#">Dietetics</a>
+                                    <a href="#">Pediatric Dietetics</a>
+                                    <a href="#">Childhood Obesity</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="span5 clearfix">
+                        <div class="thumbnail clearfix">
+                            <img src="http://placehold.it/320x200" class="pull-left span2 clearfix"
+                                 style='margin-right:10px'>
+                            <div class="caption" class="pull-left">
+                                <button class="btn btn-info pull-right" data-toggle="modal" data-target="#squarespaceModal">
+                                    Make An Appointment
+                                </button>                                <h4>
+                                    <a href="doctor-profile.html">Thomas J Kirk DDS</a>
+                                </h4>
+                                <p>Boston Dental<br> 34 Redding St</p>
+                                <div class="tags">
+                                    <a href="#">General Dentistry</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="span5 clearfix">
+                        <div class="thumbnail clearfix">
+                            <img src="http://placehold.it/320x200" class="pull-left span2 clearfix"
+                                 style='margin-right:10px'>
+                            <div class="caption" class="pull-left">
+                                <button class="btn btn-info pull-right" data-toggle="modal" data-target="#squarespaceModal">
+                                    Make An Appointment
+                                </button>
+                                <h4>
+                                    <a href="doctor-profile.html">Luis Felipe Kaufmann MD</a>
+                                </h4>
+                                <p>St Peter's Clinic <br>453 Blackstone Dr</p>
+                                <div class="tags">
+                                    <a href>Periodontics</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <button type="button" class="btn btn-lg btn-skin"> Make Appointment</button>
-                        </div>
-                    </a>
-                    <a href="doctor-profile.html" class="list-group-item">
-                        <div class="media col-md-2">
-                            <figure class="pull-left">
-                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
-                                     alt="placehold.it/350x250">
-                            </figure>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="list-group-item-heading"> Doogie Hoser MD </h4>
-                            <p class="list-group-item-text">
-                                Boston Children's Hospital<br>
-                                300 Longwood Ave <br>
-                                Boston, MA 02115
-                            </p>
-                            <hr>
-                            <span class="tags">Pediatrics</span>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <button type="button" class="btn btn-lg btn-skin">Make Appointment</button>
-                        </div>
-                    </a>
-                    <a href="doctor-profile.html" class="list-group-item">
-                        <div class="media col-md-2">
-                            <figure class="pull-left">
-                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
-                                     alt="placehold.it/350x250">
-                            </figure>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="list-group-item-heading"> List group heading </h4>
-                            <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata
-                                consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id,
-                                nam
-                                quot populo ea.
-                                Falli urbanitas ei pri, eu est enim volumus, mei no volutpat periculis. Est errem
-                                iudicabit
-                                cu. At usu vocibus officiis, ad ius eros tibique appellantur.
-                            </p>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <button type="button" class="btn btn-lg btn-skin">Make Appointment!</button>
-                        </div>
-                    </a>
-                    <a href="doctor-profile.html" class="list-group-item">
-                        <div class="media col-md-2">
-                            <figure class="pull-left">
-                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
-                                     alt="placehold.it/350x250">
-                            </figure>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="list-group-item-heading"> List group heading </h4>
-                            <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata
-                                consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id,
-                                nam
-                                quot populo ea.
-                                Falli urbanitas ei pri, eu est enim volumus, mei no volutpat periculis. Est errem
-                                iudicabit
-                                cu. At usu vocibus officiis, ad ius eros tibique appellantur.
-                            </p>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <button type="button" class="btn btn-lg btn-skin">Make Appointment!</button>
-                        </div>
-                    </a>
-                    <a href="doctor-profile.html" class="list-group-item">
-                        <div class="media col-md-2">
-                            <figure class="pull-left">
-                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
-                                     alt="placehold.it/350x250">
-                            </figure>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="list-group-item-heading"> List group heading </h4>
-                            <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata
-                                consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id,
-                                nam
-                                quot populo ea.
-                                Falli urbanitas ei pri, eu est enim volumus, mei no volutpat periculis. Est errem
-                                iudicabit
-                                cu. At usu vocibus officiis, ad ius eros tibique appellantur.
-                            </p>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <button type="button" class="btn btn-lg btn-skin">Make Appointment!</button>
-                        </div>
-                    </a>
-                    <a href=doctor-profile.html#" class="list-group-item">
-                        <div class="media col-md-2">
-                            <figure class="pull-left">
-                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
-                                     alt="placehold.it/350x250">
-                            </figure>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="list-group-item-heading"> List group heading </h4>
-                            <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata
-                                consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id,
-                                nam
-                                quot populo ea.
-                                Falli urbanitas ei pri, eu est enim volumus, mei no volutpat periculis. Est errem
-                                iudicabit
-                                cu. At usu vocibus officiis, ad ius eros tibique appellantur.
-                            </p>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <button type="button" class="btn btn-lg btn-skin">Make Appointment!</button>
-                        </div>
-                    </a>
-                    <a href="doctor-profile.html" class="list-group-item">
-                        <div class="media col-md-2">
-                            <figure class="pull-left">
-                                <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250"
-                                     alt="placehold.it/350x250">
-                            </figure>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="list-group-item-heading"> List group heading </h4>
-                            <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata
-                                consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id,
-                                nam
-                                quot populo ea.
-                                Falli urbanitas ei pri, eu est enim volumus, mei no volutpat periculis. Est errem
-                                iudicabit
-                                cu. At usu vocibus officiis, ad ius eros tibique appellantur.
-                            </p>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <button type="button" class="btn btn-lg btn-skin">Make Appointment!</button>
-                        </div>
-                    </a>
+<!-- Appointment modal -->
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h3 class="modal-title" id="lineModalLabel">My Modal</h3>
+            </div>
+            <div class="modal-body">
+
+                <!-- content goes here -->
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <input type="file" id="exampleInputFile">
+                        <p class="help-block">Example block-level help text here.</p>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Check me out
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
+                    </div>
+                    <div class="btn-group btn-delete hidden" role="group">
+                        <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
