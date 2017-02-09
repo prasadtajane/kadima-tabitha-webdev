@@ -20,13 +20,13 @@
 <div class="container">
     <div class="new-page">
         <h5>Name</h5>
-        <input class="form-control" type="text">
+        <input ng-model="model.widget.name" class="form-control" type="text">
         <h5>Text</h5>
-        <input class="form-control" type="text">
+        <input ng-model="model.widget.text" class="form-control" type="text">
         <h5>URL</h5>
-        <input class="form-control" type="text">
+        <input ng-model="model.widget.url" class="form-control" type="text">
         <h5>Width</h5>
-        <input class="form-control" type="text">
+        <input ng-model="model.widget.width"class="form-control" type="text">
         <h5>Upload</h5>
         <input class="form-control" type="file">
         <a href="#/widget-list" class="btn btn-block btn-primary">Upload Image</a>

@@ -20,10 +20,9 @@
 
 <div class="container-fluid">
     <ul class="list-group">
-        <li class="list-group-item">
-            <a href="#/page-list">
-                Cras justo odio
-            </a>
+        <!-- FIXME -->
+        <li ng-repeat = "website in model.websites" class="list-group-item">
+            <a href="#/page-list">{website.name}</a>
             <a href="#/website-edit" class="pull-right">
                 <span class="web-edit glyphicon glyphicon-cog"></span>
             </a>
@@ -34,55 +33,8 @@
                 <span class="web-edit glyphicon glyphicon-cog"></span>
             </a>
         </li>
-        <li class="list-group-item">
-            <a href="#/page-list">Morbi leo risus</a>
-            <a href="#/website-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/page-list">Porta ac consectetur ac</a>
-            <a href="#/website-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/page-list">Vestibulum at eros</a>
-            <a href="#/website-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/page-list">
-                Cras justo odio</a>
-            <a href="#/website-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/page-list">Dapibus ac facilisis in</a>
-            <a href="#/website-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/page-list">Morbi leo risus</a>
-            <a href="#/website-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/page-list">Porta ac consectetur ac</a>
-            <a href="/website-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/page-list">Vestibulum at eros</a>
-            <a href="/website-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
+
+
     </ul>
 
 </div>
