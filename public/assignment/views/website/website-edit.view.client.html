@@ -2,22 +2,22 @@
             <div class="row container-fluid">
                 <div class="col-sm-4 hidden-xs">
                     <div class="navbar-text pull-left">
-                        <a href="#/website-list">
+                        <a href="#/user/{{model.website.developerId}}/website">
                             <span class="glyphicon glyphicon-menu-left"></span>
                         </a>
                     </div>
                     <div class="navbar-text pull-right">
-                        <a href="#/website-new">
-                            <span class="glyphicon glyphicon-ok"></span>
+                        <a href="#/user/{{model.website.developerId}}/website/new">
+                            <span class="glyphicon glyphicon-plus"></span>
                         </a>
                     </div>
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#">Websites</a>
+                        <a class="navbar-brand" href="#/user/{{model.website.developerId}}/website">Websites</a>
                     </div>
                 </div>
                 <div class="col-sm-8">
                     <div class="navbar-text pull-right">
-                        <a href="#/website-list">
+                        <a ng-click="#/user/{{model.website.developerId}}/website">
                             <span class="glyphicon glyphicon-ok"></span>
                         </a>
                     </div>
@@ -34,11 +34,14 @@
             <div class="col-sm-4 hidden-xs">
                 <ul class="list-group">
                     <li ng-repeat="website in model.websites" class="list-group-item">
-                        <a href="#/page-list">{{website.name}}</a>
-                        <a href="#/website-edit" class="pull-right">
-                            <span class="web-edit glyphicon glyphicon-cog"></span>
+                        <a href="#">
+                            {{website.name}}
+                        </a>
+                        <a href="#/user/{{model.website.developerId}}/website/{{website._id}}" class="pull-right">
+                            <span class="glyphicon glyphicon-cog"></span>
                         </a>
                     </li>
+                </ul>
                 </ul>
             </div>
 
@@ -54,14 +57,14 @@
                 </div>
                 <a ng-click="model.updateWebsite(website)" class="btn btn-success btn-block">Update</a>
                 <a ng-click="model.deleteWebsite()" class="btn btn-danger btn-block"
-                   href="#/website-list">Delete</a>
+                   href="#/user/{{model.website.developerId}}/website">Delete</a>
             </div>
         </div>
 
         <nav class="navbar navbar-primary navbar-fixed-bottom">
             <div class="container-fluid">
                 <p class="navbar-text pull-right">
-                    <a href="#/profile" class="navbar-link">
+                    <a href="#/user/{{model.website.developerId}}" class="navbar-link">
                 <span class="glyphicon glyphicon-user">
                 </span>
                     </a>

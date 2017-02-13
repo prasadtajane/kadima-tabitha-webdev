@@ -5,12 +5,12 @@
     function WebsiteService() {
         var websites =
             [
-                {"_id": "123", "name": "Facebook", "developerId": "456", "description": "Lorem"},
-                {"_id": "234", "name": "Tweeter", "developerId": "456", "description": "Lorem"},
-                {"_id": "456", "name": "Gizmodo", "developerId": "456", "description": "Lorem"},
-                {"_id": "567", "name": "Tic Tac Toe", "developerId": "123", "description": "Lorem"},
-                {"_id": "678", "name": "Checkers", "developerId": "123", "description": "Lorem"},
-                {"_id": "789", "name": "Chess", "developerId": "234", "description": "Lorem"}
+                {_id: "123", name: "Facebook", developerId: "456", description: "Lorem"},
+                {_id: "234", name: "Tweeter", developerId: "456", description: "Lorem"},
+                {_id: "456", name: "Gizmodo", developerId: "456", description: "Lorem"},
+                {_id: "567", name: "Tic Tac Toe", developerId: "123", description: "Lorem"},
+                {_id: "678", name: "Checkers", developerId: "123", description: "Lorem"},
+                {_id: "789", name: "Chess", developerId: "234", description: "Lorem"}
             ];
         var api = {
             "createWebsite" : createWebsite,
@@ -31,30 +31,33 @@
         }
 
         function findWebsitesByUser(userId) {
-            for (var i in websites) {
-                website = websites[i];
-                if (website.developerId === userId) {
-                    return website;
+            var sites = [];
+            for(var w in websites) {
+                if(userId === websites[w].developerId) {
+                    sites.push(websites[w]);
                 }
             }
-            return null;
+            return sites;
         }
 
         function findWebsiteById(websiteId) {
-            for (var i in websites) {
-                website = websites[i];
-                if (website._id === websiteId) {
-                    return website;
+            for(var w in websites) {
+                if(websiteId === websites[w]._id) {
+                    return angular.copy(websites[w]);
                 }
             }
             return null;
         }
 
         function updateWebsite(websiteId, website) {
-            var indexWebsite = websites[websiteId];
-            indexWebsite.name = website.name;
-            indexWebsite.developerId = website.developerId;
-            indexWebsite.description = website.description;
+            for (var w in websites) {
+                if(websites[w]._id = websiteId) {
+                    websites[w].name = website.name;
+                    websites[w].description = website.description;
+                    return websites[w];
+                }
+            }
+            return null;
         }
 
         function deleteWebsite(websiteId)  {

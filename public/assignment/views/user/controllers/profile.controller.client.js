@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .controller("ProfileController", ProfileController);
 
-    function ProfileController(UserService, $location, $routeParams) {
+    function ProfileController(UserService, $routeParams) {
 
         var vm = this;
 
@@ -22,9 +22,8 @@
         function updateUser(newUser) {
             var user = UserService.updateUser(userId, newUser);
             if(user != null) {
-                vm.message = "User Successfully Updated!"; 
-                $location.url("/user/" + userId + "/website/")
-                
+                vm.message = "User has been successfully updated!";
+
             } else {
                 vm.error = "Unable to update user";
             }

@@ -27,9 +27,9 @@ span.page.glyphicon {
     color: #777;
 }
 
-span.page.glyphicon.glyphicon-user, .web-edit.glyphicon.glyphicon-cog, .page-edit.glyphicon {
-    color: #337ab7;
-}
+/*span.page.glyphicon.glyphicon-user, .web-edit.glyphicon.glyphicon-cog, .page-edit.glyphicon {*/
+    /*color: #337ab7;*/
+/*}*/
 
 table.borderless td,table.borderless th{
     border: none !important;
@@ -47,10 +47,11 @@ span.pull-right.glyphicon.glyphicon-menu-hamburger {
     font-size: large;
 }
 
-span.pull-right.glyphicon.glyphicon-cog {
+.glyphicon.glyphicon-cog {
     color: #337ab7;
-    font-size: large;
 }
+
+
 
 .main .page-header {
     margin-top: 0;
@@ -69,13 +70,7 @@ span.pull-right.glyphicon.glyphicon-cog {
     }
 }
 
-li > div.container-fluid {
-    padding: 5px;
-}
-.container-fluid {
-    margin: 5px;
+ul .list-group {
+    margin-top: 10px;
 }
 
-li .borderless {
-    border-top: 0 none;
-}
