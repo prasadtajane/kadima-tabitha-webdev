@@ -61,7 +61,7 @@
 
         function updateWidget(widgetId, widget) {
             var indexWidget = widgets[widgetId];
-            indexWidget._id = widget._id;
+            indexWidget._id = widgetId;
             indexWidget.widgetType = widget.widgetType;
             indexWidget.pageId = widget.pageId;
             indexWidget.size = widget.size;

@@ -1,48 +1,44 @@
 <nav class="navbar navbar-primary navbar-fixed-top">
     <p class="navbar-text pull-left">
-        <a class="navbar-link" href="#/profile">
+        <a class="navbar-link" href="#/user/{{model.userId}}">
                 <span class="glyphicon glyphicon-menu-left">
                 </span>
         </a>
     </p>
     <div class="navbar-header">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#/user/{{model.userId}}/website/">
             Websites
         </a>
     </div>
     <p class="navbar-text pull-right">
-        <a href="#/website-new" class="navbar-link">
+        <a href="#/user/{{model.userId}}/website/new" class="navbar-link">
                     <span class="glyphicon glyphicon-plus">
                     </span>
         </a>
     </p>
 </nav>
 
-<div class="container-fluid">
+<div class="website-list-container">
     <ul class="list-group">
-        <!-- FIXME -->
-        <li ng-repeat = "website in model.websites" class="list-group-item">
-            <a href="#/page-list">{website.name}</a>
-            <a href="#/website-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
+        <li ng-repeat="website in model.websites" class="list-group-item">
+            <a href="#" class="list-group-item">
+                <a href="#/user/{{model.userId}}/website/{{website._id}}/page">{{website.name}}</a>
+                <p class="pull-right">
+                    <a href="#/user/{{model.userId}}/website/{{website._id}}"
+                       class="glyphicon glyphicon-cog glyphi-1 gly"></a>
+                </p>
             </a>
         </li>
-        <li class="list-group-item">
-            <a href="#/page-list">Dapibus ac facilisis in</a>
-            <a href="#/website-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-
-
     </ul>
+</div>
 
+</div>
 </div>
 
 
 <nav class="navbar navbar-primary navbar-fixed-bottom">
     <div class="navbar-text pull-right">
-        <a href="#/profile">
+        <a href="#/user/{{model.userId}}">
             <span class="glyphicon glyphicon-user"></span>
         </a>
     </div>

@@ -20,34 +20,10 @@
 <div class="container">
     <div class="borderless">
     <ul class="list-group">
-        <li class="list-group-item">
+        <li ng-repeat="website in model.pages" class="list-group-item">
             <a href="#/widget-list">
-                Blog Post
+                {{website.name}}
             </a>
-            <a href="#/page-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/widget-list">Blogs</a>
-            <a href="#/page-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/widget-list">Home</a>
-            <a href="#/page-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/widget-list">About</a>
-            <a href="#/page-edit" class="pull-right">
-                <span class="web-edit glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#/widget-list">Contact us</a>
             <a href="#/page-edit" class="pull-right">
                 <span class="web-edit glyphicon glyphicon-cog"></span>
             </a>

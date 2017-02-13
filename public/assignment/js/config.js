@@ -37,13 +37,13 @@
                 controllerAs: "model"
             })
             .when("/user/:uid/website/new", {
-                templateUrl: "views/webiste/website-new.view.client.html",
-                controller: "WebsiteNewController",
+                templateUrl: "views/website/website-new.view.client.html",
+                controller: "NewWebsiteController",
                 controllerAs: "model"
             })
             .when("/user/:uid/website/:wid", {
                 templateUrl: "views/website/website-edit.view.client.html",
-                controller: "WebsiteEditController",
+                controller: "EditWebsiteController",
                 controllerAs: "model"
             })
             .when("/user/:uid/website/:wid/page", {

@@ -1,24 +1,21 @@
 (function () {
-    angular
-        .module("WebAppMaker")
-        .controller("LoginController", LoginController);
+        angular
+            .module("WebAppMaker")
+            .controller("LoginController", LoginController);
 
-    function LoginController($routeParams, $location, UserService) {
+        function LoginController($location, UserService) {
 
-        var vm = this;
-        var userId = $routeParams["userId"];
-        function init() {
-          vm.user = UserService.findUserById(userId);
-        }
-        init();
+            var vm = this;
+            vm.login = login;
 
-        function login(user) {
-            var user = UserService.findUserByCredentials(user.username, user.password);
-            if(user) {
-                $location.url("/user/"+user._id);
-            } else {
-                vm.error = "User not found";
+            
+            function login(user) {
+                user = UserService.findUserByCredentials(user.username, user.password);
+                if (user) {
+                    $location.url("/user/" + user._id);
+                } else {
+                    vm.alert = "Unable to login";
+                }
             }
         }
-    }
-})();
+    })();

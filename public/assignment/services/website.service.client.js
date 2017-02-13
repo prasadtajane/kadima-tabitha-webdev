@@ -22,7 +22,7 @@
         return api; 
         function createWebsite(userId, website){
             var newWebsite = {
-                _id : website._id,
+                _id : userId,
                 name: website.name,
                 developerId : userId,
                 description : website.description
@@ -52,7 +52,6 @@
 
         function updateWebsite(websiteId, website) {
             var indexWebsite = websites[websiteId];
-            indexWebsite._id = website._id;
             indexWebsite.name = website.name;
             indexWebsite.developerId = website.developerId;
             indexWebsite.description = website.description;

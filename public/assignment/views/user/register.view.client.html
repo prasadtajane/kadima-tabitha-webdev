@@ -10,11 +10,12 @@
            ng-model="model.user.password"/>
     <input type="password"
            class="form-control"
+           id="verify"
            placeholder="verify password"
-           ng-model="model.user.password"/>
+           ng-model="user.password"/>
 
     <a class="btn btn-primary btn-block"
-       href="#/profile">Register</a>
+       ng-click="model.register(user)">Register</a>
     <a class="btn btn-danger  btn-block"
        href="#/login">Cancel</a>
 </div>

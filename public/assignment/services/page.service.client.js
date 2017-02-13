@@ -5,13 +5,13 @@
     function PageService() {
         var pages =
             [
-                { "_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem" },
-                { "_id": "432", "name": "Post 2", "websiteId": "456", "description": "Lorem" },
-                { "_id": "543", "name": "Post 3", "websiteId": "456", "description": "Lorem" }
+                { "_id": "321", "name": "Post 1", "title" : "Title","websiteId": "456", "description": "Lorem" },
+                { "_id": "432", "name": "Post 2", "title" : "Title", "websiteId": "456", "description": "Lorem" },
+                { "_id": "543", "name": "Post 3", "title" : "Title", "websiteId": "456", "description": "Lorem" }
             ];
         var api = {
             "createPage" : createPage,
-            "findpagesByUser" : findPageByWebsiteId,
+            "findPagesByWebsiteId" : findPageByWebsiteId,
             "findPageById" : findPageById,
             "updatePage" : updatePage,
             "deletePage" : deletePage
@@ -19,7 +19,7 @@
         return api;
         function createPage(websiteId, page){
             var newPage = {
-                _id :  page._id,
+                _id :  websiteId,
                 name:  page.name,
                 websiteId: websiteId,
                 description: page.description
@@ -50,7 +50,7 @@
 
         function updatePage(pageId, page) {
             var indexPage = pages[pageId];
-            indexPage._id = page._id;
+            indexPage._id = pageId
             indexPage.name = page.name;
             indexPage.websiteId = page.websiteId;
             indexPage.description = page.description;
