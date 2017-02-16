@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <p class="navbar-text pull-left">
-        <a class="navbar-link" href="#/page-list">
+        <a class="navbar-link" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                 <span class="page glyphicon glyphicon-menu-left">
                 </span>
         </a>
@@ -11,9 +11,9 @@
         </a>
     </div>
     <p class="navbar-text pull-right">
-        <a href="#/page-list" class="navbar-link">
-                    <span class="page glyphicon glyphicon-ok">
-                    </span>
+        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page" ng-click="model.createPage(page)" class="navbar-link">
+            <span class="page glyphicon glyphicon-ok">
+            </span>
         </a>
     </p>
 </nav>
@@ -29,7 +29,7 @@
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class=" navbar-text pull-right">
-        <a href="#/profile">
+        <a href="#/user/{{model.userId}}">
             <span class="page glyphicon glyphicon-user"></span>
         </a>
     </div>

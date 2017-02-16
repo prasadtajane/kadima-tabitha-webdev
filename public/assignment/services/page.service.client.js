@@ -5,13 +5,13 @@
     function PageService() {
         var pages =
             [
-                { "_id": "321", "name": "Post 1", "title" : "Title","websiteId": "456", "description": "Lorem" },
-                { "_id": "432", "name": "Post 2", "title" : "Title", "websiteId": "456", "description": "Lorem" },
-                { "_id": "543", "name": "Post 3", "title" : "Title", "websiteId": "456", "description": "Lorem" }
+                { _id: "321", name: "Post 1", title : "Title", websiteId: "456", description: "Lorem" },
+                { _id: "432", name: "Post 2", title : "Title", websiteId: "456", description: "Lorem" },
+                { _id: "543", name: "Post 3", title : "Title", websiteId: "456", description: "Lorem" }
             ];
         var api = {
             "createPage" : createPage,
-            "findPagesByWebsiteId" : findPageByWebsiteId,
+            "findPagesByWebsiteId" : findPagesByWebsiteId,
             "findPageById" : findPageById,
             "updatePage" : updatePage,
             "deletePage" : deletePage
@@ -21,6 +21,7 @@
             var newPage = {
                 _id :  websiteId,
                 name:  page.name,
+                title: page.title,
                 websiteId: websiteId,
                 description: page.description
 
@@ -28,14 +29,14 @@
             pages.push(newPage);
         }
 
-        function findPageByWebsiteId(websiteId) {
+        function findPagesByWebsiteId(websiteId) {
+            var pgs = [];
             for (var i in pages) {
-                page = pages[i];
-                if (page.websiteId === websiteId) {
-                    return page;
+                if(websiteId == pages[i].websiteId) {
+                    pgs.push(pages[i]); 
                 }
             }
-            return null;
+            return pgs;
         }
 
         function findPageById(pageId) {

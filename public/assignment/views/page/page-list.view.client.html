@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <p class="navbar-text pull-left">
-        <a class="navbar-link" href="#/website-list">
+        <a class="navbar-link" href="#/user/{{model.userId}}/website">
                 <span class="page glyphicon glyphicon-menu-left">
                 </span>
         </a>
@@ -11,7 +11,7 @@
         </a>
     </div>
     <p class="navbar-text pull-right">
-        <a href="#/page-new" class="navbar-link">
+        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/new" class="navbar-link">
                     <span class="page glyphicon glyphicon-plus">
                     </span>
         </a>
@@ -20,11 +20,11 @@
 <div class="container">
     <div class="borderless">
     <ul class="list-group">
-        <li ng-repeat="website in model.pages" class="list-group-item">
-            <a href="#/widget-list">
-                {{website.name}}
+        <li ng-repeat="page in model.pages" class="list-group-item">
+            <a href="#">
+                {{page.name}}
             </a>
-            <a href="#/page-edit" class="pull-right">
+            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}/" class="pull-right">
                 <span class="web-edit glyphicon glyphicon-cog"></span>
             </a>
         </li>
@@ -35,7 +35,7 @@
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="navbar-text pull-right">
-        <a href="#/profile">
+        <a href="#/user/{{model.userId}}">
             <span class="page glyphicon glyphicon-user"></span>
         </a>
     </div>

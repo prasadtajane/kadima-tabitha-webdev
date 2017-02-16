@@ -3,9 +3,9 @@
         .module("WebAppMaker")
         .controller("RegisterController", RegisterController);
 
-    function RegisterController($routeParams, $location, UserService) {
+    function RegisterController($location, UserService) {
         var vm = this;
-      //  vm.userId = $routeParams["uid"];
+      
         vm.register = register;
 
 

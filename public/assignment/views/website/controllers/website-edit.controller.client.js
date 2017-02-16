@@ -8,33 +8,36 @@
         
         var userId = $routeParams['uid'];
         var websiteId = $routeParams['wid'];
-        
+
+        vm.userId = userId;
+        vm.websiteId = websiteId;
+
         //event handlers 
         vm.updateWebsite = updateWebsite;
         vm.deleteWebsite = deleteWebsite;
-
+        
+        
         function init() {
-            var websites  = WebsiteService.findWebsitesByUser(userId);
-            vm.websites = websites; 
-            var website = WebsiteService.findWebsiteById(websiteId);
-            vm.website = website; 
+            vm.websites = WebsiteService.findWebsitesByUser(userId);
+            vm.website = WebsiteService.findWebsiteById(websiteId);
+            vm.name = vm.website.name;
+            vm.description = vm.website.description;
         }
 
         init();
 
+
         function updateWebsite(website) {
-            var website = WebsiteService.updateWebsite(websiteId, website);
-            if (website != null) {
-                vm.message = "Website has been successfully updated!"; 
-            } else {
-                vm.error = "Unable to update website"
+            var updateWebsite = WebsiteService.updateWebsite(vm.websiteId, website);
+            if (updateWebsite != null) {
             }
-            
+            else {
+                vm.error = "Website couldn't be Updated."
+            }
         }
 
         function deleteWebsite() {
             WebsiteService.deleteWebsite(vm.websiteId);
-            $location.url("/user/" + vm.userId + "/website");
         }
     }
 }) ();

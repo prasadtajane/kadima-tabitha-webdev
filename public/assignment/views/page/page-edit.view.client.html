@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <p class="navbar-text pull-left">
-        <a class="navbar-link" href="#/page-list">
+        <a class="navbar-link" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                 <span class="page glyphicon glyphicon-menu-left">
                 </span>
         </a>
@@ -11,7 +11,7 @@
         </a>
     </div>
     <p class="navbar-text pull-right">
-        <a href="#/page-list" class="navbar-link">
+        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-link">
                     <span class="page glyphicon glyphicon-ok">
                     </span>
         </a>
@@ -22,15 +22,19 @@
         <h4>Name</h4>
         <input ng-model="model.page.name" class="form-control" type="text" placeholder="Blog Post">
         <h4>Title</h4>
-        <input ng-model="model." class="form-control" type="text" placeholder="Page Title">
-        <a class="btn btn-block btn-danger" href="#/page-list">Delete</a>
+        <input ng-model="model.page.title" class="form-control" type="text" placeholder="Page Title">
+        <div class="form-group">
+            <label for="desc">Description:</label>
+            <textarea  ng-model = "model.page.description" class="form-control" rows="4" id="desc" placeholder="Description"></textarea>
+        </div>
+        <a class="btn btn-block btn-danger" ng-click="model.delete()" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">Delete</a>
     </div>
 
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="navbar-text pull-right">
-        <a href="#/profile">
+        <a href="#/user/{{model.userId}}">
             <span class="page glyphicon glyphicon-user"></span>
         </a>
     </div>

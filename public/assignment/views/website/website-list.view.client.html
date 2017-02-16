@@ -1,17 +1,17 @@
 <nav class="navbar navbar-primary navbar-fixed-top">
     <p class="navbar-text pull-left">
-        <a class="navbar-link" href="#/user/{{website.developerId}}/website">
+        <a class="navbar-link" href="#/user/{{model.userId}}/">
                 <span class="glyphicon glyphicon-menu-left">
                 </span>
         </a>
     </p>
     <div class="navbar-header">
-        <a class="navbar-brand" href="#/user/{{website.developerId}}/website/">
+        <a class="navbar-brand" href="#/user/{{model.userId}}/website/">
             Websites
         </a>
     </div>
     <p class="navbar-text pull-right">
-        <a href="#/user/{{website.developerId}}/website/new" class="navbar-link">
+        <a href="#/user/{{model.userId}}/website/new" class="navbar-link">
                     <span class="glyphicon glyphicon-plus">
                     </span>
         </a>
@@ -21,7 +21,7 @@
 <div class="container-fluid">
     <ul class="list-group">
         <li ng-repeat="website in model.websites" class="list-group-item">
-            <a href="#">
+            <a href="#/user/{{model.userId}}/website/{{website._id}}/page">
                 {{website.name}}
             </a>
 
@@ -35,7 +35,7 @@
 
 <nav class="navbar navbar-primary navbar-fixed-bottom">
     <div class="navbar-text pull-right">
-        <a href="#/user/{{website.developerId}}">
+        <a href="#/user/{{model.userId}}">
             <span class="glyphicon glyphicon-user"></span>
         </a>
     </div>
