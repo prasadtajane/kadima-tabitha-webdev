@@ -13,10 +13,10 @@
 </nav>
 
 <div class="container">
-    <!-- TODO  ng-repeat-->
+
     <ul class="list-group list-hover">
         <li class="list-group-item">
-            <a href="#/widget-heading">Header</a>
+            <a ng-click="model.createWidget(model)">Header</a>
         </li>
         <li class="list-group-item">
             <a href="#">Label</a></li>
@@ -27,16 +27,16 @@
             <a href="#">Text Input</a>
         </li>
         <li class="list-group-item">
-            <a href="#/widget-heading">Link</a>
+            <a href="#">Link</a>
         </li>
         <li class="list-group-item">
-            <a href="#/widget-heading">Button</a>
+            <a href="#">Button</a>
         </li>
         <li class="list-group-item">
-            <a href="#/widget-image"> Image</a>
+            <a ng-click="model.createWidget(model)"> Image</a>
         </li>
         <li class="list-group-item">
-            <a href="#/widget-youtube">YouTube</a>
+            <a ng-click="model.createWidget(model)">YouTube</a>
         </li>
         <li class="list-group-item">
             <a href="#">Data Table</a>
@@ -51,7 +51,7 @@
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="row navbar-text pull-right">
-        <a href="#/profile">
+        <a href="#/user/{{model.userId}}">
             <span class="glyphicon glyphicon-user"></span>
         </a>
     </div>

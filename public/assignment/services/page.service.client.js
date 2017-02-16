@@ -32,7 +32,7 @@
         function findPagesByWebsiteId(websiteId) {
             var pgs = [];
             for (var i in pages) {
-                if(websiteId == pages[i].websiteId) {
+                if(websiteId === pages[i].websiteId) {
                     pgs.push(pages[i]); 
                 }
             }

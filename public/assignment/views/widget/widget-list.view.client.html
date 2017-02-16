@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <p class="navbar-text pull-left">
-        <a class="navbar-link" href="#/page-list">
+        <a class="navbar-link" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                 <span class="page glyphicon glyphicon-menu-left">
                 </span>
         </a>
@@ -11,29 +11,38 @@
         </a>
     </div>
     <p class="navbar-text pull-right">
-        <a href="#/widget-choose" class="navbar-link">
+        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new" class="navbar-link">
                     <span class="page glyphicon glyphicon-plus">
                     </span>
         </a>
     </p>
 </nav>
 
-<div class="container">
-    <!-- first page header -->
-    <div class="row">
-        <div ng-repeat="widget in model.widgets" class="page-header">
-            <h1>{{widget.header}}</h1>
-            <a href="#/widget-heading">
-                <span class="pull-right glyphicon glyphicon-cog"></span>
+<div class="container-fluid">
+    <div ng-repeat="widget in model.widgets">
+        <div class="jga-toolbar">
+            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
+                <span class="glyphicon glyphicon-cog"></span>
             </a>
-            <a href="#">
-                <span class="pull-right glyphicon glyphicon-menu-hamburger"></span>
-            </a>
+            <span class="glyphicon glyphicon-align-justify"></span>
+        </div>
+
+        <div ng-switch="widget.widgetType">
+            <div ng-switch-when="HEADER">
+                <ng-include src="'views/widget/widget-heading.view.client.html'"></ng-include>
+            </div>
+            <div ng-switch-when="IMAGE">
+                <ng-include src="'views/widget/widget-image.view.client.html'"></ng-include>
+            </div>
+            <div ng-switch-when="HTML">
+               <p>{{widget.name}}</p>
+            </div>
+            <div ng-switch-when="YOUTUBE">
+                <ng-include src="'views/widget/widget-youtube.view.client.html'"></ng-include>
+            </div>
         </div>
     </div>
 </div>
-</div>
-
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <p class="navbar-text pull-left">
@@ -46,7 +55,7 @@
     </p>
     <p class="navbar-text pull-right">
 
-        <a href="#/profile">
+        <a href="#/user/{{model.userId}}/">
             <span class="glyphicon glyphicon-user"></span>
         </a>
     </p>

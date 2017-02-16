@@ -1,43 +1,8 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <p class="navbar-text pull-left">
-        <a class="navbar-link" href="#/widget-list">
-                <span class="page glyphicon glyphicon-menu-left">
-                </span>
-        </a>
-    </p>
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-            Widget Edit
-        </a>
-    </div>
-    <p class="navbar-text pull-right">
-        <a href="#/widget-list" class="navbar-link">
-                    <span class="page glyphicon glyphicon-ok">
-                    </span>
-        </a>
-    </p>
-</nav>
-<div class="container">
-    <div class="new-page">
-        <h5>Name</h5>
-        <input  ng-model="model.widget.name" class="form-control" type="text">
-        <h5>Text</h5>
-        <input ng-model="model.widget.text" class="form-control" type="text">
-        <h5>Size</h5>
-        <input ng-model="model.widget.size" class="form-control" type="text">
-        <a href="#/widget-list" class="btn btn-block btn-danger">Delete</a>
-    </div>
-
+<div ng-switch="widget.size">
+    <h1 ng-switch-when="1">{{widget.text}} {{widget.size}}</h1>
+    <h2 ng-switch-when="2">{{widget.text}} {{widget.size}}</h2>
+    <h3 ng-switch-when="3">{{widget.text}} {{widget.size}}</h3>
+    <h4 ng-switch-when="4">{{widget.text}} {{widget.size}}</h4>
+    <h5 ng-switch-when="5">{{widget.text}} {{widget.size}}</h5>
+    <h6 ng-switch-when="6">{{widget.text}} {{widget.size}}</h6>
 </div>
-
-<nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container">
-        <div class="row navbar-text pull-right">
-            <div class="col-xs-3 text-right">
-                <a href="#/profile">
-                    <span class="glyphicon glyphicon-user"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-</nav>

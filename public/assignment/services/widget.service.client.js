@@ -5,19 +5,19 @@
     function WidgetService() {
         var widgets =
             [
-                {"_id": "123", "name": "Gizmodo", "widgetType": "HEADER", "pageId": "321", "size": 2, "text": "GIZMODO"},
-                {"_id": "234", "widgetType": "HEADER", "pageId": "321", "size": 4, "text": "Lorem ipsum"},
+                {_id: "123", name: "Gizmodo", widgetType: "HEADER", pageId: "321", size: 2, text: "GIZMODO"},
+                {_id: "234", widgetType: "HEADER", pageId: "321", size: 4, text: "Lorem ipsum"},
                 {
-                    "_id": "345", "name" : "lorepixel", "widgetType": "IMAGE", "pageId": "321", "width": "100%",
-                    "url": "http://lorempixel.com/400/200/"
+                    _id: "345", name : "lorepixel", widgetType: "IMAGE", pageId: "321", width: "100%",
+                    url: "http://lorempixel.com/400/200/"
                 },
-                {"_id": "456", "name" : "Lorem", "widgetType": "HTML", "pageId": "321", "text": "<p>Lorem ipsum</p>"},
-                {"_id": "567", "widgetType": "HEADER", "pageId": "321", "size": 4, "text": "Lorem ipsum"},
+                {_id: "456", name : "Lorem", widgetType: "HTML", pageId: "321", text: "<p>Lorem ipsum</p>"},
+                {_id: "567", widgetType: "HEADER", pageId: "321", size: 4, text: "Lorem ipsum"},
                 {
-                    "_id": "678", "name":"Youtube", "widgetType": "YOUTUBE", "pageId": "321", "width": "100%",
-                    "url": "https://youtu.be/AM2Ivdi9c4E"
+                    _id: "678", name:"Youtube", widgetType: "YOUTUBE", pageId: "321", width: "100%",
+                    url: "https://www.youtube.com/embed/AM2Ivdi9c4E"
                 },
-                {"_id": "789", "name" : "html lorem","widgetType": "HTML", "pageId": "321", "text": "<p>Lorem ipsum</p>"}
+                {_id: "789", name : "html lorem",widgetType: "HTML", pageId: "321", text: "<p>Lorem ipsum</p>"}
             ];
         var api = {
             "createWidget": createWidget,
@@ -40,13 +40,13 @@
         }
 
         function findWidgetsByPageId(pageId) {
+            var wdgt = [];
             for (var i in widgets) {
-                widget = widgets[i];
-                if (widget.pageId === pageId) {
-                    return widget;
+                if (pageId === widgets[i].pageId) {
+                    wdgt.push(widgets[i]);
                 }
             }
-            return null;
+            return wdgt;
         }
 
         function findWidgetById(widgetId) {

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-left">
+            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="white_navbar navbar-link">
+                  <span class="page glyphicon glyphicon-menu-left">
+                  </span>
+            </a>
+        </div>
+        <a class="navbar-brand">
+            Widget Edit
+        </a>
+        <div class="navbar-text pull-right">
+            <a ng-click="model.updateWidget(model.widget)" class="navbar-link">
+                  <span class="page glyphicon glyphicon-ok">
+                  </span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div ng-repeat="widget in widgets">
+    <div ng-switch="widget.widgetType">
+        <div ng-switch-when="HEADING">
+            <ng-include src="'widget-heading.view.client.html'"/>
+        </div>
+        <div ng-switch-when="IMAGE">
+            <ng-include src="'widget-image.view.client.html'"/>
+        </div>
+        <div ng-switch-when="YOUTUBE">
+            <ng-include src="'widget-youtube.view.client.html'"/>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/user/{{model.userId}}" class="navbar-link">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+        </div>
+    </div>
+</nav>

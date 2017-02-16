@@ -27,10 +27,6 @@ span.page.glyphicon {
     color: #777;
 }
 
-/*span.page.glyphicon.glyphicon-user, .web-edit.glyphicon.glyphicon-cog, .page-edit.glyphicon {*/
-    /*color: #337ab7;*/
-/*}*/
-
 table.borderless td,table.borderless th{
     border: none !important;
 }
@@ -47,7 +43,9 @@ span.pull-right.glyphicon.glyphicon-menu-hamburger {
     font-size: large;
 }
 
-.glyphicon.glyphicon-cog {
+.glyphicon.glyphicon-cog,
+.glyphicon.glyphicon-align-justify
+{
     color: #337ab7;
 }
 
@@ -74,3 +72,12 @@ ul .list-group {
     margin-top: 10px;
 }
 
+.jga-toolbar {
+    position: absolute;
+    right: 15px;
+    background-color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 5px;
+    opacity: 0.7;
+}
