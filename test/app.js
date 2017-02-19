@@ -15,7 +15,7 @@ module.exports = function(app)
     // }
 
     var mongoose = require("mongoose");
-    mongoose.connect("mongo ds117859.mlab.com:17859/webdevschema -u tkadima -p truthBEAT$");
+    mongoose.connect("tkadima:truthBEAT$@ds117859.mlab.com:17859/webdevschema");
 
     var TestSchema = mongoose.Schema({
         message: String
