@@ -22,13 +22,14 @@ module.exports = function (app) {
     
     function findAllPagesForWebsite(req, res) {
         var websiteId = req.params['websiteId']; 
+
+        var pgs = [];
         for (var p in pages) {
-            var page = pages[p]; 
-            if ( page.websiteId = websiteId) {
-                res.send(page); 
+            if (websiteId === pages[p].developerId) {
+                pgs.push(pages[p]);
             }
         }
-        res.sendStatus(404).send({}); 
+        res.json(pgs); 
     }
     
     function findPageById(req, res) {

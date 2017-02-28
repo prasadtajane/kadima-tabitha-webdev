@@ -25,14 +25,18 @@
         }
 
         init();
-       
-       
+
+
         function updateWidget(widget) {
-            var updateWidget = WidgetService.updateWidget(widgetId, widget);
-            if (updateWidget == null) {
-                vm.error("Error: Widget could not be updated.");
-                $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
-            }
+            WidgetService
+                .updateWidget(widgetId, widget)
+                .success(function (widget) {
+                    vm.message = "Widget updated"
+                })
+                .error(function (error) {
+                    vm.error = "Could not update widget"
+                })
+
         }
 
         function deleteWidget(widgetId) {

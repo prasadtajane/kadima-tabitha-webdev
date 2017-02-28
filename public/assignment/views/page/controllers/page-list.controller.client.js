@@ -12,7 +12,14 @@
         vm.userId = userId;
         
         function init() {
-            var pages = PageService.findPagesByWebsiteId(websiteId); 
+            PageService
+                .findPagesByWebsite(websiteId)
+                .success(function (page) {
+                    vm.message = "Here's the list of pages"; 
+                })
+                .error(function (err) {
+                    vm.error = "Unable to load pages"
+                }); 
             vm.pages = pages;
         }
         

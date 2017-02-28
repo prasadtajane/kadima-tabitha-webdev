@@ -12,12 +12,21 @@
 
 
         function init() {
-            vm.pages = PageService.findPagesByWebsiteId(vm.wid);
+
         }
 
-        init(); 
-        function createPage (page) {
-            PageService.createPage(vm.websiteId, page);
+        init();
+
+        function createPage(page) {
+            PageService
+                .createPage(vm.websiteId, page)
+                .success(function (page) {
+                    vm.message = "Created page!";
+                })
+                .error(function (err) {
+                    vm.message = "Unable to create page"; 
+                })
+
         }
     }
 

@@ -31,13 +31,14 @@ module.exports = function (app) {
 
     function findAllWidgetsForPage(req, res) {
         var pageId = req.params['pageId'];
+        
+        var wdgts = []; 
         for (var w in widgets) {
-            var widget = widgets[w];
-            if (widget.pageId = pageId) {
-                res.send(widget);
+            if (pageId === widgets[w].pageId) {
+                wdgts.push(wdgts[w]); 
             }
         }
-        res.sendStatus(404).send({});
+        res.json(wdgts); 
     }
 
     function findWidgetById(req, res) {

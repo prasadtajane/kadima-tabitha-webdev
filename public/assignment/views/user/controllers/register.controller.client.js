@@ -1,30 +1,31 @@
 (function () {
-    angular
-        .module("WebAppMaker")
-        .controller("RegisterController", RegisterController);
+        angular
+            .module("WebAppMaker")
+            .controller("RegisterController", RegisterController);
 
-    function RegisterController($location, UserService) {
-        var vm = this;
-      
-        vm.register = register;
+        function RegisterController($location, UserService) {
+            var vm = this;
 
+            vm.register = register;
 
-        function register() {
-            var verify = document.getElementById('verify').value;
-            if (vm.user.password == verify) {
-                UserService.createUser(vm.user);
-                if(vm.user != null) {
-                    $location.url("/user/" + vm.user._id);
-                }
-                else {
-                    $location.url("/register");
-                }
+            function init() {
+
             }
-            else {
-                $location.url("/register");
+
+            init();
+
+            function register(user) {
+                UserService
+                    .createUser(user.username)
+                    .success(function (user) {
+                        vm.message = "Avaliable";
+                        $location.url("/user/" + vm.user._id);
+                    })
+                    .error(function (err) {
+                        vm.message = "That username is already taken"
+                    });
+
             }
+
         }
-    }
-
-
-})();
+    })();

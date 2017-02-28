@@ -20,8 +20,16 @@
 
         init();
         function createWidget(widget) {
-            WidgetService.createWidget(vm.pageId, widget);
-            $location.url("user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget/" + widget._id )
+            WidgetService
+                .createWidget(vm.pageId, widget)
+                .success(function () {
+                    vm.message = "Here's the list of widgets. "
+                    $location.url("user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget/" + widget._id)
+
+                })
+                .error(function (err) {
+                    vm.message = "Unable to load widgets";
+                })
 
         }
     }

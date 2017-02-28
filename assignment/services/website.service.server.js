@@ -24,14 +24,15 @@ var websites =
     }
 
     function findAllWebsitesForUser(req, res) {
-        var userId = req.params['userId'];
+        var userId = req.params['userId']; 
+        
+        var sites = []; 
         for (var w in websites) {
-            var website = websites[w];
-            if ( website.developerId === userId) {
-                res.send(website);
+            if (userId === websites[w].developerId) {
+                sites.push(websites[w]); 
             }
         }
-        res.sendStatus(404).send({});
+        res.json(sites); 
     }
 
     function findWebsiteById(req, res) {

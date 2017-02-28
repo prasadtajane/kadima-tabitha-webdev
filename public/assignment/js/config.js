@@ -1,10 +1,15 @@
-(function() {
+(function () {
     angular
         .module("WebAppMaker")
         .config(Config);
 
 
-    function Config($routeProvider) {
+    function Config($routeProvider, $httpProvider) {
+
+        $httpProvider.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+        $httpProvider.defaults.headers.put['Content-Type'] = 'application/json;charset=utf-8';
+
+
         $routeProvider
             .when("/", {
                 templateUrl: "views/user/login.view.client.html",
@@ -75,6 +80,8 @@
                 templateUrl: "views/widget/widget-edit.view.client.html",
                 controller: "EditWidgetController",
                 controllerAs: "model"
-            })
+            });
+       // $locationProvider.html5Mode(true);
+
     }
 })();

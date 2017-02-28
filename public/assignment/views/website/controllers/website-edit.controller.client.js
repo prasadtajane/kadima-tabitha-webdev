@@ -2,10 +2,10 @@
     angular
         .module("WebAppMaker")
         .controller("EditWebsiteController", EditWebsiteController);
-    
-    function EditWebsiteController($routeParams, $location, WebsiteService) {
+
+    function EditWebsiteController($routeParams, WebsiteService) {
         var vm = this;
-        
+
         var userId = $routeParams['uid'];
         var websiteId = $routeParams['wid'];
 
@@ -15,8 +15,8 @@
         //event handlers 
         vm.updateWebsite = updateWebsite;
         vm.deleteWebsite = deleteWebsite;
-        
-        
+
+
         function init() {
             vm.websites = WebsiteService.findWebsitesByUser(userId);
             vm.website = WebsiteService.findWebsiteById(websiteId);
@@ -28,16 +28,21 @@
 
 
         function updateWebsite(website) {
-            var updateWebsite = WebsiteService.updateWebsite(vm.websiteId, website);
-            if (updateWebsite != null) {
-            }
-            else {
-                vm.error = "Website couldn't be Updated."
-            }
+            WebsiteService
+                .updateWebsite(vm.websiteId, website)
+                .success(function (website) {
+
+                    vm.message = "website updated "
+                })
+                .error(function (err) {
+                    vm.error = "Website couldn't be updated."
+
+                })
+               
         }
 
         function deleteWebsite() {
             WebsiteService.deleteWebsite(vm.websiteId);
         }
     }
-}) ();
+})();

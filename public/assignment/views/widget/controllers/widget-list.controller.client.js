@@ -16,8 +16,15 @@
         vm.doYouTrust = doYouTrust;
 
         function init() {
-            var widgets = WidgetService.findWidgetsByPageId(pageId);
-            vm.widgets = widgets;
+            WidgetService
+                .findAllWidgetsForPage(pageId) 
+                .success(function()
+                {
+                    vm.message = "Here's a list of widgets"
+                })
+                .error(function (err) {
+                    vm.message = "Unable to load widgets"
+                })
         }
 
         init();

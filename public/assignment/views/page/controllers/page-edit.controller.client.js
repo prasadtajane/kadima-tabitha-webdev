@@ -12,8 +12,8 @@
         vm.websiteId = websiteId;
         vm.userId = userId;
         vm.pageId = pageId;
-        
-        vm.updatePage = updatePage; 
+
+        vm.updatePage = updatePage;
         vm.deletePage = deletePage;
 
         function init() {
@@ -24,16 +24,22 @@
         }
 
         init();
-     
-        function updatePage(page) {
-            var updatePage = PageService.updatePage(vm.pageId, page);
-            if (updatePage == null) {
-                vm.error = "Error: Page could not be updated."
-            }
+
+        function updatePage(newPage) {
+            PageService
+                .updateWebsite(vm.websiteId, newPage)
+                .success(function (user) {
+                    if (user != null) {
+                        vm.message = "Page updated!"
+                    } else {
+                        vm.error = "Page couldn't be updated."
+                    }
+
+                });
         }
 
         function deletePage() {
-            WebsiteService.deleteWebsite(vm.pageId); 
+            WebsiteService.deleteWebsite(vm.pageId);
         }
     }
 })();

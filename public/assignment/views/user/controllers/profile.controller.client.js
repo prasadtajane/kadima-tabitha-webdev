@@ -9,7 +9,7 @@
 
         // event handlers
         vm.updateUser = updateUser;
-        
+
 
         var userId = $routeParams['uid'];
 
@@ -17,18 +17,22 @@
             var user = UserService.findUserById(userId);
             vm.user = user;
         }
+
         init();
 
         function updateUser(newUser) {
-            var user = UserService.updateUser(userId, newUser);
-            if(user != null) {
-                vm.message = "User has been successfully updated!";
+            UserService
+                .updateUser(userId, newUser)
+                .success(function (user) {
+                    if (user != null) {
+                        vm.message = "User has been successfully updated!";
 
-            } else {
-                vm.error = "Unable to update user";
-            }
+                    } else {
+                        vm.error = "Unable to update user";
+                    }
+                });
         }
     }
 
-    
+
 })();

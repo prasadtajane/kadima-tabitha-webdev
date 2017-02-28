@@ -11,8 +11,14 @@
 
 
         function init() {
-            var websites = WebsiteService.findWebsitesByUser(userId);
-            vm.websites = websites;
+            WebsiteService
+                .findAllWebsitesForUser(userId)
+                .success(function () {
+                    vm.message = "Here's the list of websites"; 
+                })
+                .error(function (err) {
+                    vm.message = "Unable to load websites"; 
+                })
         }
 
         init();
