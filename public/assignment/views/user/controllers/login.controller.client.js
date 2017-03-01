@@ -14,16 +14,17 @@
 
         init();
 
+
         function login(user) {
-            var promise = UserService.findUserByCredentials(user.username, user.password);
+            var promise = UserService
+                .findUser(user);
             promise.success(function (user) {
                 if (user) {
                     $location.url("/user/" + user._id);
                 } else {
-                    vm.alert = "Incorrect credentials";
+                    vm.error = "User not found";
                 }
             });
-
         }
     }
 })();

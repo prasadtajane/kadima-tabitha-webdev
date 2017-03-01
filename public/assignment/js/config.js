@@ -1,10 +1,10 @@
 (function () {
     angular
         .module("WebAppMaker")
-        .config(Config);
+        .config(configuration);
 
 
-    function Config($routeProvider, $httpProvider) {
+    function configuration($routeProvider, $httpProvider) {
 
         $httpProvider.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
         $httpProvider.defaults.headers.put['Content-Type'] = 'application/json;charset=utf-8';
@@ -17,11 +17,6 @@
                 controllerAs: "model"
             })
             .when("/login", {
-                templateUrl: "views/user/login.view.client.html",
-                controller: "LoginController",
-                controllerAs: "model"
-            })
-            .when("/default", {
                 templateUrl: "views/user/login.view.client.html",
                 controller: "LoginController",
                 controllerAs: "model"
@@ -80,8 +75,10 @@
                 templateUrl: "views/widget/widget-edit.view.client.html",
                 controller: "EditWidgetController",
                 controllerAs: "model"
+            })
+            .otherwise({
+                redirectTo: '/'
             });
-       // $locationProvider.html5Mode(true);
 
     }
 })();

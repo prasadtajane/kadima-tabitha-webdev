@@ -13,14 +13,15 @@
         
         function init() {
             PageService
-                .findPagesByWebsite(websiteId)
+                .findAllPagesForWebsite(websiteId)
                 .success(function (page) {
-                    vm.message = "Here's the list of pages"; 
+                    vm.message = "Here's the list of pages";
+                    vm.pages = page;
                 })
                 .error(function (err) {
                     vm.error = "Unable to load pages"
                 }); 
-            vm.pages = pages;
+            
         }
         
         init(); 

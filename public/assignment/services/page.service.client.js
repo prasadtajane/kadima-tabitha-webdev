@@ -18,11 +18,11 @@
         }
 
         function findAllPagesForWebsite (websiteId) {
-            return http.get("/api/website/" + websiteId +"/page");
+            return $http.get("/api/website/" + websiteId +"/page");
         }
 
         function findPageById(pageId) {
-            return http.get("/api/page/"+pageId);
+            return $http.get("/api/page/"+pageId);
         }
 
         function updatePage(pageId, newPage) {

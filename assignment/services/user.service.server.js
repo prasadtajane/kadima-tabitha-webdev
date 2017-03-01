@@ -1,7 +1,6 @@
 module.exports = function (app) {
     app.post("/api/user", createUser);
-    app.get("/api/user?username=username", findUserByUsername);
-    app.get("/api/user?username=username&password=password", findUserByCredentials);
+    app.get("/api/user", findUser);
     app.get("/api/user/:userId", findUserById);
     app.put("/api/user/:userId", updateUser);
     app.delete("/api/user/:userId", deleteUser);
@@ -18,6 +17,7 @@ module.exports = function (app) {
     ];
 
     function deleteUser(req, res) {
+        console.log("1");
         var userId = req.params.userId;
         for(var u in users) {
             if(users[u]._id === userId) {
@@ -30,6 +30,7 @@ module.exports = function (app) {
     }
 
     function createUser(req, res) {
+        console.log("2");
         var newUser = req.body;
         newUser._id = (new Date()).getTime() + "";
         users.push(newUser);
@@ -37,6 +38,7 @@ module.exports = function (app) {
     }
 
     function updateUser(req, res) {
+        console.log("3");
         var userId = req.params['userId'];
         for(var u in users) {
             var user = users[u];
@@ -51,6 +53,7 @@ module.exports = function (app) {
     }
 
     function findUserById(req, res) {
+        console.log("4");
         var userId = req.params['userId'];
         for(var u in users) {
             var user = users[u];
@@ -59,11 +62,27 @@ module.exports = function (app) {
                 return;
             }
         }
-        res.sendStatus(404).send({});
+        res.sendStatus(404);
+    }
+
+
+
+    function findUser(req, res) {
+        console.log("5");
+        console.log("finding user...");
+        var username = req.query['username'];
+        var password = req.query['password'];
+        if(username && password) {
+            findUserByCredentials(req, res);
+        } else if(username) {
+            findUserByUsername(req, res);
+        }
+
     }
 
 
     function findUserByUsername(req, res) {
+        console.log("6");
         var username = req.query['username'];
         var user = users.find(function(u){
             return u.username == username;
@@ -76,6 +95,8 @@ module.exports = function (app) {
     }
 
     function findUserByCredentials(req, res){
+        console.log("7");
+        console.log("Server trying to log in");
         var username = req.query['username'];
         var password = req.query['password'];
         var user = users.find(function(u){
