@@ -1,19 +1,17 @@
 <div class="container">
-    <div class="new-page">
 
-        <h5>Name</h5>
-        <input ng-model="model.widget.name" class="form-control" type="text">
-        <h5>Text</h5>
-        <input ng-model="model.widget.text" class="form-control" type="text">
-        <h5>URL</h5>
-        <input ng-model="model.widget.url" class="form-control" type="text">
-        <h5>Width</h5>
-        <input ng-model="model.widget.width" class="form-control" type="text">
-        <h5>Upload</h5>
-        <input class="form-control" type="file">
-        <a ng-click="model.updateWidget(model.widget)" class="btn btn-block btn-success">Update Image</a>
-        <a ng-click="model.deleteWidget()" class="btn btn-block btn-danger">Delete</a>
-    </div>
+    <label>Width</label>
+    <input ng-model="model.widget.width" class="form-control"/>
+    <form action="/api/upload" method="post" enctype="multipart/form-data">
+        <input name="myFile" type="file" class="form-control"/>
+        <input name="uid" value="{{model.userId}}" style="display: none"/>
+        <input name="wid" value="{{model.websiteId}}" style="display: none"/>
+        <input name="widgetId" value="{{model.widget._id}}" style="display: none"/>
+        <button type="submit" class="btn btn-block btn-primary">Upload Image</button>
+    </form>
+    <a ng-click="model.updateWidget(model.widget)" class="btn btn-block btn-success">Update Image</a>
+    <a ng-click="model.deleteWidget()" class="btn btn-block btn-danger">Delete</a>
+</div>
 
 </div>
 

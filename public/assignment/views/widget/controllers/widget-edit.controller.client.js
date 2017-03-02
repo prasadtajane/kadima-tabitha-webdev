@@ -30,9 +30,9 @@
 
         function updateWidget(widget) {
             WidgetService
-                .updateWidget(widgetId, widget)
-                .success(function (widgetId) {
-                    if (widgetId == null) {
+                .updateWidget(vm.widgetId, widget)
+                .success(function (widget) {
+                    if (widget == null) {
                         vm.error = "Unable to update widget"
                     } else {
                         vm.message = "Widget successfully updated!"; 

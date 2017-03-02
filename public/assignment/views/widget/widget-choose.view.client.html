@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-primary navbar-fixed-top">
     <p class="navbar-text pull-left">
         <a class="navbar-link" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
                 <span class="page glyphicon glyphicon-menu-left">
@@ -16,33 +16,17 @@
 
     <ul class="list-group list-hover">
         <li class="list-group-item">
-            <a ng-click="model.createWidget(model.widget)">Header</a>
+            <a  href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/">Header</a>
         </li>
-        <li class="list-group-item">
-            <a href="#">Label</a></li>
+
         <li class="list-group-item">
             <a href="#">HTML</a>
-        </li>
-        <li class="list-group-item">
-            <a href="#">Text Input</a>
-        </li>
-        <li class="list-group-item">
-            <a href="#">Link</a>
-        </li>
-        <li class="list-group-item">
-            <a href="#">Button</a>
         </li>
         <li class="list-group-item">
             <a ng-click="model.createWidget(model.widget)"> Image</a>
         </li>
         <li class="list-group-item">
             <a ng-click="model.createWidget(model.widget)">YouTube</a>
-        </li>
-        <li class="list-group-item">
-            <a href="#">Data Table</a>
-        </li>
-        <li class="list-group-item">
-            <a href="#">Repeater</a>
         </li>
     </ul>
 

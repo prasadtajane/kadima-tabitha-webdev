@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-primary navbar-fixed-top">
     <p class="navbar-text pull-left">
         <a class="navbar-link" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                 <span class="page glyphicon glyphicon-menu-left">
@@ -11,7 +11,8 @@
         </a>
     </div>
     <p class="navbar-text pull-right">
-        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new" class="navbar-link">
+        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new"
+           class="navbar-link">
                     <span class="page glyphicon glyphicon-plus">
                     </span>
         </a>
@@ -19,26 +20,30 @@
 </nav>
 
 <div class="container-fluid">
-    <div ng-repeat="widget in model.widgets">
-        <div class="jga-toolbar">
-            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-            <span class="glyphicon glyphicon-align-justify"></span>
-        </div>
+    <div wbdv-sortable="">
+        <div ng-repeat="widget in model.widgets">
 
-        <div ng-switch="widget.widgetType">
-            <div ng-switch-when="HEADER">
-                <ng-include src="'views/widget/widget-header.view.client.html'"></ng-include>
-            </div>
-            <div ng-switch-when="IMAGE">
-                <ng-include src="'views/widget/widget-image.view.client.html'"></ng-include>
-            </div>
-            <div ng-switch-when="HTML">
-               <ng-include src="'views/widget/widget-html.view.client.html'"></ng-include>
-            </div>
-            <div ng-switch-when="YOUTUBE">
-                <ng-include src="'views/widget/widget-youtube.view.client.html'"></ng-include>
+            <div ng-switch="widget.widgetType">
+                <div class="widget-toolbar">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
+                        <span class="glyphicon glyphicon-cog"></span>
+                    </a>
+                    <a href="">
+                        <span class="glyphicon glyphicon-align-justify"></span>
+                    </a>
+                </div>
+                <div ng-switch-when="HEADER">
+                    <ng-include src="'views/widget/widget-header.view.client.html'"></ng-include>
+                </div>
+                <div ng-switch-when="IMAGE">
+                    <ng-include src="'views/widget/widget-image.view.client.html'"></ng-include>
+                </div>
+                <div ng-switch-when="HTML">
+                    <ng-include src="'views/widget/widget-html.view.client.html'"></ng-include>
+                </div>
+                <div ng-switch-when="YOUTUBE">
+                    <ng-include src="'views/widget/widget-youtube.view.client.html'"></ng-include>
+                </div>
             </div>
         </div>
     </div>

@@ -5,21 +5,28 @@ module.exports = function (app) {
     app.put("/api/widget/:widgetId", updateWidget);
     app.delete("/api/widget/:widgetId", deleteWidget);
 
+    var multer = require('multer');
+    var fs = require('fs');
+    var upload = multer({ dest: __dirname+'/../../public/uploads' });
+    
+    app.post ("/api/upload", upload.single('myFile'), uploadImage);
+
+
     var widgets =
         [
             {_id: "123", name: "Gizmodo", widgetType: "HEADER", pageId: "321", size: 2, text: "GIZMODO"},
-            {_id: "234", widgetType: "HEADER", pageId: "321", size: 4, text: "Lorem ipsum"},
+            {_id: "234", widgetType: "HEADER", pageId: "321", size: 4, text: "Watermelon"},
             {
-                _id: "345", name: "lorepixel", widgetType: "IMAGE", pageId: "321", width: "100%",
+                _id: "345", name: "Bananas", widgetType: "IMAGE", pageId: "321", width: "50%",
                 url: "http://lorempixel.com/400/200/"
             },
-            {_id: "456", name: "Lorem", widgetType: "HTML", pageId: "321", text: "<p>Lorem ipsum</p>"},
-            {_id: "567", widgetType: "HEADER", pageId: "321", size: 4, text: "Lorem ipsum"},
+            {_id: "456", name: "ABCDEFGH", widgetType: "HTML", pageId: "321", text: "<p>ABCDEFGH</p>"},
+            {_id: "567", widgetType: "HEADER", pageId: "321", size: 4, text: "Bananas"},
             {
-                _id: "678", name: "Youtube", widgetType: "YOUTUBE", pageId: "321", width: "100%",
+                _id: "678", name: "Youtube", widgetType: "YOUTUBE", pageId: "321", width: "40%",
                 url: "https://www.youtube.com/embed/AM2Ivdi9c4E"
             },
-            {_id: "789", name: "html lorem", widgetType: "HTML", pageId: "321", text: "<p>Lorem ipsum</p>"}
+            {_id: "789", name: "html lorem", widgetType: "HTML", pageId: "321", text: "<p>Moon Taxi</p>"}
         ];
 
     function createWidget(req, res) {
@@ -84,4 +91,36 @@ module.exports = function (app) {
         }
         res.sendStatus(404);
     }
+
+    function uploadImage(req, res) {
+
+        var widget        = req.body;
+        var myFile        = req.file;
+        var url = req.protocol + '://' +req.get('host')+"/uploads/"+myFile.filename;
+        if(widget.widgetId === "IMAGE")
+        {
+            widget.url = url;
+            var id = parseInt(widgets[widgets.length-1]._id);
+            id++;
+            widget._id = id.toString();
+            widget.widgetType = "IMAGE";
+            widgets.push(widget);
+        }
+        else
+        {
+            for (var w in widgets)
+            {
+                if(widgets[w]._id === widget.widgetId)
+                {
+                    widgets[w].url = url;
+                    widgets[w].width = widget.width;
+                }
+            }
+            widget._id = widget.widgetId;
+        }
+        res.redirect("/user/" + req.body.userId + "/website/" + req.body.websiteId + "/page/"
+            + req.body.pageId + "/widget/" + widget._id);
+    }
+
+
 };
