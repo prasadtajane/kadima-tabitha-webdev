@@ -18,21 +18,21 @@
     </div>
 </nav>
 
-<div ng-repeat="widget in widgets">
-    <div ng-switch="widget.widgetType">
-        <div ng-switch-when="HEADING">
-            <ng-include src="'widget-heading.view.client.html'"/>
+<div class="container-fluid">
+    <div ng-switch="model.widget.widgetType">
+        <div ng-switch-when="HEADER">
+            <ng-include src="'views/widget/editor/widget-header-edit.view.client.html'"></ng-include>
         </div>
         <div ng-switch-when="IMAGE">
-            <ng-include src="'widget-image.view.client.html'"/>
+            <ng-include src="'views/widget/editor/widget-image-edit.view.client.html'"></ng-include>
         </div>
         <div ng-switch-when="YOUTUBE">
-            <ng-include src="'widget-youtube.view.client.html'"/>
+            <ng-include src="'views/widget/editor/widget-youtube-editor.view.client.html'"></ng-include>
+        </div>
+        <div ng-switch-when="HTML">
+            <ng-include src="'views/widget/editor/widget-html-editor.view.client.html'"></ng-include>
         </div>
     </div>
-</div>
-
-</div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">

@@ -18,11 +18,11 @@
         }
 
         function findAllWidgetsForPage (pageId) {
-            return http.get("/api/page/" + pageId +"/widget");
+            return $http.get("/api/page/" + pageId +"/widget");
         }
 
         function findWidgetById(widgetId) {
-            return http.get("/api/widget/"+widgetId);
+            return $http.get("/api/widget/"+widgetId);
         }
 
         function updateWidget(widgetId, newWidget) {

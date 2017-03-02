@@ -2,22 +2,18 @@
     angular
         .module("WebAppMaker")
         .controller("WebsiteListController", WebsiteListController);
-    
+
     function WebsiteListController($routeParams, WebsiteService) {
         var vm = this;
-        var userId = $routeParams['uid'];
-
-        vm.userId = userId;
+        vm.userId = $routeParams['uid'];
 
 
         function init() {
             WebsiteService
-                .findAllWebsitesForUser(userId)
-                .success(function () {
-                    vm.message = "Here's the list of websites"; 
-                })
-                .error(function (err) {
-                    vm.message = "Unable to load websites"; 
+                .findAllWebsitesForUser(vm.userId)
+                .success(function (websites) {
+                    vm.message = "Here's the list of websites";
+                    vm.websites = websites;
                 })
         }
 

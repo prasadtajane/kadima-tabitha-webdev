@@ -1,4 +1,5 @@
 module.exports = function (app) {
+    
     app.post("/api/user", createUser);
     app.get("/api/user", findUser);
     app.get("/api/user/:userId", findUserById);
@@ -17,7 +18,6 @@ module.exports = function (app) {
     ];
 
     function deleteUser(req, res) {
-        console.log("1");
         var userId = req.params.userId;
         for(var u in users) {
             if(users[u]._id === userId) {
@@ -30,7 +30,6 @@ module.exports = function (app) {
     }
 
     function createUser(req, res) {
-        console.log("2");
         var newUser = req.body;
         newUser._id = (new Date()).getTime() + "";
         users.push(newUser);
@@ -38,11 +37,11 @@ module.exports = function (app) {
     }
 
     function updateUser(req, res) {
-        console.log("3");
         var userId = req.params['userId'];
         for(var u in users) {
             var user = users[u];
             if( user._id === userId ) {
+                var newUser = req.body;
                 users[u].firstName = newUser.firstName;
                 users[u].lastName = newUser.lastName;
                 res.sendStatus(200);
@@ -53,7 +52,7 @@ module.exports = function (app) {
     }
 
     function findUserById(req, res) {
-        console.log("4");
+       
         var userId = req.params['userId'];
         for(var u in users) {
             var user = users[u];
@@ -68,8 +67,6 @@ module.exports = function (app) {
 
 
     function findUser(req, res) {
-        console.log("5");
-        console.log("finding user...");
         var username = req.query['username'];
         var password = req.query['password'];
         if(username && password) {
@@ -82,7 +79,6 @@ module.exports = function (app) {
 
 
     function findUserByUsername(req, res) {
-        console.log("6");
         var username = req.query['username'];
         var user = users.find(function(u){
             return u.username == username;
@@ -95,8 +91,6 @@ module.exports = function (app) {
     }
 
     function findUserByCredentials(req, res){
-        console.log("7");
-        console.log("Server trying to log in");
         var username = req.query['username'];
         var password = req.query['password'];
         var user = users.find(function(u){

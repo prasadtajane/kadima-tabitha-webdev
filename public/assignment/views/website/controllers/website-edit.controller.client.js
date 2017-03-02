@@ -3,14 +3,11 @@
         .module("WebAppMaker")
         .controller("EditWebsiteController", EditWebsiteController);
 
-    function EditWebsiteController($routeParams, WebsiteService) {
+    function EditWebsiteController($routeParams, WebsiteService, $location) {
         var vm = this;
 
-        var userId = $routeParams['uid'];
-        var websiteId = $routeParams['wid'];
-
-        vm.userId = userId;
-        vm.websiteId = websiteId;
+        vm.userId = $routeParams['uid'];
+        vm.websiteId = $routeParams['wid'];
 
         //event handlers 
         vm.updateWebsite = updateWebsite;
@@ -18,10 +15,18 @@
 
 
         function init() {
-            vm.websites = WebsiteService.findWebsitesByUser(userId);
-            vm.website = WebsiteService.findWebsiteById(websiteId);
-            vm.name = vm.website.name;
-            vm.description = vm.website.description;
+            WebsiteService
+                .findAllWebsitesForUser(vm.userId)
+                .success(function (websites) {
+                    vm.message = "Here's the list of websites";
+                    vm.websites = websites;
+                });
+
+            WebsiteService
+                .findWebsiteById(vm.websiteId)
+                .success(function (website) {
+                    vm.website = website;
+                })
         }
 
         init();
@@ -31,18 +36,26 @@
             WebsiteService
                 .updateWebsite(vm.websiteId, website)
                 .success(function (website) {
+                    if (website) {
+                        vm.message = "Website successfully updated!";
+                        $location.url("/user/" + vm.userId + "/website");
 
-                    vm.message = "website updated "
+                    } else {
+                        vm.error = "Unable to update website";
+                    }
                 })
-                .error(function (err) {
-                    vm.error = "Website couldn't be updated."
 
-                })
-               
         }
 
         function deleteWebsite() {
-            WebsiteService.deleteWebsite(vm.websiteId);
+            WebsiteService
+                .deleteWebsite(vm.websiteId)
+                .success(function () {
+                    $location.url("/user/" + vm.userId + "/website");
+                })
+                .error(function () {
+                    vm.error = "Unable to remove website";
+                });
         }
     }
 })();

@@ -29,13 +29,13 @@
 
         <div ng-switch="widget.widgetType">
             <div ng-switch-when="HEADER">
-                <ng-include src="'views/widget/widget-heading.view.client.html'"></ng-include>
+                <ng-include src="'views/widget/widget-header.view.client.html'"></ng-include>
             </div>
             <div ng-switch-when="IMAGE">
                 <ng-include src="'views/widget/widget-image.view.client.html'"></ng-include>
             </div>
             <div ng-switch-when="HTML">
-               <p>{{widget.name}}</p>
+               <ng-include src="'views/widget/widget-html.view.client.html'"></ng-include>
             </div>
             <div ng-switch-when="YOUTUBE">
                 <ng-include src="'views/widget/widget-youtube.view.client.html'"></ng-include>
@@ -43,20 +43,3 @@
         </div>
     </div>
 </div>
-
-<nav class="navbar navbar-default navbar-fixed-bottom">
-    <p class="navbar-text pull-left">
-        <a href="#">
-            <span class="glyphicon glyphicon-triangle-right"></span>
-        </a>
-        <a href="#">
-            <span class="glyphicon glyphicon-eye-open"></span>
-        </a>
-    </p>
-    <p class="navbar-text pull-right">
-
-        <a href="#/user/{{model.userId}}/">
-            <span class="glyphicon glyphicon-user"></span>
-        </a>
-    </p>
-</nav>

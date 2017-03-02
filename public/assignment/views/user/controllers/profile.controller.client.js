@@ -6,23 +6,26 @@
     function ProfileController(UserService, $routeParams) {
 
         var vm = this;
+        vm.userId = $routeParams['uid'];
 
         // event handlers
         vm.updateUser = updateUser;
-
-
-        var userId = $routeParams['uid'];
+        vm.deleteUser = deleteUser;
+        
 
         function init() {
-            var user = UserService.findUserById(userId);
-            vm.user = user;
+            UserService
+                .findUserById(vm.userId)
+                .success(function (user) {
+                    vm.user = user;
+                });
         }
 
         init();
 
         function updateUser(newUser) {
             UserService
-                .updateUser(userId, newUser)
+                .updateUser(vm.userId, newUser)
                 .success(function (user) {
                     if (user != null) {
                         vm.message = "User has been successfully updated!";
@@ -32,6 +35,13 @@
                     }
                 });
         }
+
+    
+        function deleteUser() {
+            UserService
+                .deleteUser(vm.userId);
+        }
+
     }
 
 

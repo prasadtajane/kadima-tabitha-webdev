@@ -14,6 +14,7 @@ module.exports = function (app) {
     
     
     function createPage(req, res) {
+
         var newPage = req.params['websiteId'];
         newPage._id = pages.size; 
         pages.push(newPage); 
@@ -21,11 +22,11 @@ module.exports = function (app) {
     }
     
     function findAllPagesForWebsite(req, res) {
-        var websiteId = req.params['websiteId']; 
-
+        
+        var websiteId = req.params['websiteId'];
         var pgs = [];
         for (var p in pages) {
-            if (websiteId === pages[p].developerId) {
+            if (websiteId === pages[p].websiteId) {
                 pgs.push(pages[p]);
             }
         }
@@ -33,6 +34,7 @@ module.exports = function (app) {
     }
     
     function findPageById(req, res) {
+
         var pageId = req.params['pageId']; 
         for (var p in pages) {
             var page = pages[p]; 

@@ -13,16 +13,16 @@
         };
         return api;
 
-        function createWebsite(userId) {
-            return $http.post("/api/user/"+userId +"/website");
+        function createWebsite(userId, website) {
+            return $http.post("/api/user/"+userId +"/website", website);
         }
 
         function findAllWebsitesForUser (userId) {
-            return http.get("/api/user/" + userId +"/website");
+            return $http.get("/api/user/" + userId +"/website");
         }
 
         function findWebsiteById(websiteId) {
-            return http.get("/api/website/"+websiteId);
+            return $http.get("/api/website/"+websiteId);
         }
 
         function updateWebsite(websiteId, newWebsite) {
@@ -30,8 +30,8 @@
         }
 
 
-        function deleteWebsite(websiteId, newWebsite) {
-            return $http.delete("/api/website/"+websiteId, newWebsite);
+        function deleteWebsite(websiteId) {
+            return $http.delete("/api/website/"+websiteId);
         }
 
     }

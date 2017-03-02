@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-sm-8">
                     <div class="navbar-text pull-right">
-                        <a href="#/user/{{model.userId}}/website" ng-click="model.updateWebsite(model)">
+                        <a href="#/user/{{model.userId}}/website" ng-click="model.updateWebsite(model.website)">
                             <span class="glyphicon glyphicon-ok"></span>
                         </a>
                     </div>
@@ -55,9 +55,8 @@
                     <label for="desc">Description:</label>
                     <textarea  ng-model = "model.website.description" class="form-control" rows="4" id="desc" placeholder="Description"></textarea>
                 </div>
-                <a ng-click="model.updateWebsite(model)" href="#/user/{{model.userId}}" class="btn btn-success btn-block">Update</a>
-                <a ng-click="model.deleteWebsite()" class="btn btn-danger btn-block"
-                   href="#/user/{{model.userId}}/website">Delete</a>
+                <a ng-click="model.updateWebsite(model.website)" class="btn btn-success btn-block">Update</a>
+                <a ng-click="model.deleteWebsite()" class="btn btn-danger btn-block">Delete</a>
             </div>
         </div>
 

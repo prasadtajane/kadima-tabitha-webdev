@@ -18,21 +18,22 @@ var websites =
 
     function createWebsite(req, res) {
         var newWebsite = req.body;
-        newWebsite._id = websites.size + 1;
+        var userId = req.params['userId'];
+        newWebsite.developerId = userId;
+        newWebsite._id = (new Date()).getTime() + "";
         websites.push(newWebsite);
         res.json(newWebsite);
     }
 
     function findAllWebsitesForUser(req, res) {
-        var userId = req.params['userId']; 
-        
+        var userId = req.params['userId'];
         var sites = []; 
         for (var w in websites) {
             if (userId === websites[w].developerId) {
                 sites.push(websites[w]); 
             }
         }
-        res.json(sites); 
+        res.json(sites);
     }
 
     function findWebsiteById(req, res) {

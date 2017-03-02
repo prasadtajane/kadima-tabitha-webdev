@@ -5,36 +5,33 @@
 
     function WidgetListController($sce, $routeParams, WidgetService) {
         var vm = this;
-        var userId = $routeParams['uid'];
-        var websiteId = $routeParams['wid'];
-        var pageId = $routeParams['pid'];
+        vm.userId = $routeParams['uid'];
+        vm.websiteId = $routeParams['wid'];
+        vm.pageId = $routeParams['pid'];
 
-        vm.websiteId = websiteId;
-        vm.userId = userId;
-        vm.pageId = pageId;
-
-        vm.doYouTrust = doYouTrust;
+        vm.trustYoutubeUrl = trustYoutubeUrl;
+        vm.trustHtml = trustHtml; 
 
         function init() {
             WidgetService
-                .findAllWidgetsForPage(pageId) 
-                .success(function()
-                {
-                    vm.message = "Here's a list of widgets"
-                })
-                .error(function (err) {
-                    vm.message = "Unable to load widgets"
-                })
+                .findAllWidgetsForPage(vm.pageId)
+                .success(function (widgets) {
+                    vm.message = "Here's a list of widgets";
+                    vm.widgets = widgets;
+                });
         }
 
         init();
 
-        function doYouTrust(url) {
-            var baseUrl = "https://www.youtube.com/embed/";
+        function trustYoutubeUrl(url) {
             var urlParts = url.split('/');
             var id = urlParts[urlParts.length-1];
-            baseUrl += id;
+            var baseUrl = "https://www.youtube.com/embed/" +id;
             return $sce.trustAsResourceUrl(baseUrl);
+        }
+
+        function trustHtml(html) {
+            return $sce.trustAsHtml(html);
         }
     }
    

@@ -45,10 +45,15 @@
     <!-- New Website section -->
     <div class="col-sm-8 new-web">
         <label for="webname">Website Name</label>
-        <input class="form-control" id="webname" placeholder="Website Name">
+        <input class="form-control" id="webname" placeholder="Website Name" ng-model="website.name">
 
         <label for="webDescription">Website Name</label>
-        <textarea class="form-control" id="webDescription" placeholder="Description" rows="5"></textarea>
+        <textarea class="form-control" id="webDescription" placeholder="Description" rows="5"
+                  ng-model="website.description"></textarea>
+        <a href="#/user/{{model.userId}}/website" class="btn btn-block btn-info"
+        ng-click="model.createWebsite(website)">
+            Create New Website
+        </a>
     </div>
 </div>
 

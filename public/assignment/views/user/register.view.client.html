@@ -1,5 +1,12 @@
 <div class="container">
     <h1>Register</h1>
+    <div class="alert alert-success" ng-show="model.error">
+        {{model.error}}
+    </div>
+
+    <div class="alert alert-danger" ng-show="model.message">
+        {{model.message}}
+    </div>
     <input type="text"
            class="form-control"
            placeholder="username"
@@ -15,7 +22,7 @@
            ng-model="user.password"/>
 
     <a class="btn btn-primary btn-block"
-       ng-click="model.register(model)">Register</a>
+       ng-click="model.register(model.user)">Register</a>
     <a class="btn btn-danger  btn-block"
        href="#/login">Cancel</a>
 </div>

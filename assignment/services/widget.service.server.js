@@ -31,11 +31,10 @@ module.exports = function (app) {
 
     function findAllWidgetsForPage(req, res) {
         var pageId = req.params['pageId'];
-        
         var wdgts = []; 
         for (var w in widgets) {
             if (pageId === widgets[w].pageId) {
-                wdgts.push(wdgts[w]); 
+                wdgts.push(widgets[w]);
             }
         }
         res.json(wdgts); 
@@ -54,15 +53,23 @@ module.exports = function (app) {
     }
 
     function updateWidget(req, res) {
-        var widgetId = req.params['widgetId'];
-        var newWidget = req.body;
+        var widgetId = req.params.widgetId;
+        var widget = req.body;
         for (var w in widgets) {
-            var widget = widgets[w];
-            if (widget._id === widgetId) {
-                <!-- FIXME why not just page.name = newWidget.name?  -->
-                widgets[w].text = newWidget.name;
+            if (widgets[w]._id == widgetId) {
+                if (widgets[w].widgetType == "HEADER" || widgets[w].widgetType == "HTML") {
+                    widgets[w].size = widget.size;
+                    widgets[w].text = widget.text;
+
+                } else if (widgets[w].widgetType == "IMAGE" || widgets[w].widgetType == "YOUTUBE") {
+                    widgets[w].url = widget.url;
+                    widgets[w].width = widget.width;
+
+                }
+                res.json(widgets[w]);
                 return;
             }
+
         }
     }
 
@@ -75,6 +82,6 @@ module.exports = function (app) {
                 return;
             }
         }
-        res.sendStatus(404).send({});
+        res.sendStatus(404);
     }
 };

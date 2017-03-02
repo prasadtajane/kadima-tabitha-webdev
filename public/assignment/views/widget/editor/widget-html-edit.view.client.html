@@ -1,38 +1,7 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <p class="navbar-text pull-left">
-        <a class="navbar-link" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
-                <span class="page glyphicon glyphicon-menu-left">
-                </span>
-        </a>
-    </p>
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-            Widget Edit
-        </a>
-    </div>
-    <p class="navbar-text pull-right">
-        <a ng-click="model.updateWidget(model.widget)" class="navbar-link">
-                    <span class="page glyphicon glyphicon-ok">
-                    </span>
-        </a>
-    </p>
-</nav>
-
 <input ng-model="model.widget.text" class="form-control"/>
 
 </select>
 
-<a ng-click="model.updateWidget(model.widget)" class="btn btn-block btn-success">Update</a>
+<a ng-click="model.updateWidget(model.widget)" class="btn btn-block btn-info">Update</a>
 <a ng-click="model.deleteWidget(model.widget)" class="btn btn-block btn-danger">Delete</a>
 
-<nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container">
-        <div class="row navbar-text pull-right">
-            <div class="col-xs-3 text-right">
-                <a href="#/user/{{model.userId}}">
-                    <span class="glyphicon glyphicon-user"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-</nav>

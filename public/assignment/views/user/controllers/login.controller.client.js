@@ -17,7 +17,7 @@
 
         function login(user) {
             var promise = UserService
-                .findUser(user);
+                .findUsersByCredentials(user.username, user.password);
             promise.success(function (user) {
                 if (user) {
                     $location.url("/user/" + user._id);
