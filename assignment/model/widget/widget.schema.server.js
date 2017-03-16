@@ -2,9 +2,10 @@
  * Created by tabitha on 3/5/17.
  */
 module.exports = function (mongoose) {
+    var PageSchema = require("../page/page.schema.server");
 
     var WidgetSchema = mongoose.Schema({
-        _page: {type: String, ref: 'WidgetModel'},
+        _page: PageSchema, 
         type: {type: String, enum: ['HEADING', 'IMAGE', 'YOUTUBE',
         'HTML', 'INPUT']},
         name: String,
