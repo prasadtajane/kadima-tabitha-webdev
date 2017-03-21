@@ -5,236 +5,166 @@
  */
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
+
 .text-muted {
     color: #777777;
 }
+
 .text-primary {
     color: #fed136;
 }
+
 p {
     font-size: 14px;
     line-height: 1.75;
+    font-family: 'Open Sans', sans-serif;
 }
+
 p.large {
-    font-size: 16px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 80px;
+    padding-right: 80px;
+
 }
-a,
-a:hover,
-a:focus,
-a:active,
-a.active {
+
+a:hover, a:focus, a:active {
+    text-decoration: none;
     outline: none;
 }
-a {
+
+.navbar-default {
+    background-color: transparent;
+    border: 0px;
+    padding: 20px 0;
+    transition: all 0.3s;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #fff;
+    outline: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    outline: none;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
     color: #fed136;
+    background-color: transparent;
 }
-a:hover,
-a:focus,
-a:active,
-a.active {
-    color: #fec503;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
-}
+
 .img-centered {
     margin: 0 auto;
 }
+
 .bg-light-gray {
     background-color: #D3D3D3;
 }
+
 .bg-darkest-gray {
     background-color: #222222;
 }
+
 .btn-primary {
     color: white;
     background-color: #fed136;
     border-color: #fed136;
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     font-weight: 700;
 }
 
 
-.btn-xl .badge {
-    color: #fed136;
-    background-color: white;
-}
-.navbar-custom {
-    background-color: #222222;
-    border-color: transparent;
-}
-.navbar-custom .navbar-brand {
-    color: #fed136;
-    font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
-}
-.navbar-custom .navbar-brand:hover,
-.navbar-custom .navbar-brand:focus,
-.navbar-custom .navbar-brand:active,
-.navbar-custom .navbar-brand.active {
-    color: #fec503;
-}
-.navbar-custom .navbar-collapse {
-    border-color: rgba(255, 255, 255, 0.02);
-}
-.navbar-custom .navbar-toggle {
-    background-color: #fed136;
-    border-color: #fed136;
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    color: white;
-    font-size: 12px;
-}
-.navbar-custom .navbar-toggle:hover,
-.navbar-custom .navbar-toggle:focus {
-    background-color: #fed136;
-}
-.navbar-custom .nav li a {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: white;
-}
-.navbar-custom .nav li a:hover,
-.navbar-custom .nav li a:focus {
-    color: #fed136;
-    outline: none;
-}
-.navbar-custom .navbar-nav > .active > a {
-    border-radius: 0;
-    color: white;
-    background-color: #fed136;
-}
-.navbar-custom .navbar-nav > .active > a:hover,
-.navbar-custom .navbar-nav > .active > a:focus {
-    color: white;
-    background-color: #fec503;
-}
-@media (min-width: 768px) {
-    .navbar-custom {
-        background-color: transparent;
-        padding: 25px 0;
-        -webkit-transition: padding 0.3s;
-        -moz-transition: padding 0.3s;
-        transition: padding 0.3s;
-        border: none;
-    }
-    .navbar-custom .navbar-brand {
-        font-size: 2em;
-        -webkit-transition: all 0.3s;
-        -moz-transition: all 0.3s;
-        transition: all 0.3s;
-    }
-    .navbar-custom .navbar-nav > .active > a {
-        border-radius: 3px;
-    }
-}
-@media (min-width: 768px) {
-    .navbar-custom.affix {
-        background-color: #222222;
-        padding: 10px 0;
-    }
-    .navbar-custom.affix .navbar-brand {
-        font-size: 1.5em;
-    }
-}
 header {
     background-image: url('../images/boston-1099418_1920.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
-    -o-background-size: cover;
     text-align: center;
     color: whitesmoke;
 }
-header .intro-text {
-    padding-top: 100px;
-    padding-bottom: 50px;
-}
+
+
 header .intro-text .intro-lead-in {
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: italic;
     font-size: 22px;
     line-height: 22px;
     margin-bottom: 25px;
 }
+
 header .intro-text .intro-heading {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Patua One', cursive;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 70px;
     line-height: 50px;
     margin-bottom: 25px;
 }
+
 @media (min-width: 768px) {
     header .intro-text {
         padding-top: 300px;
         padding-bottom: 200px;
     }
-    header .intro-text .intro-lead-in {
-        font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-style: italic;
-        font-size: 40px;
-        line-height: 40px;
-        margin-bottom: 25px;
-    }
-    header .intro-text .intro-heading {
-        font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 75px;
-        line-height: 75px;
-        margin-bottom: 50px;
-    }
 }
+
 section {
     padding: 100px 0;
 }
+
 section h2.section-heading {
-    font-size: 40px;
+    font-size: 50px;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    font-family: 'Patua One', cursive;
+    font-weight: 500;
 }
+
 section h3.section-subheading {
     font-size: 16px;
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', cursive;
     text-transform: none;
     font-style: italic;
     font-weight: 400;
-    margin-bottom: 75px;
+    margin-bottom: 45px;
 }
+
 @media (min-width: 768px) {
     section {
         padding: 150px 0;
     }
 }
+
 .service-heading {
     margin: 15px 0;
     text-transform: none;
 }
+
 #portfolio .portfolio-item {
     margin: 0 0 15px;
     right: 0;
 }
+
 #portfolio .portfolio-item .portfolio-link {
     display: block;
     position: relative;
     max-width: 400px;
     margin: 0 auto;
 }
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
     background: rgba(254, 209, 54, 0.9);
     position: absolute;
@@ -245,9 +175,11 @@ section h3.section-subheading {
     -webkit-transition: all ease 0.5s;
     -moz-transition: all ease 0.5s;
 }
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
     opacity: 1;
 }
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
     position: absolute;
     width: 100%;
@@ -258,13 +190,16 @@ section h3.section-subheading {
     margin-top: -12px;
     color: white;
 }
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
     margin-top: -12px;
 }
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
     margin: 0;
 }
+
 #portfolio .portfolio-item .portfolio-caption {
     max-width: 400px;
     margin: 0 auto;
@@ -272,19 +207,23 @@ section h3.section-subheading {
     text-align: center;
     padding: 25px;
 }
+
 #portfolio .portfolio-item .portfolio-caption h4 {
     text-transform: none;
     margin: 0;
 }
+
 #portfolio .portfolio-item .portfolio-caption p {
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', cursive;
     font-style: italic;
     font-size: 16px;
     margin: 0;
 }
+
 #portfolio * {
     z-index: 2;
 }
+
 @media (min-width: 767px) {
     #portfolio .portfolio-item {
         margin: 0 0 30px;
@@ -298,6 +237,7 @@ aside.clients img {
 ul.social-buttons {
     margin-bottom: 0;
 }
+
 ul.social-buttons li a {
     display: block;
     background-color: #222222;
@@ -312,22 +252,26 @@ ul.social-buttons li a {
     -moz-transition: all 0.3s;
     transition: all 0.3s;
 }
+
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
     background-color: #fed136;
 }
+
 .btn:focus,
 .btn:active,
 .btn.active,
 .btn:active:focus {
     outline: none;
 }
+
 .portfolio-modal .modal-dialog {
     margin: 0;
     height: 100%;
     width: auto;
 }
+
 .portfolio-modal .modal-content {
     border-radius: 0;
     background-clip: border-box;
@@ -338,26 +282,32 @@ ul.social-buttons li a:active {
     padding: 100px 0;
     text-align: center;
 }
+
 .portfolio-modal .modal-content h2 {
     margin-bottom: 15px;
     font-size: 3em;
 }
+
 .portfolio-modal .modal-content p {
     margin-bottom: 30px;
 }
+
 .portfolio-modal .modal-content p.item-intro {
     margin: 20px 0 30px;
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Patua One', cursive;
     font-style: italic;
     font-size: 16px;
 }
+
 .portfolio-modal .modal-content ul.list-inline {
     margin-bottom: 30px;
     margin-top: 0;
 }
+
 .portfolio-modal .modal-content img {
     margin-bottom: 30px;
 }
+
 .portfolio-modal .close-modal {
     position: absolute;
     width: 75px;
@@ -367,9 +317,11 @@ ul.social-buttons li a:active {
     right: 25px;
     cursor: pointer;
 }
+
 .portfolio-modal .close-modal:hover {
     opacity: 0.3;
 }
+
 .portfolio-modal .close-modal .lr {
     height: 75px;
     width: 1px;
@@ -382,6 +334,7 @@ ul.social-buttons li a:active {
     /* Safari and Chrome */
     z-index: 1051;
 }
+
 .portfolio-modal .close-modal .lr .rl {
     height: 75px;
     width: 1px;
@@ -393,25 +346,29 @@ ul.social-buttons li a:active {
     /* Safari and Chrome */
     z-index: 1052;
 }
+
 .portfolio-modal .modal-backdrop {
     opacity: 0;
     display: none;
 }
+
 ::-moz-selection {
     text-shadow: none;
     background: #fed136;
 }
+
 ::selection {
     text-shadow: none;
     background: #fed136;
 }
+
 img::selection {
     background: transparent;
 }
+
 img::-moz-selection {
     background: transparent;
 }
-
 
 @media (max-width: 768px) {
     .container {
@@ -449,59 +406,29 @@ img::-moz-selection {
     }
 }
 
-@media (max-width: 375px) {
-    .featurette-divider {
-        margin: 10px 0;
-    }
-}
+/*@media (max-width: 375px) {*/
+    /*.featurette-divider {*/
+        /*margin: 10px 0;*/
+    /*}*/
+/*}*/
 
 .col-list .col-head {
     color: white;
     border-bottom: thick solid rgba(0, 0, 0, 0.2);
     border-radius: 5px 5px 0 0;
-    margin-top: 45px;
+    margin-top: 35px;
+    font-size: 40px;
 }
 
-.col-list .col-head span {
-    color: white;
-    font-size: 3em;
-    padding: 15px;
-    border: thick solid white;
-    border-radius: 50%;
-    margin-top: -45px;
-    background-color: #BE1E2D;
-}
 
-.col-list .col-head h2 {
+.col-list .col-head h4 {
     margin-top: 7px;
     margin-bottom: 5px;
-    font-size: 2em;
+    font-size: 25px;
     font-weight: 700;
 }
 
-.col-list .t1 .col-head {
-    background-color: #FFB748;
-}
 
-.col-list .t2 .col-head {
-    background-color: #16CAC8;
-}
-
-.col-list .t3 .col-head {
-    background-color: #F87152;
-}
-
-.col-list .t1 li {
-    border-bottom: 1px solid rgba(255, 183, 72, .4);
-}
-
-.col-list .t2 li {
-    border-bottom: 1px solid rgba(22, 202, 200, .4);
-}
-
-.col-list .t3 li {
-    border-bottom: 1px solid rgba(248, 113, 82, .4)
-}
 
 .col-list .t1 li:last-child,
 .col-list .t2 li:last-child,
@@ -518,6 +445,11 @@ img::-moz-selection {
 .col-list li:hover {
     background-color: #F7F7F9;
 }
+
+.col-title {
+    color: #737373;
+}
+
 
 .btn-linkedin {
     background: #007BB6;

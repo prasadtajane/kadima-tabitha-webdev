@@ -5,14 +5,14 @@ module.exports = function() {
     var mongoose = require("mongoose");
     var mongojs = require('mongojs');
 
-    mongoose.connect('mongodb://localhost/web-app-maker');
+    mongoose.connect('mongodb://localhost/cs4800');
     mongojs('web-app-maker');
 
     var model = {
-        userModel : require("./user/user.model.server")(mongoose),
-        websiteModel : require("./website/website.model.server")(mongoose),
-        pageModel : require("./page/page.model.server")(mongoose, websiteModel),
-        websiteModel : require("./widget/widget.model.server")(mongoose, websiteModel),
+        userModel : require("./user/user.model.server")(),
+        websiteModel : require("./website/website.model.server")(),
+        pageModel : require("./page/page.model.server")(),
+        websiteModel : require("./widget/widget.model.server")(),
         mongojs : mongojs
     };
 

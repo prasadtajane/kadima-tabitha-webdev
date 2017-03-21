@@ -1,8 +1,9 @@
 /**
  * Created by tabitha on 3/5/17.
  */
-module.exports = function (mongoose) {
-    var PageSchema = require("../page/page.schema.server");
+module.exports = function () {
+
+    var mongoose = require('mongoose');
 
     var WidgetSchema = mongoose.Schema({
         _page: PageSchema, 

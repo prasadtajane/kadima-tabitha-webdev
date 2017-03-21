@@ -1,33 +1,17 @@
-module.exports = function (app) {
+module.exports = function (app, model) {
+
     app.post("/api/page/:pageId/widget", createWidget);
     app.get("/api/page/:pageId/widget", findAllWidgetsForPage);
     app.get("/api/widget/:widgetId", findWidgetById);
     app.put("/api/widget/:widgetId", updateWidget);
     app.delete("/api/widget/:widgetId", deleteWidget);
-
-    var multer = require('multer');
-    var fs = require('fs');
-    var upload = multer({ dest: __dirname+'/../../public/uploads' });
-    
     app.post ("/api/upload", upload.single('myFile'), uploadImage);
 
+    var widgetModel = model.widgetModel;
 
-    var widgets =
-        [
-            {_id: "123", name: "Gizmodo", widgetType: "HEADER", pageId: "321", size: 2, text: "GIZMODO"},
-            {_id: "234", widgetType: "HEADER", pageId: "321", size: 4, text: "Watermelon"},
-            {
-                _id: "345", name: "Bananas", widgetType: "IMAGE", pageId: "321", width: "50%",
-                url: "http://lorempixel.com/400/200/"
-            },
-            {_id: "456", name: "ABCDEFGH", widgetType: "HTML", pageId: "321", text: "<p>ABCDEFGH</p>"},
-            {_id: "567", widgetType: "HEADER", pageId: "321", size: 4, text: "Bananas"},
-            {
-                _id: "678", name: "Youtube", widgetType: "YOUTUBE", pageId: "321", width: "40%",
-                url: "https://www.youtube.com/embed/AM2Ivdi9c4E"
-            },
-            {_id: "789", name: "html lorem", widgetType: "HTML", pageId: "321", text: "<p>Moon Taxi</p>"}
-        ];
+
+    var multer = require('multer');
+    var upload = multer({ dest: __dirname+'/../../public/uploads' });
 
     function createWidget(req, res) {
         var newWidget = req.body;

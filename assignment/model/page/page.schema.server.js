@@ -1,16 +1,16 @@
 /**
  * Created by tabitha on 3/5/17.
  */
-module.exports = function (mongoose) {
-    var WebsiteSchema = require("../website/website.schema.server"); 
-    var WidgetSchema = require("../widget/widget.schema.server"); 
-    
+module.exports = function () {
+
+    var mongoose = require('mongoose');
+
     var PageSchema = mongoose.Schema ({
-        _website: WebsiteSchema,
+        _website: {type: mongoose.Schema.ObjectId, ref: 'WebsiteModel'},
         name: String,
         title: String,
         description: String,
-        widgets: [WidgetSchema],
+        widgets: [{type: mongoose.Schema.ObjectId, ref: 'WidgetModel'}],
         dateCreated: {type: Date, default: Date.now()}
     }, {collection: 'page' }); 
     
