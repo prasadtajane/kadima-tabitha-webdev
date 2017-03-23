@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .factory("WidgetService", WidgetService);
 
-    function WidgetService($http) {
+    function WidgetService($http, $routeParams) {
         var api = {
             "createWidget" : createWidget,
             "findAllWidgetsForPage": findAllWidgetsForPage,
@@ -38,6 +38,10 @@
 
         function updateWidgetPosition(startIndex, finalIndex, pageId) {
             return $http.put("/page/" + pageId + "/widget?initial=" + startIndex + "&final=" + finalIndex);
+        }
+
+        function sortWidgets(startIndex, endIndex) {
+            $http.put("/page/"+ $routeParams.pid +"/widget?start=" + startIndex + "&end=" + endIndex)
         }
 
     }
