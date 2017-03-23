@@ -8,6 +8,8 @@ module.exports = function (app, model) {
 
     var userModel = model.userModel;
 
+    console.log("Server service: User");
+
 
     function createUser(req, res) {
         userModel

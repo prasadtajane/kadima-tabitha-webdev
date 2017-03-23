@@ -1,4 +1,4 @@
-module.export = function () {
+module.exports = function () {
     var q = require('q');
     var mongoose = require('mongoose');
     var pageSchema = require('./page.schema.server')();
