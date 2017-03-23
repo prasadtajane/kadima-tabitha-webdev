@@ -3,13 +3,13 @@
         .module("wamDirectives", [])
         .directive("wamSortable", wamSortable);
 
-    function sortable() {
+    function wamSortable() {
         function linker(scope, element, attributes) {
             var startIndex = -1;
             var endIndex  = -1;
 
             element
-                .sortable({
+                .wamSortable({
                     axis: 'y',
                     start: function(event, ui){
                         startIndex = $(ui.item).index();
