@@ -9,11 +9,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 
 require("./assignment/app.js")(app);
+require("./project/app.js")(app);
 
-// var assignment = require('./assignment/app.js');
-// assignment(app);
-
-require ("./test/app.js")(app);
+require("./test/app.js")(app);
 
 var port = process.env.PORT || 3000;
 app.listen(port); 

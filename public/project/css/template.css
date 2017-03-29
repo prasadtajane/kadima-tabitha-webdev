@@ -318,7 +318,7 @@ Navigation
 }
 
 .navbar.navbar-custom ul.nav.navbar-nav {
-	margin-top: 15px;
+	margin-top: 0px;
  	-webkit-transition: all .4s ease-in-out;
     -moz-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
@@ -1295,7 +1295,7 @@ footer {
 }
 
 footer {
-	padding: 50px 0 0;
+	padding: 0px 0 0;
 	
 }
 

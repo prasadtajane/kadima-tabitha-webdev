@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="BostonHealth">
 
 <head>
     <meta charset="utf-8">
@@ -8,253 +8,41 @@
 
     <title>Boston Health </title>
 
-    <!-- css -->
+    <!-- Style -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link href="css/animate.css" rel="stylesheet"/>
     <link href="css/template.css" rel="stylesheet">
-    <!-- boxed bg -->
-    <link id="bodybg" href="Medicio/bodybg/bg1.css" rel="stylesheet" type="text/css"/>
-    <!-- template skin -->
     <link id="t-colors" href="css/default.css" rel="stylesheet">
+
+    <!-- Javascript -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Web app -->
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <!-- Services -->
+
+    <!-- Directives -->
+
+    <!-- Controller -->
+    <script src="views/home.controller.client.js"></script>
+    <script src="views/patient/controllers/login.controller.client.js"></script>
+    <script src="views/patient/controllers/patient-account.controller.client.js"></script>
+    <script src="views/patient/controllers/patient-register.controller.client.js"></script>
+    <script src="views/patient/controllers/search.controller.client.js"></script>
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<body >
 
-<div id="wrapper">
-
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Boston<span class="color">Health</span></a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="navbar navbar-right ">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="search.html">Find Doctor</a></li>
-                <!-- TODO toggle visibility -->
-                <li><a href="login.html">Login</a></li>
-                <li><a href="patient-account.html">Account</a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-        <!-- /.container -->
-    </nav>
-
-
-    <!-- Section: intro -->
-    <section id="intro" class="intro">
-        <div class="intro-content">
-            <div class="container">
-                <div class="row">
-                    <div class="intro-text col-lg-8">
-                        <h2 class="h-ultra text-center">Boston Health Search</h2>
-                        <h4 class="h-light text-center">Find the <span class="color">best quality healthcare</span> for you</h4>
-                            <div class="button-group">
-                                    <a href="patient-register.html"><button class="btn btn-lg btn-skin navbar-btn">Sign up for the Service</button></a>
-                                    <a href="#"><button class="btn btn-lg btn-info">Sign up as a Health Care Provider</button></a>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- /Section: intro -->
-
-    <!-- Section: boxes -->
-    <section id="boxes" class="home-section paddingtop-80">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3 col-md-3">
-                    <div class="box text-center">
-                        <i class="fa fa-check fa-3x circled bg-skin"></i>
-                        <h4 class="h-bold">Make an appoinment</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, nec te mollis utroque honestatis, ut utamur molestiae vix,
-                            graecis eligendi ne.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-md-3">
-                    <div class="box text-center">
-
-                        <i class="fa fa-list-alt fa-3x circled bg-skin"></i>
-                        <h4 class="h-bold">Choose your package</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, nec te mollis utroque honestatis, ut utamur molestiae vix,
-                            graecis eligendi ne.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-md-3">
-                    <div class="box text-center">
-                        <i class="fa fa-user-md fa-3x circled bg-skin"></i>
-                        <h4 class="h-bold">Contact a specialist</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, nec te mollis utroque honestatis, ut utamur molestiae vix,
-                            graecis eligendi ne.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-md-3">
-                    <div class="box text-center">
-
-                        <i class="fa fa-hospital-o fa-3x circled bg-skin"></i>
-                        <h4 class="h-bold">Get diagnostic report</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, nec te mollis utroque honestatis, ut utamur molestiae vix,
-                            graecis eligendi ne.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <!-- /Section: boxes -->
-
-
-    <section id="callaction" class="home-section paddingtop-40">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="callaction bg-gray">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="cta-text">
-                                    <h3> Need help now?</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit uisque interdum ante
-                                        eget faucibus. </p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="cta-btn">
-                                    <!-- create emergency popup modal -->
-                                    <a href="search.html" class="btn btn-skin btn-lg">Book an appoinment</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Section: services -->
-    <section id="service" class="home-section nopadding paddingtop-60">
-
-        <div class="container">
-
-            <div class="row service-section">
-                <div class="col-sm-3 col-md-3">
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <span class="fa fa-stethoscope fa-3x"></span>
-                        </div>
-                        <div class="service-desc">
-                            <h5 class="h-light">Medical checkup</h5>
-                            <p>Vestibulum tincidunt enim in pharetra malesuada.</p>
-                        </div>
-                    </div>
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <span class="fa fa-wheelchair fa-3x"></span>
-                        </div>
-                        <div class="service-desc">
-                            <h5 class="h-light">Nursing Services</h5>
-                            <p>Vestibulum tincidunt enim in pharetra malesuada.</p>
-                        </div>
-                    </div>
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <span class="fa fa-plus-square fa-3x"></span>
-                        </div>
-                        <div class="service-desc">
-                            <h5 class="h-light">Pharmacy</h5>
-                            <p>Vestibulum tincidunt enim in pharetra malesuada.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-md-3">
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <span class="fa fa-h-square fa-3x"></span>
-                        </div>
-                        <div class="service-desc">
-                            <h5 class="h-light">Gyn Care</h5>
-                            <p>Vestibulum tincidunt enim in pharetra malesuada.</p>
-                        </div>
-
-                    </div>
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <span class="fa fa-filter fa-3x"></span>
-                        </div>
-                        <div class="service-desc">
-                            <h5 class="h-light">Neurology</h5>
-                            <p>Vestibulum tincidunt enim in pharetra malesuada.</p>
-                        </div>
-                    </div>
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <span class="fa fa-user-md fa-3x"></span>
-                        </div>
-                        <div class="service-desc">
-                            <h5 class="h-light">Sleep Center</h5>
-                            <p>Vestibulum tincidunt enim in pharetra malesuada.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6">
-                    <img src="img/doctor-image.jpg" class="img-responsive img-circle" alt="" />
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-    <!-- /Section: services -->
-
-    <footer >
-        <div class="sub-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="wow fadeInLeft" data-wow-delay="0.1s">
-                            <div class="text-left">
-                                <p>&copy;Copyright - Medicio Theme. All rights reserved.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="wow fadeInRight" data-wow-delay="0.1s">
-                            <div class="text-right">
-                                <div class="credits">
-                                    <!--
-                                        All the links in the footer should remain intact.
-                                        You can delete the links only if you purchased the pro version.
-                                        Licensing information: https://bootstrapmade.com/license/
-                                        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Medicio
-                                    -->
-                                    <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business
-                                        Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-</div>
-<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-
+<div ng-view></div>
 </body>
 
 </html>

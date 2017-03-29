@@ -34,7 +34,7 @@ module.exports = function () {
         var deferred = q.defer();
 
         userModel
-            .findUserById(userId, function (err, user) {
+            .findById(userId, function (err, user) {
                 if (err) {
                     deferred.reject(new Error(err));
                 } else {
