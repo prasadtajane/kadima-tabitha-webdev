@@ -122,3 +122,8 @@ div.tags a:hover {
     margin: 5px;
 }
 
+.login-title {
+    text-align: center;
+    /*vertical-align: middle;*/
+    /*line-height: 90px;*/
+}

@@ -34,7 +34,7 @@
                 templateUrl: "views/doctor/doctor-register.view.client.html"
             })
             .otherwise({
-                redirectTo: '/'
+                redirectTo: '/home'
             });
     }
 

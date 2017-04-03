@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 
 require("./assignment/app.js")(app);
-require("./project/app.js")(app);
+//require("./project/app")(app);
 
 require("./test/app.js")(app);
 
