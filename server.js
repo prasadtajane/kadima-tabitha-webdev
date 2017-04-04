@@ -1,5 +1,8 @@
 var express = require('express');
 var app = express();
+var cookieParser = require('cookie-parser');
+var session      = require('express-session');
+var passport     = require('passport');
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -9,7 +12,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 
 require("./assignment/app.js")(app);
-//require("./project/app")(app);
+
+app.use(cookieParser());
+app.use(session({ secret: process.env.SESSION_SECRET }));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 require("./test/app.js")(app);
 

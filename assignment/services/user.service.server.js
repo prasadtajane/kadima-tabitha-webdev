@@ -1,5 +1,8 @@
 module.exports = function (app, model) {
 
+    var auth = authorized;
+    var passport = require('passport');
+
     app.post("/api/user", createUser);
     app.get("/api/user", findUser);
     app.get("/api/user/:userId", findUserById);
@@ -8,6 +11,31 @@ module.exports = function (app, model) {
 
     var userModel = model.userModel;
 
+    passport.serializerUser(serializeUser);
+    passport.deserializeUser(deserializeUser);
+
+    function serializeUser(user, done) {
+        done(null, user);
+    }
+
+    function deserializeUser(user, done) {
+        userModel
+            .findUserById(user._id)
+            .then(function (user) {
+                    done(null, user);
+                }, function (err) {
+                    done(err, user);
+                });
+    }
+
+
+    function authorized(req, res, next) {
+        if (!req.isAuthenticated()) {
+            res.send(401);
+        } else {
+            next();
+        }
+    }
 
     function createUser(req, res) {
         userModel
