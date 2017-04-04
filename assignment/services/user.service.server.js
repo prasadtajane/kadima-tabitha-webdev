@@ -4,6 +4,7 @@ module.exports = function (app, model) {
     var passport = require('passport');
     var LocalStrategy  = require('passport-local').Strategy;
 
+    app.post("/api/login", passport.authenticate("wamDirective"), login);
     app.post("/api/user", createUser);
     app.get("/api/user", findUser);
     app.get("/api/user/:userId", findUserById);
@@ -46,6 +47,11 @@ module.exports = function (app, model) {
                     return done(err);
                 }
             });
+    }
+    
+    function login(req, res) {
+        var user = req.user;
+        res.json(user); 
     }
 
     function authorized(req, res, next) {
