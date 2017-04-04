@@ -4,10 +4,12 @@ module.exports = function (app, model) {
     var passport = require('passport');
     var LocalStrategy  = require('passport-local').Strategy;
 
-    app.post("/api/login", passport.authenticate("wamDirective"), login);
+    app.post("/api/login", passport.authenticate("localStrategy"), login);
+    app.post('/api/logout', logout);
     app.post("/api/user", createUser);
     app.get("/api/user", findUser);
     app.get("/api/user/:userId", findUserById);
+    app.get("/api/loggedin", loggedin);
     app.put("/api/user/:userId", updateUser);
     app.delete("/api/user/:userId", deleteUser);
 
@@ -51,7 +53,16 @@ module.exports = function (app, model) {
     
     function login(req, res) {
         var user = req.user;
-        res.json(user); 
+        res.json(user);
+    }
+
+    function logout(req, res) {
+        req.logOut();
+        res.send(200);
+    }
+
+    function loggedin(req, res) {
+        res.send(req.isAuthenticated() ? req.user : '0');
     }
 
     function authorized(req, res, next) {

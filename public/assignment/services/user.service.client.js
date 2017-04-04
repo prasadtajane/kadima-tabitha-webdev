@@ -6,6 +6,8 @@
     function UserService($http) {
 
         var api = {
+            "login" : login,
+            "logout" : logout,
             "createUser": createUser,
             "findUserById": findUserById,
             "findUserByUsername": findUserByUsername,
@@ -19,6 +21,9 @@
             return $http.post("/api/login", user);
         }
 
+        function logout(user) {
+            return $http.post("/api/", user);
+        }
         function createUser(user) {
             return $http.post("/api/user/", user);
         }
