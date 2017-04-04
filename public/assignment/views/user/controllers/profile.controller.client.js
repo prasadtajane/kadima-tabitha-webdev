@@ -33,6 +33,16 @@
 
         init();
 
+        function register() {
+            UserService
+                .register(user)
+                .then(function (response) {
+                    var user = response.data;
+                    $rootScope.currentUser = user;
+                    $location.url("/user/"+user._id);
+                })
+        }
+
         function updateUser(newUser) {
             UserService
                 .updateUser(vm.userId, newUser)
