@@ -11,7 +11,7 @@ module.exports = function () {
         phone: String,
         websites: [{type: mongoose.Schema.ObjectId, ref: 'WebsiteModel'}],
         dateCreated: {type: Date, default: Date.now()}
-    }, {collection: 'user'});
+    }, {collection: 'users'});
 
     return UserSchema;
 

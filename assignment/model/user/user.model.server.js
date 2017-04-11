@@ -18,11 +18,12 @@ module.exports = function () {
     return api;
 
     function createUser(user) {
+        console.log("creating user model");
         var deferred = q.defer();
         userModel
             .create(user, function (err, user) {
                 if (err) {
-                    deferred.reject(new Error(err));
+                    deferred.reject(err);
                 } else {
                     deferred.resolve(user);
                 }
@@ -47,16 +48,14 @@ module.exports = function () {
 
     function findUserByUsername(username) {
         var deferred = q.defer();
-
         userModel
-            .findOne({username: username}, function (err, user) {
+            .findOne({username : username}, function (err, user) {
                 if (err) {
-                    deferred.reject(new Error(err));
+                    deferred.reject(err);
                 } else {
                     deferred.resolve(user);
                 }
             });
-
         return deferred.promise;
     }
 

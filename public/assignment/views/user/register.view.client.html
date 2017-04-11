@@ -1,20 +1,18 @@
 <div class="container">
     <h1>Register</h1>
-    <div class="alert alert-success" ng-show="model.error">
-        {{model.error}}
-    </div>
-
     <div class="alert alert-danger" ng-show="model.message">
         {{model.message}}
     </div>
     <input type="text"
            class="form-control"
            placeholder="username"
-           ng-model="model.user.username"/>
+           ng-model="user.username"/>
+
     <input type="password"
            class="form-control"
            placeholder="password"
-           ng-model="model.user.password"/>
+           ng-model="user.password"/>
+
     <input type="password"
            class="form-control"
            id="verify"
@@ -22,7 +20,7 @@
            ng-model="user.password"/>
 
     <a class="btn btn-primary btn-block"
-       ng-click="model.register(model.user)">Register</a>
+       ng-click="model.register(user)">Register</a>
     <a class="btn btn-danger  btn-block"
        href="#/login">Cancel</a>
 </div>

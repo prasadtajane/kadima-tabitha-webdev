@@ -1,8 +1,13 @@
 var express = require('express');
-var app = express();
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
-var passport     = require('passport');
+// var passport     = require('passport');
+var mongoose     = require('mongoose');
+
+var app = express();
+
+mongoose.Promise = global.Promise;
+mongoose.createConnection('mongodb://127.0.0.1:27017/cs4550');
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -14,10 +19,10 @@ app.use(express.static(__dirname + '/public'));
 require("./assignment/app.js")(app);
 
 app.use(cookieParser());
-app.use(session({ secret: process.env.SESSION_SECRET }));
+app.use(session({ secret: "secret" }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 require("./test/app.js")(app);
 
