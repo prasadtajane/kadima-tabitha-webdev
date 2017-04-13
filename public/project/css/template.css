@@ -14,7 +14,7 @@ body {
     width: 100%;
     height: 100%;
     font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
+	font-weight: normal;
 	font-size: 16px;
     line-height: 1.6em;
 }
@@ -99,34 +99,34 @@ h6 {
 	line-height: 1em;
 }
 
-h1.h-xlight,h2.h-xlight,h3.h-xlight ,h4.h-xlight ,h5.h-xlight ,h6.h-xlight  {
-	font-weight: 100;
-}
+/*h1.h-xlight,h2.h-xlight,h3.h-xlight ,h4.h-xlight ,h5.h-xlight ,h6.h-xlight  {*/
+	/*font-weight: 100;*/
+/*}*/
 
-h1.h-light,h2.h-light,h3.h-light ,h4.h-light ,h5.h-light ,h6.h-light  {
-	font-weight: 300;
-}
+/*h1.h-light,h2.h-light,h3.h-light ,h4.h-light ,h5.h-light ,h6.h-light  {*/
+	/*font-weight: 300;*/
+/*}*/
 
-h1.h-normal,h2.h-normal,h3.h-normal ,h4.h-normal ,h5.h-normal ,h6.h-normal  {
-	font-weight: 400;
-}
+/*h1.h-normal,h2.h-normal,h3.h-normal ,h4.h-normal ,h5.h-normal ,h6.h-normal  {*/
+	/*font-weight: 400;*/
+/*}*/
 
-h1.h-medium,h2.h-medium,h3.h-medium ,h4.h-medium ,h5.h-medium ,h6.h-medium  {
-	font-weight: 500;
-}
+/*h1.h-medium,h2.h-medium,h3.h-medium ,h4.h-medium ,h5.h-medium ,h6.h-medium  {*/
+	/*font-weight: 500;*/
+/*}*/
 
-h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
-	font-weight: 700;
-}
+/*h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {*/
+	/*font-weight: 700;*/
+/*}*/
 
-h1.h-ultra,h2.h-ultra,h3.h-ultra ,h4.h-ultra ,h5.h-ultra ,h6.h-ultra  {
-	font-weight: 900;
-}
+/*h1.h-ultra,h2.h-ultra,h3.h-ultra ,h4.h-ultra ,h5.h-ultra ,h6.h-ultra  {*/
+	/*font-weight: 900;*/
+/*}*/
 
 
-h1.font-light,h2.font-light,h3.font-light,h4.font-light,h5.font-light,h6.font-light {
-	color: #fff;
-}
+/*h1.font-light,h2.font-light,h3.font-light,h4.font-light,h5.font-light,h6.font-light {*/
+	/*color: #fff;*/
+/*}*/
 
 .big-heading {
 	font-size: 48px;
@@ -205,9 +205,6 @@ blockquote.bg-dark {
 blockquote strong {
   font-weight: 700;
 }
-
-
-
 
 .light {
     font-weight: 400;
@@ -1616,6 +1613,10 @@ a.scrollup i:hover {
 	font-weight: 700;
 }
 
+.btn-default {
+    background: #4ACCD1;
+}
+
 .btn.btn-noradius {
 	border-radius: 0;
 }
@@ -1870,34 +1871,34 @@ a.btn:focus{
 
 .bgr .bg.bg1 {
 	background: url(../Medicio/img/bodybg/bg1.png) repeat left top;
-}	
+}
 .bgr .bg.bg2 {
 	background: url(../Medicio/img/bodybg/bg2.png) repeat left top;
-}	
+}
 .bgr .bg.bg3 {
 	background: url(../Medicio/img/bodybg/bg3.jpg) repeat left top;
-}	
+}
 .bgr .bg.bg4 {
 	background: url(../Medicio/img/bodybg/bg4.png) repeat left top;
-}	
+}
 .bgr .bg.bg5 {
 	background: url(../Medicio/img/bodybg/bg5.png) repeat left top;
-}	
+}
 .bgr .bg.bg6 {
 	background: url(../Medicio/img/bodybg/bg6.png) repeat left top;
-}	
+}
 .bgr .bg.bg7 {
 	background: url(../Medicio/img/bodybg/bg7.png) repeat left top;
-}	
+}
 .bgr .bg.bg8 {
 	background: url(../Medicio/img/bodybg/bg8.jpg) repeat left top;
-}	
+}
 .bgr .bg.bg9 {
 	background: url(../Medicio/img/bodybg/bg9.png) repeat left top;
-}	
+}
 .bgr .bg.bg10 {
 	background: url(../Medicio/img/bodybg/bg10.png) repeat left top;
-}	
+}
 
 #accent_color{
 	color: #fff;
@@ -2050,4 +2051,10 @@ a.btn:focus{
 	.intro-content {
 		padding:250px 0 0;
 	}
+}
+
+@font-face {
+	font-family: 'Glyphicons Halflings';
+	src: url('../fonts/glyphicons-halflings-regular.eot');
+	src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
