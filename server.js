@@ -1,6 +1,6 @@
 var express = require('express');
 var cookieParser = require('cookie-parser');
-var session      = require('express-session');
+//var session      = require('express-session');
 // var passport     = require('passport');
 var mongoose     = require('mongoose');
 
@@ -18,8 +18,8 @@ app.use(express.static(__dirname + '/public'));
 
 require("./assignment/app.js")(app);
 
-app.use(cookieParser());
-app.use(session({ secret: "secret" }));
+// app.use(cookieParser());
+// app.use(session({ secret: "secret" }));
 
 // app.use(passport.initialize());
 // app.use(passport.session());
