@@ -1,22 +1,22 @@
 <div class="container-fluid">
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#/home">Boston<span class="color">Health</span></a>
-            </div>
+        <div class="navbar-header">
+            <a class="navbar-brand">Boston<span class="color">Health</span></a>
+        </div>
 
         <div class="navbar ">
             <ul class="nav navbar-nav pull-right">
-                <li><a href="#">Home</a></li>
+                <li><a href="#/home">Home</a></li>
                 <li><a href="#/search">Find Doctor</a></li>
-                <li class="active"><a href="#/account">Account</a></li>
+                <li class="active"><a href="#/patient">Profile</a></li>
                 <li><a href="#/login">Login</a></li>
             </ul>
         </div>
     </nav>
     <div class="container">
-
+        <br>
         <div role="form">
-            <h2>Patient Registration
+            <h2>Patient Profile
                 <small></small>
             </h2>
             <div class="row">
@@ -66,83 +66,73 @@
                                    placeholder="Work phone">
                         </div>
                     </div>
-                    <div class="col-xs-3 col-sm-3 col-md-3">
+                    <div class="col-md-6">
                         <select>
-                            <option value="" class="disabled">Select Primary Phone</option>
-                            <option value="cellphone">Cell</option>
-                            <option value="homephone">Home</option>
-                            <option value="workphone">Work</option>
+                            <option class="disabled">Preferred Method of Communication</option>
+                            <option>Call Cell Phone</option>
+                            <option>Text Cell Phone</option>
+                            <option>Home Phone</option>
+                            <option>Work Phone</option>
+                            <option>Email</option>
                         </select>
                     </div>
-                </div>
-                <!--/Contact form section -->
-            </div>
-
-            <hr>
-            <div class="row">
-                <!-- Demographics form section -->
-                <h4>Demographics</h4>
-                <label for="dob">Date of Birth</label>
-                <div class="form-group">
-                    <input type="date" name="dob" id="dob" class="form-control input-md date-select">
+                    <!--/Contact form section -->
                 </div>
 
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <p class="instruction">Indicate Your <strong>Sex</strong></p>
-                    <label class="radio-inline">
-                        <input type="radio" name="sex" value="true" checked="checked"> Male
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="sex"> Female
-                    </label>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <p class="instruction">Please enter your gender here if it differs from your sex</p>
-                    <input type="text" name="gender" class="form-control input-md">
-                </div>
-                <!-- /Demographics form section --->
-            </div>
-            <hr>
-            <div class="row">
-                <!-- Medical History Form section -->
-                <h4>Medical History</h4>
+                <hr>
                 <div class="row">
-                    <p class="instruction">Please check to indicate if you have ever had the following
-                        conditions</p>
-                    <div class="condition-grid">
-
-                        <div class="row">
-                            <div class="col"><input type="checkbox" checked="checked"/><label>Diabetes</label></div>
-                            <div class="col"><input type="checkbox"/><label>Kidney Disease</label></div>
-                            <div class="col"><input type="checkbox"/><label>Stroke</label></div>
-                            <div class="col"><input type="checkbox"/><label>Tuberculosis</label></div>
-                            <div class="col"><input type="checkbox" checked="checked"/><label>High Blood Pressure</label></div>
-                            <div class="col"><input type="checkbox"/><label>Hepatitis</label></div>
+                    <!-- Demographics form section -->
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <h4>Demographics</h4>
+                        <label for="dob">Date of Birth</label>
+                        <div class="form-group">
+                            <input type="date" name="dob" id="dob" class="form-control input-md date-select">
                         </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <p class="instruction">Indicate Your <strong>Sex</strong></p>
+                        <label class="radio-inline">
+                            <input type="radio" name="sex" value="true" checked="checked"> Male
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="sex"> Female
+                        </label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <p class="instruction">Please enter your gender here if it differs from your sex</p>
+                        <input type="text" name="gender" class="form-control input-md">
+                    </div>
+                    <!-- /Demographics form section --->
+                </div>
+                <hr>
+                <div class="row">
+                    <!-- Medical History Form section -->
+                    <div class="col-sm-6">
+                        <h4>Medical History</h4>
                         <div class="row">
-
-                            <div class="col"><input type="checkbox" checked="checked"/><label>Depression</label></div>
-                            <div class="col"><input type="checkbox"/><label>Coronary Artery Disease</label></div>
-                            <div class="col"><input type="checkbox"/><label>Asthma </label></div>
-                            <div class="col"><input type="checkbox"/><label>Thyroid Disease</label></div>
-                            <div class="col"><input type="checkbox"/><label>Emphysema </label></div>
-                        </div>
-                        <div class="row">
-                            <div class="col"><input type="checkbox"><label>Seizures</label></div>
-                            <div class="col"><input type="checkbox"><label>Heart Attack</label></div>
-                            <div class="col"><input type="checkbox" checked="checked"><label>Anxiety</label></div>
-                            <div class="col"><input type="checkbox"><label>Coagulation problem</label></div>
-                            <div class="col"><input type="checkbox"/><label>Congestive Heart Failure</label></div>
-
-                        </div>
-                        <!-- User must elaborate if they check off one of these -->
-                        <div class="row">
-                            <div class="col"><input type="checkbox"/><label>Eye Problems </label></div>
-                            <div class="col"><input type="checkbox"/><label>Sexually Transmitted Disease</label>
+                            <div class="col-sm-8">
+                                <label>Please check to indicate if you have been diagnosed with the following 
+                                    conditions</label>
+                                <select multiple size="15">
+                                    <option value="diabetes">Diabetes</option>
+                                    <option value="kidney">Kidney Disease</option>
+                                    <option value="stroke">Stroke</option>
+                                    <option value="tb">Tuberculosis</option>
+                                    <option value="hbp">High Blood Pressure</option>
+                                    <option value="hep">Hepatitis</option>
+                                    <option value="depress">Depression</option>
+                                    <option value="cad">Coronary Artery Disease</option>
+                                    <option value="asthma">Asthma</option>
+                                    <option value="thyroid">Thyroid Disease</option>
+                                    <option value="emphysema">Emphysema</option>
+                                    <option value="heartAttack">Heart Attack</option>
+                                    <option value="anxiety">Anxiety</option>
+                                    <option value="coag">Coagulation problem</option>
+                                    <option value="chf">Congestive Heart Failure</option>
+                                    <option value="std">Sexually Transmitted Disease</option>
+                                    <option value="cancer">Cancer</option>
+                                </select>
                             </div>
-                            <div class="col"><input type="checkbox"/><label>Cancer </label></div>
-                            <div class="col"><input type="checkbox"/><label>Congestive Heart Failure</label></div>
-                            <div class="col"><input type="checkbox"><label>Other</label></div>
                         </div>
                     </div>
                     <!-- /Medical history form section -->
@@ -151,8 +141,7 @@
             </div>
         </div>
         <div class="pull-right">
-            <a class="btn btn-lg btn-danger" href="#/home">Cancel</a>
-            <a class="btn btn-lg btn-skin" href="#/home">Submit</a>
+            <a class="btn btn-lg btn-skin" href="#/home">Update</a>
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <section>
             <div class="wizard">
@@ -17,7 +17,7 @@
                         <li role="presentation" class="disabled" ng-class="{active:tab===2}">
                             <a ng-click="tab = 2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
                             <span class="round-tab">
-                                <i class="glyphicon glyphicon-list-alt"></i>
+                                <i class="glyphicon glyphicon-education"></i>
                             </span>
                             </a>
                         </li>
@@ -47,47 +47,50 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="firstName">First Name</label>
-                                        <input type="text" class="form-control" id="firstName"
-                                               placeholder="First Name">
+                                        <input type="text" class="form-control" id="firstName" ng-model="doctor.firstName"
+                                               placeholder="First Name"/>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="lastName">Last Name</label>
-                                        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                                        <input type="text" class="form-control" id="lastName" placeholder="Last Name"
+                                        ng-model="doctor.lastName">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="email">Email address</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                        <input type="email" class="form-control" id="email" placeholder="Email"
+                                               ng-model="doctor.email">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="confirmEmail">Confirm Email address</label>
                                         <input type="email" class="form-control" id="confirmEmail"
-                                               placeholder="Confirm Email">
+                                               placeholder="Confirm Email" ng-model="doctor.email">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="userName">Choose a Username</label>
-                                        <input type="text" class="form-control" id="userName" placeholder="username">
+                                        <input type="text" class="form-control" id="userName" placeholder="username"
+                                        ng-model="doctor.username"/>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password">
+                                        <input type="password" class="form-control" id="password" ng-model="doctor.password"/>
                                     </div>
                                     <div class="col-md-3">
                                         <label for="cpassword">Confirm Password</label>
-                                        <input type="password" class="form-control" id="cpassword">
+                                        <input type="password" class="form-control" id="cpassword" ng-model="doctor.password"/>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="phoneNum">Office Phone Number</label>
-                                        <input type="email" class="form-control" id="phoneNum"
-                                               placeholder="(xxx)-xxx-xxxx">
+                                        <input type="email" class="form-control" id="phoneNum" ng-model="doctor.workPhone"
+                                               placeholder="(xxx)-xxx-xxxx"/>
                                     </div>
                                 </div>
                             </div>
@@ -106,13 +109,12 @@
                                 <div class="row">
                                     <div class="col-md-6 col-xs-6">
                                         <h5>Select a Job Title</h5>
-                                        <select id="jobTitle">
+                                        <select name="jobTitle" ng-model="doctor.jobTitle">
                                             <option value="dr">Doctor</option>
-                                            <option value="np">Nurse Practioner</option>
+                                            <option value="np">Nurse Practitoner</option>
                                             <option value="pa">Physician Assistant</option>
                                             <option value="rn">Nurse - Registered Nurse (RN)</option>
-                                            <option value="cns">Nurse - Certified Nursing Specialist(CNS)
-                                            </option>
+                                            <option value="cns">Nurse - Certified Nursing Specialist(CNS)</option>
                                             <option value="ph">Pharmacist</option>
                                         </select>
                                     </div>
@@ -120,7 +122,7 @@
 
                                     <div class="col-md-4 col-xs-6">
                                         <h5>Select All Specialities That Apply</h5>
-                                        <select multiple>
+                                        <select multiple name="specialities" ng-model ="doctor.specialities"/>
                                             <option>Primary Care</option>
                                             <option>Allergy and Asthma</option>
                                             <option>Anesthesiology</option>
@@ -132,24 +134,18 @@
                                             <option>Hematology</option>
                                             <option>Immunology</option>
                                             <option>Infectious disease</option>
-                                            >
                                             <option>Nephrology</option>
                                             <option>Neurology</option>
-                                            >
                                             <option>Obstetrics/gynecology</option>
-                                            >
                                             <option>Oncology</option>
-                                            >
                                             <option>Ophthalmology</option>
                                             <option>Orthopedics</option>
-                                            >
                                             <option>Otorhinolaryngology</option>
                                             <option>Physical therapy and rehabilitative medicine</option>
                                             <option>Psychiatry</option>
                                             <option>Pulmonary</option>
                                             <option>Radiology</option>
                                             <option>Rheumatology</option>
-                                            >
                                             <option>Urology</option>
                                         </select>
                                     </div>
@@ -158,54 +154,52 @@
                                     <div class="col-md-5">
                                         <label for="facility">Name of facility</label><br>
                                         <input id="facility" type="text" class="form-control"
-                                               placeholder="Enter clinic or hospital name"><br>
+                                               placeholder="Enter clinic or hospital name"
+                                               ng-model="facility"/><br>
                                     </div>
                                     <br>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-9 column">
+                                    <div class="col-md-6 column">
                                         <table class="table table-bordered table-hover" id="education_table">
                                             <thead>
-                                            <tr>
                                                 <th class="text-center">College/University</th>
                                                 <th class="text-center">Degree</th>
                                                 <th class="text-center">Year of Graduation</th>
                                                 <th></th>
-                                            </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
+                                            <tr ng-repeat="school in schools">
                                                 <td>
                                                     <input type="text" name="college"
                                                            placeholder="Enter Name of Alma Mater"
-                                                           class="form-control"/>
+                                                           class="form-control"
+                                                           ng-model="school.name"/>
                                                 </td>
                                                 <td>
                                                     <input type="text" name='degree' placeholder='Degree'
-                                                           class="form-control"/>
+                                                           class="form-control"
+                                                           ng-model="school.degree"/>
                                                 </td>
                                                 <td>
                                                     <input type="text" name='yrOfGrad'
                                                            placeholder='Enter Year of Graduation'
-                                                           class="form-control"/>
+                                                           class="form-control"
+                                                           ng-model="school.yog"/>
                                                 </td>
                                                 <td>
-                                                    <a id='delete_row' class="pull-left btn btn-danger btn-circle">
+                                                    <a ng-submit='delete_row' class="pull-left btn btn-danger btn-circle">
                                                         <i class="glyphicon glyphicon-remove"></i>
                                                     </a>
                                                 </td>
                                             </tr>
-                                            <tr id='addr1'></tr>
                                             </tbody>
                                         </table>
-                                        <a id="add_row" class="btn btn-success pull-left btn-circle">
+                                        <a ng-submit="addRow()" class="btn btn-success pull-left" type="submit">
                                             <i class="glyphicon glyphicon-plus"> </i> Add More
                                         </a>
                                     </div>
                                 </div>
-                                <br>
-
-
                             </div>
                             <ul class="list-inline pull-right">
                                 <li>

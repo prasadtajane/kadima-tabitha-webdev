@@ -1,157 +1,305 @@
-<!-- TODO : redo as modal ? eh...-->
-<div class="container-fluid">
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#/home">Boston<span class="color">Health</span></a>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
+<div class="container">
+    <div class="row">
+        <section>
+            <div class="wizard">
+                <div class="wizard-inner">
+                    <div class="connecting-line"></div>
+                    <ul class="nav nav-tabs" role="tablist" ng-init="tab = 1">
 
-        <div role="form">
-            <h2>Patient Registration
-                <small></small>
-            </h2>
-            <div class="row">
-                <!-- Contact form section -->
-                <h4>Contact Information</h4>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-md"
-                               placeholder="First Name" tabindex="1">
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                        <input type="text" name="last_name" id="last_name" class="form-control input-md"
-                               placeholder="Last Name" tabindex="2">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" id="email" class="form-control input-md"
-                           placeholder="Email Address" tabindex="4">
-                </div>
-                <div class="row">
-                    <div class="col-xs-6 col-sm-6 col-md-6">
-                        <div class="form-group">
-                            <input type="password" name="password" id="password" class="form-control input-md"
-                                   placeholder="Password" tabindex="5">
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6">
-                        <div class="form-group">
-                            <input type="password" name="password_confirmation" id="password_confirmation"
-                                   class="form-control input-md" placeholder="Confirm Password" tabindex="6">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-3 col-sm-3 col-md-3">
-                        <div class="form-group">
-                            <input type="tel" name="cell" id="cell" class="form-control input-md"
-                                   placeholder="Cell phone">
-                        </div>
-                    </div>
-                    <div class="col-xs-3 col-sm-3 col-md-3">
-                        <div class="form-group">
-                            <input type="tel" name="home" id="home" class="form-control input-md"
-                                   placeholder="Home Phone">
-                        </div>
-                    </div>
-                    <div class="col-xs-3 col-sm-3 col-md-3">
-                        <div class="form-group">
-                            <input type="tel" name="work" id="work" class="form-control input-md"
-                                   placeholder="Work phone">
-                        </div>
-                    </div>
-                    <div class="col-xs-3 col-sm-3 col-md-3">
-                        <select>
-                            <option value="" class="disabled">Select Primary Phone</option>
-                            <option value="cellphone">Cell</option>
-                            <option value="homephone">Home</option>
-                            <option value="workphone">Work</option>
-                        </select>
-                    </div>
-                </div>
-                <!--/Contact form section -->
-            </div>
+                        <li role="presentation" class="active" ng-class="{active:tab===1}">
+                            <a ng-click="tab = 1" data-toggle="tab" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                            </a>
+                        </li>
 
-            <hr>
-            <div class="row">
-                <!-- Demographics form section -->
-                <h4>Demographics</h4>
-                <label for="dob">Date of Birth</label>
-                <div class="form-group">
-                    <input type="date" name="dob" id="dob" class="form-control input-md date-select">
+                        <li role="presentation" class="disabled" ng-class="{active:tab===2}">
+                            <a ng-click="tab = 2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-globe"></i>
+                            </span>
+                            </a>
+                        </li>
+                        <li role="presentation" class="disabled" ng-class="{active:tab===3}">
+                            <a ng-click="tab = 3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-list"></i>
+                            </span>
+                            </a>
+                        </li>
+
+                        <li role="presentation" class="disabled" ng-class="{active:tab===4}">
+                            <a ng-click="tab = 4" data-toggle="tab" aria-controls="complete" role="tab"
+                               title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-thumbs-up"></i>
+                            </span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <p class="instruction">Indicate Your <strong>Sex</strong></p>
-                    <label class="radio-inline">
-                        <input type="radio" name="sex"> Male
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="sex"> Female
-                    </label>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <p class="instruction">Please enter your gender here if it differs from your sex</p>
-                    <input type="text" name="gender" class="form-control input-md">
-                </div>
-                <!-- /Demographics form section --->
-            </div>
-            <hr>
-            <div class="row">
-                <!-- Medical History Form section -->
-                <h4>Medical History</h4>
-                <div class="row">
-                    <p class="instruction">Please check to indicate if you have ever had the following
-                        conditions</p>
-                    <div class="condition-grid">
+                <form role="form">
+                    <div class="tab-content">
+                        <div class="tab-pane active" role="tabpanel" ng-show="tab === 1">
+                            <div class="step1">
+                                <h5>Contact Information</h5>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-6">
 
-                        <div class="row">
-                            <div class="col"><input type="checkbox"/><label>Diabetes</label></div>
-                            <div class="col"><input type="checkbox"/><label>Kidney Disease</label></div>
-                            <div class="col"><input type="checkbox"/><label>Stroke</label></div>
-                            <div class="col"><input type="checkbox"/><label>Tuberculosis</label></div>
-                            <div class="col"><input type="checkbox"/><label>High Blood Pressure</label></div>
-                            <div class="col"><input type="checkbox"/><label>Hepatitis</label></div>
-                        </div>
-                        <div class="row">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" class="form-control" id="firstName"
+                                               placeholder="First Name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                                    </div>
+                                </div>
 
-                            <div class="col"><input type="checkbox"/><label>Depression</label></div>
-                            <div class="col"><input type="checkbox"/><label>Coronary Artery Disease</label></div>
-                            <div class="col"><input type="checkbox"/><label>Asthma </label></div>
-                            <div class="col"><input type="checkbox"/><label>Thyroid Disease</label></div>
-                            <div class="col"><input type="checkbox"/><label>Emphysema </label></div>
-                        </div>
-                        <div class="row">
-                            <div class="col"><input type="checkbox"><label>Seizures</label></div>
-                            <div class="col"><input type="checkbox"><label>Heart Attack</label></div>
-                            <div class="col"><input type="checkbox"><label>Anxiety</label></div>
-                            <div class="col"><input type="checkbox"><label>Coagulation problem</label></div>
-                            <div class="col"><input type="checkbox"/><label>Congestive Heart Failure</label></div>
-
-                        </div>
-                        <!-- User must elaborate if they check off one of these -->
-                        <div class="row">
-                            <div class="col"><input type="checkbox"/><label>Eye Problems </label></div>
-                            <div class="col"><input type="checkbox"/><label>Sexually Transmitted Disease</label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="email">Email address</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="confirmEmail">Confirm Email address</label>
+                                        <input type="email" class="form-control" id="confirmEmail"
+                                               placeholder="Confirm Email">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="homePhone">Home Phone</label>
+                                        <input type="tel" class="form-control" id="homePhone">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="cellPhone"> Cell Phone</label>
+                                        <input type="tel" class="form-control" id="cellPhone">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="workPhone"> Work Phone </label>
+                                        <input type="tel" class="form-control" id="workPhone">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="userName">Choose a Username</label>
+                                        <input type="text" class="form-control" id="userName" placeholder="username">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label> Select Preferred Method of Communication</label>
+                                        <select>
+                                            <option>Call Cell Phone</option>
+                                            <option>Text Cell Phone</option>
+                                            <option>Home Phone</option>
+                                            <option>Work Phone</option>
+                                            <option>Email</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="cpassword">Confirm Password</label>
+                                        <input type="password" class="form-control" id="cpassword">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col"><input type="checkbox"/><label>Cancer </label></div>
-                            <div class="col"><input type="checkbox"/><label>Congestive Heart Failure</label></div>
-                            <div class="col"><input type="checkbox"><label>Other</label></div>
+                            <ul class="list-inline pull-right">
+                                <li>
+                                    <button type="button" class="btn btn-primary next-step" ng-click="tab = 2">
+                                        Continue
+                                    </button>
+                                </li>
+                            </ul>
                         </div>
+
+
+                        <div class="tab-pane active" role="tabpanel" ng-show="tab === 2">
+                            <div class="step2">
+                                <h5>Demographics</h5>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-4 col-lg-4"> 
+                                        <label>Indicate Your Sex*</label> 
+                                        <label class="radio-inline">  <input type="radio" name="sex"> Male  </label> 
+                                        <label class="radio-inline"> <input type="radio" name="sex"> Female </label> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-4 col-lg-4">
+                                        <label for="dob">Select Date of Birth</label>
+                                            <input id="dob"class="form-control" type="datetime" placeholder="mm/dd/yyyy">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <select>
+                                            <option value="native">American Indian/ Alaska Native</option>
+                                            <option value="asian">Asian</option>
+                                            <option value="black">Black/ African American</option>
+                                            <option value="pi">Native Hawaiian or Other Pacific Islander</option>
+                                            <option value="other">Other or Multiracial</option>
+                                        </select>
+                                        <input type="checkbox">
+                                        <label>Hispanic</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Enter Height in feet and inches </label>
+                                    </div>
+                                    <div class="col-md-offset-2 col-xs-6">
+                                        <label>Enter Weight in pounds</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-1">
+                                        <input class="form-control" type="number" placeholder="feet">
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <input class="form-control" type="number" placeholder="inches">
+                                    </div>
+                                    <div class="col-md-offset-4 col-xs-3">
+                                        <input class="form-control" type="number" placeholder="weight">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label>Marital Status</label><br>
+                                        <select>
+                                            <option value="single">Single</option>
+                                            <option value="dp">In a Domestic Partnership</option>
+                                            <option value="married">Married</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-offset-2 col-xs-4">
+                                        <label>Sexual Orientation</label><br>
+                                        <select>
+                                            <option value="hetero">Heterosexual</option>
+                                            <option value="homo">Homosexual</option>
+                                            <option value="bisex">Bisexual</option>
+                                            <option value="pan">Pansexual</option>
+                                            <option value="asex">Asexual</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="list-inline pull-right">
+                                <li>
+                                    <button type="button" class="btn btn-info prev-step" ng-click="tab = 1">Previous
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-primary" ng-click="tab = 3">Continue</button>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="tab-pane active" role="tabpanel" ng-show="tab === 3">
+                            <div class="step3">
+                                <h5>Medical History</h5>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-6"> 
+                                        <label class="radio-inline">  <input type="radio" name="sex"> Smoker </label> 
+                                        <label class="radio-inline"> <input type="radio" name="sex"> Non-smoker</label> 
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 column">
+                                        <label>Please enter any medication you are currently taking</label>
+                                        <table class="table table-bordered table-hover" id="education_table">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">Medication</th>
+                                                <th class="text-center">Dosage</th><th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" name="medName"
+                                                           placeholder="Enter RX name of medication"
+                                                           class="form-control"/>
+                                                </td>
+                                                <td>
+                                                    <input type="number" name='dosage' placeholder='Enter dosage: e.g. 60mg'
+                                                           class="form-control"/>
+                                                </td>
+                                                <td>
+                                                    <a id='delete_row' class="pull-left btn btn-danger btn-circle">
+                                                        <i class="glyphicon glyphicon-remove"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr id='addr1'></tr>
+                                            </tbody>
+                                        </table>
+                                        <a id="add_row" class="btn btn-success pull-left btn-circle">
+                                            <i class="glyphicon glyphicon-plus"> </i> Add More
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <label>Please check to indicate if you have been diagnosed with the following 
+                                            conditions</label>
+                                        <select multiple size="15">
+                                            <option value="anxiety">Anxiety</option>
+                                            <option value="asthma">Asthma</option>
+                                            <option value="cancer">Cancer</option>
+                                            <option value="coag">Coagulation problem</option>
+                                            <option value="chf">Congestive Heart Failure</option>
+                                            <option value="cad">Coronary Artery Disease</option>
+                                            <option value="diabetes">Diabetes</option>
+                                            <option value="depress">Depression</option>
+                                            <option value="emphysema">Emphysema</option>
+                                            <option value="heartAttack">Heart Attack</option>
+                                            <option value="hep">Hepatitis</option>
+                                            <option value="hbp">High Blood Pressure</option>
+                                            <option value="kidney">Kidney Disease</option>
+                                            <option value="std">Sexually Transmitted Disease</option>
+                                            <option value="stroke">Stroke</option>
+                                            <option value="thyroid">Thyroid Disease</option>
+                                            <option value="tb">Tuberculosis</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="list-inline pull-right">
+                                <li>
+                                    <button type="button" class="btn btn-info" ng-click="tab = 2">Previous</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-primary" ng-click="tab = 4">
+                                        Continue
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane active" role="tabpanel" ng-show="tab === 4">
+                            <div class="step4">
+                                <h5>Registration Completed!</h5>
+                                <hr>
+                                <a ng-click="tab = 3" class="btn btn-info">Previous</a>
+                                <a href="#/patient" class="btn btn-success pull-right">Submit</a>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
-                    <!-- /Medical history form section -->
-                </div>
                 </form>
             </div>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-lg btn-danger" href="#/home">Cancel</a>
-            <a class="btn btn-lg btn-skin" href="#/home">Next</a>
-        </div>
+        </section>
     </div>
 </div>
