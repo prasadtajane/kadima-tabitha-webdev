@@ -43,7 +43,7 @@
                                 <!-- /input-group -->
                             </div>
                             <div class="col-sm-6">
-                                <h4 style="color:#00b1b1;">Gregory House MD</h4></span>
+                                <h4 style="color:#00b1b1;">{{doctor.firstName}} {{doctor.lastName}}</h4></span>
                                 <div class="pull-right">
                                     <a href="#"><i class="fa fa-calendar fa-3x icon-warning" aria-hidden="true"></i></a><br>
                                     <a href="#"><i class="fa fa-phone fa-3x icon-success"></i></a><br>
@@ -54,24 +54,24 @@
                             <hr style="margin:5px 0 5px 0;">
 
                             <div class="col-sm-5 col-xs-6 tital ">First Name:</div>
-                            <div class="col-sm-7 col-xs-6 ">Gregory</div>
+                            <div class="col-sm-7 col-xs-6 ">{{doctor.firstName}}</div>
                             <div class="clearfix"></div>
                             <div class="bot-border"></div>
 
 
                             <div class="col-sm-5 col-xs-6 tital ">Last Name:</div>
-                            <div class="col-sm-7"> House</div>
+                            <div class="col-sm-7"> {{doctor.lastName}}</div>
                             <div class="clearfix"></div>
                             <div class="bot-border"></div>
 
                             <div class="col-sm-5 col-xs-6 tital ">Facility</div>
-                            <div class="col-sm-7">MGH, Department of Neurology</div>
+                            <div class="col-sm-7">{{doctor.facility}}</div>
 
                             <div class="clearfix"></div>
                             <div class="bot-border"></div>
 
-                            <div class="col-sm-5 col-xs-6 tital ">Speciality:</div>
-                            <div class="col-sm-7">Anesthesia</div>
+                            <div class="col-sm-5 col-xs-6 tital ">Specialities:</div>
+                            <div class="col-sm-7">{{doctor.specialities}}</div>
 
                             <div class="clearfix"></div>
                             <div class="bot-border"></div>
@@ -83,7 +83,7 @@
                             <div class="bot-border"></div>
 
                             <div class="col-sm-5 col-xs-6 tital ">Education</div>
-                            <div class="col-sm-7">John Hopkins University, School of Medicine</div>
+                            <div class="col-sm-7">{{doctor.schools}}</div>
                             <div class="clearfix"></div>
                             <div class="bot-border"></div>
 

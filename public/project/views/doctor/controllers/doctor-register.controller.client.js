@@ -9,23 +9,14 @@
 
         vm.register = register;
         vm.login = login;
-        vm.addSchool = addSchool;
 
-        console.log(vm.model);
-        var schools = vm.model.schools;
 
-        function addSchool() {
-            schools.push({
-                'name' : "",
-                'degree' : "",
-                'yog' : ""
-            });
-
-        };
-
+        function init() {
+            vm.schools = [];
+        }
 
         function login(username, password) {
-            UserService
+            DoctorService
                 .findDoctorByCredentials(username, password)
                 .then(function (response) {
                     var doctor = response.data;
@@ -41,33 +32,22 @@
         }
 
 
-        function register(username, password, vPassword) {
-            if (!(password === vPassword)) {
-                vm.error = "Error: passwords do not match!";
-                return null;
-            }
-
-            UserService.findDoctorByUsername(username)
-                .then(function (response) {
-                    console.log(response);
-                    if (response.data.username === username) {
-                        vm.error = "Username already in use";
-                        return null;
-                    }
-                    else {
-                        var newUser = {username: username, password: password};
-                        DoctorService.createDoctor(newDoctor)
-                            .then(function (response) {
-                                login(username, password);
-
-                            }, function (error) {
-                                vm.error = "User Not Created, Error: " + error;
-                            })
-                    }
-                }, function (error) {
-                    vm.error = "Error Seaching for User";
-                });
-
+        function register(doctor) {
+            DoctorService
+                .findDoctorByUsername(doctor.username)
+                .success(function (doctor) {
+                    vm.error = "Username already taken";
+                })
+                .error(function () {
+                    DoctorService
+                        .createDoctor(doctor)
+                        .success(function (newDoctor) {
+                            $location.url("/doctor/" + newDoctor._id);
+                        })
+                        .error(function () {
+                            vm.error = "User Registration Failed";
+                        })
+                })
         }
 
     }

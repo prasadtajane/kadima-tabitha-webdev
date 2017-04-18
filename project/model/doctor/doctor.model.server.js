@@ -1,21 +1,21 @@
-module.exports = function () {
+module.exports = function (mongoose, q) {
 
-    var q = require('q');
-    var mongoose = require('mongoose');
-    var doctorSchema = require('./doctor.schema.server')();
+    var doctorSchema = require('./doctor.schema.server')(mongoose);
     var doctorModel = mongoose.model('DoctorModel', doctorSchema);
 
-
     var api = {
+
         createDoctor: createDoctor,
         findDoctorById: findDoctorById,
         findDoctorByCredentials: findDoctorByCredentials,
         updateDoctor: updateDoctor,
-        deleteDoctor: deleteDoctor
+        deleteDoctor: deleteDoctor,
+        addSchool : addSchool
     };
 
     return api;
 
+    console.log("Doctor api created");
     function createDoctor(doctor) {
         var deferred = q.defer();
         doctorModel
@@ -47,7 +47,7 @@ module.exports = function () {
         var deferred = q.defer();
 
         doctorModel
-            .findOne({username: username, password: password}, function (err, doctor) {
+            .find([{username: username, password: password}], function (err, doctor) {
                 if (err) {
                     deferred.reject(new Error(err));
                 } else {
@@ -59,13 +59,19 @@ module.exports = function () {
 
     function updateDoctor(doctorId, doctor) {
         var deferred = q.defer();
-
-        doctorModel
-            .update({_id: doctorId}, {$set: doctor}, function (err, status) {
-                if (err) {
-                    deferred.reject(new Error(err));
-                } else {
-                    deferred.resolve(status);
+        doctorModel.update(
+            { _id : doctorId },
+            {
+                username: doctor.username,
+                firstName: doctor.firstName,
+                lastName: doctor.lastName,
+                email: doctor.email
+            }, function (err, user) {
+                if(err){
+                    deferred.reject(err);
+                }
+                else {
+                    deferred.resolve(user);
                 }
             });
         return deferred.promise;
@@ -85,4 +91,21 @@ module.exports = function () {
         return deferred.promise;
 
     };
+
+
+
+    function addSchool(doctorId, schoolId) {
+        var deferred = q.defer();
+        UserModel.findById(doctorId, function (err, doctor) {
+            if(err){
+                deferred.reject(err);
+            }
+            else {
+                doctor.schools.push(schoolId);
+                doctor.save();
+                deferred.resolve();
+            }
+        });
+        return deferred.promise;
+    }
 };

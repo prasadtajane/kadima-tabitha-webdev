@@ -1,5 +1,4 @@
-(module.export = function () {
-    var mongoose = require('mongoose');
+(module.export = function (mongoose) {
 
     var SchoolSchema = mongoose.Schema({
         name: String,

@@ -8,7 +8,6 @@
         $httpProvider.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
         $httpProvider.defaults.headers.put['Content-Type'] = 'application/json;charset=utf-8';
 
-
         $routeProvider
             .when("/home", {
                 templateUrl: "views/home.view.client.html"
@@ -33,7 +32,9 @@
                 // controllers: SearchController
             })
             .when("/doctor", {
-                templateUrl: "views/doctor/doctor-profile.view.client.html"
+                templateUrl: "views/doctor/doctor-profile.view.client.html",
+                controller: "DoctorProfileController",
+                controllerAs: "model"
             })
             .when("/doctor-register", {
                 templateUrl: "views/doctor/doctor-register.view.client.html",

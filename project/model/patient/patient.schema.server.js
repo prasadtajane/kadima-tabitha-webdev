@@ -1,6 +1,4 @@
-module.exports = function () {
-   var mongoose = require('mongoose');
-
+module.exports = function (mongoose) {
    var PatientSchema = mongoose.Schema ({
        username: String,
        password: String,

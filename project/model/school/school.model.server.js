@@ -1,7 +1,5 @@
-module.exports = function () {
-    var q = require('q');
-    var mongoose = require('mongoose');
-    var schoolSchema = require('./school.schema.server')();
+module.exports = function (mongoose, q) {
+    var schoolSchema = require('./school.schema.server')(mongoose);
     var schoolModel = mongoose.model('SchoolModel', schoolSchema);
 
 

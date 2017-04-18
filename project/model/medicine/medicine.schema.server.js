@@ -1,5 +1,4 @@
-(module.exports = function () {
-    var mongoose = require('mongoose');
+(module.exports = function (mongoose) {
 
     var MedicineSchema = mongoose.Schema({
         name: String,
