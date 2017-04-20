@@ -1,30 +1,35 @@
 (function () {
     angular
         .module("BostonHealth")
-        .controller("DoctorRegisterController", DoctorRegisterController);
+        .controller("RegisterController", RegisterController);
 
 
-    function DoctorRegisterController($location, DoctorService) {
+    function RegisterController($location, UserService) {
         var vm = this;
-
         vm.register = register;
         vm.login = login;
 
 
+
         function init() {
-            vm.schools = [];
+            var promise = UserService.findUserById(vm.userId);
+            promise.success(function (user) {
+                vm.user = user;
+            });
         }
 
+        init();
+
         function login(username, password) {
-            DoctorService
-                .findDoctorByCredentials(username, password)
+            UserService
+                .findUserByCredentials(username, password)
                 .then(function (response) {
-                    var doctor = response.data;
-                    if (doctor === null) {
+                    var user = response.data;
+                    if (user === null) {
                         vm.error = "User not found";
                     }
                     else {
-                        $location.url("/doctor/" + doctor._id);
+                        $location.url("/doctor/" + user._id);
                     }
                 }, function (error) {
                     vm.error = "Error: " + error;
@@ -34,15 +39,15 @@
 
         function register(doctor) {
             DoctorService
-                .findDoctorByUsername(doctor.username)
-                .success(function (doctor) {
+                .findUserByUsername(user.username)
+                .success(function (user) {
                     vm.error = "Username already taken";
                 })
                 .error(function () {
-                    DoctorService
-                        .createDoctor(doctor)
-                        .success(function (newDoctor) {
-                            $location.url("/doctor/" + newDoctor._id);
+                    UserService
+                        .createUser(user)
+                        .success(function (newUser) {
+                            $location.url("/user/" + newUser._id);
                         })
                         .error(function () {
                             vm.error = "User Registration Failed";

@@ -1,0 +1,71 @@
+<div class="step3">
+    <h5>Medical History</h5>
+    <hr>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6"> 
+            <label class="radio-inline">  <input type="radio" name="sex"> Smoker </label> 
+            <label class="radio-inline"> <input type="radio" name="sex"> Non-smoker</label> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 column">
+            <label>Please enter any medication you are currently taking</label>
+            <table class="table table-bordered table-hover" id="education_table">
+                <thead>
+                <tr>
+                    <th class="text-center">Medication</th>
+                    <th class="text-center">Dosage</th><th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <input type="text" name="medName"
+                               placeholder="Enter RX name of medication"
+                               class="form-control"/>
+                    </td>
+                    <td>
+                        <input type="number" name='dosage' placeholder='Enter dosage: e.g. 60mg'
+                               class="form-control"/>
+                    </td>
+                    <td>
+                        <a id='delete_row' class="pull-left btn btn-danger btn-circle">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr id='addr1'></tr>
+                </tbody>
+            </table>
+            <a id="add_row" class="btn btn-success pull-left btn-circle">
+                <i class="glyphicon glyphicon-plus"> </i> Add More
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <label>Please check to indicate if you have been diagnosed with the following 
+                conditions</label>
+            <select multiple size="15">
+                <option value="anxiety">Anxiety</option>
+                <option value="asthma">Asthma</option>
+                <option value="cancer">Cancer</option>
+                <option value="coag">Coagulation problem</option>
+                <option value="chf">Congestive Heart Failure</option>
+                <option value="cad">Coronary Artery Disease</option>
+                <option value="diabetes">Diabetes</option>
+                <option value="depress">Depression</option>
+                <option value="emphysema">Emphysema</option>
+                <option value="heartAttack">Heart Attack</option>
+                <option value="hep">Hepatitis</option>
+                <option value="hbp">High Blood Pressure</option>
+                <option value="kidney">Kidney Disease</option>
+                <option value="std">Sexually Transmitted Disease</option>
+                <option value="stroke">Stroke</option>
+                <option value="thyroid">Thyroid Disease</option>
+                <option value="tb">Tuberculosis</option>
+            </select>
+        </div>
+    </div>
+</div>

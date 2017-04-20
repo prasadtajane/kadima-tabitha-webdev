@@ -1,0 +1,194 @@
+<div class="container">
+    <div class="row ">
+        <strong>Select one </strong>
+        <label class="radio-inline"><input type="radio" value="Doctor" ng-model="user.role">Doctor</label>
+        <label class="radio-inline"><input type="radio" value="Patient" ng-model="user.role">Patient</label>
+    </div>
+    <div class="row">
+        <section>
+            <div class="wizard">
+                <div class="wizard-inner">
+                    <div class="connecting-line"></div>
+                    <ul class="nav nav-tabs" role="tablist" ng-init="tab = 1">
+
+                        <li role="presentation" class="active" ng-class="{active:tab===1}">
+                            <a ng-click="tab = 1" data-toggle="tab" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                            </a>
+                        </li>
+
+                        <li role="presentation" class="disabled" ng-class="{active:tab===2}">
+                            <a ng-click="tab = 2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2"
+                               ng-switch="role">
+                            <span class="round-tab" ng-switch-when="doctor">
+                                <i class="glyphicon glyphicon-bookmark"></i>
+                            </span>
+                                <span class="round-tab" ng-switch-when="patient">
+                                <i class="glyphicon glyphicon-globe"></i>
+                            </span>
+                            </a>
+                        </li>
+                        <li role="presentation" class="disabled" ng-class="{active:tab===3}">
+                            <a ng-click="tab = 3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3"
+                               ng-switch="role">
+                            <span class="round-tab" ng-switch-when="doctor">
+                                <i class="glyphicon glyphicon-cloud-upload"></i>
+                            </span>
+                                <span class="round-tab" ng-switch-when="patient">
+                                <i class="glyphicon glyphicon-cloud-upload"></i>
+                            </span>
+                            </a>
+                        </li>
+                        <li role="presentation" class="disabled" ng-class="{active:tab===4}">
+                            <a ng-click="tab = 4" data-toggle="tab" aria-controls="complete" role="tab"
+                               title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-thumbs-up"></i>
+                            </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <form role="form">
+                    <div class="tab-content">
+                        <div class="tab-pane active" role="tabpanel" ng-show="tab === 1">
+                            <div class="step1">
+                                <h5>Contact Information</h5>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" class="form-control" id="firstName"
+                                               ng-model="doctor.firstName"
+                                               placeholder="First Name"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" placeholder="Last Name"
+                                               ng-model="user.lastName">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="email">Email address</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email"
+                                               ng-model="user.email">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="confirmEmail">Confirm Email address</label>
+                                        <input type="email" class="form-control" id="confirmEmail"
+                                               placeholder="Confirm Email" ng-model="user.email">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="userName">Choose a Username</label>
+                                        <input type="text" class="form-control" id="userName" placeholder="username"
+                                               ng-model="user.username"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password"
+                                               ng-model="user.password"/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="cpassword">Confirm Password</label>
+                                        <input type="password" class="form-control" id="cpassword"
+                                               ng-model="user.password"/>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6" ng-show="model.doctor">
+                                        <label for="phoneNum">Office Phone Number</label>
+                                        <input type="text" class="form-control" id="phoneNum"
+                                               ng-model="user.workPhone"/>
+                                    </div>
+                                    <div class="col-md-3" ng-show="model.patient">
+                                        <label for="cellPhone"> Cell Phone</label>
+                                        <input type="tel" class="form-control" id="cellPhone">
+                                    </div>
+                                    <div class="col-md-3" ng-show="model.patient">
+                                        <label for="workPhone"> Work Phone </label>
+                                        <input type="tel" class="form-control" id="workPhone">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <ul class="list-inline pull-right">
+                                <li>
+                                    <button type="button" class="btn btn-primary next-step" ng-click="tab = 2">
+                                        Continue
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane active" role="tabpanel" ng-show="tab === 2" ng-switch="model.user.role">
+                            <div ng-switch-when="doctor">
+                                <ng-include src="./doctor/credentials.view.client.html"></ng-include>
+                            </div>
+                            <div ng-switch-when="patient">
+                                <div ng-switch-when="patient">
+                                    <ng-include src="./patient/demographics.view.client.html"></ng-include>
+                                </div>
+                            </div>
+                            <ul class="list-inline pull-right">
+                                <li>
+                                    <button type="button" class="btn btn-info prev-step" ng-click="tab = 1">Previous
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-primary" ng-click="tab = 3">Continue</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane active" role="tabpanel" ng-show="tab === 3" ng-switch="model.user.role">
+                            <div ng-switch-when="doctor">
+                                <div class="step3">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <h5>Upload Documents</h5>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="med_license">Required: Upload Medical License</label>
+                                            <input id="med_license" class="form-control" type="file">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-switch-when="patient">
+                                <ng-include src="./patient/medical.view.client.html"></ng-include>
+                            </div>
+                        </div>
+                            <ul class="list-inline pull-right">
+                                <li>
+                                    <button type="button" class="btn btn-info" ng-click="tab = 2">Previous</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-primary" ng-click="tab = 4">
+                                        Continue
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane active" role="tabpanel" ng-show="tab === 4">
+                            <div class="step4">
+                                <h5>Registration Completed!</h5>
+                                <hr>
+                                <a ng-click="tab = 3" class="btn btn-info">Previous</a>
+                                <a ng-click="model.register(user)"
+                                   class="btn btn-success pull-right">Submit</a>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>

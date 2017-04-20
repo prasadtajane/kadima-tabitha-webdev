@@ -11,7 +11,6 @@
             <ul class="nav navbar-nav pull-right">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#/search">Find Doctor</a></li>
-                <li><a href="#/patient">Profile</a></li>
                 <li><a href="#/login">Login</a></li>
             </ul>
         </div>
@@ -29,8 +28,9 @@
                         <h2 class="h-ultra text-center">Boston Health Search</h2>
                         <h4 class="h-light text-center">Find the <span class="color">best quality healthcare</span> for you</h4>
                         <div class="button-group">
-                            <a href="#/register"><button class="btn btn-lg btn-skin navbar-btn">Sign up for the Service</button></a>
-                            <a href="#/doctor-register"><button class="btn btn-lg btn-info">Register as a Health Care Provider</button></a>
+                            <a href="#/register"><button class="btn btn-lg btn-skin navbar-btn" ng-value="patient" ng-model="user.role">
+                                Sign Up Here!
+                            </button></a>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                 <div class="col-sm-3 col-md-3">
                     <div class="box text-center">
                         <i class="fa fa-check fa-3x circled bg-skin"></i>
-                        <h4 class="h-bold">Make an appoinment</h4>
+                        <h4 class="h-bold">Make an appointment</h4>
                         <p>
                             View doctors by speciality and availability and get direct contact with the
                             physician of your choice for an appointment.

@@ -1,4 +1,4 @@
-(module.export = function (mongoose) {
+module.exports = function (mongoose) {
 
     var SchoolSchema = mongoose.Schema({
         name: String,
@@ -7,4 +7,4 @@
     }, {collection: 'school'});
 
     return SchoolSchema;
-});
+};

@@ -10,39 +10,37 @@
 
         $routeProvider
             .when("/home", {
-                templateUrl: "views/home.view.client.html"
-                // controller: HomeController,
-                // controller: model
+                templateUrl: "views/user/home.view.client.html"
             })
             .when("/login", {
-                templateUrl: "views/login.view.client.html",
+                templateUrl: "views/user/login.view.client.html",
                 controller: "LoginController",
                 controllerAs: "model"
             })
             .when("/register", {
-                templateUrl: "views/patient/patient-register.view.client.html"
-                // controller: RegisterController
+                templateUrl: "views/user/register.view.client.html",
+                controller: "RegisterController",
+                controllerAs: "model"
             })
-            .when("/patient", {
-                templateUrl: "views/patient/patient-account.view.client.html"
-                // controller: PatientAccountController
+
+            .when("/patient/:uid", {
+                templateUrl: "views/patient/patient-account.view.client.html",
+                controller: "PatientAccountController",
+                controllerAs: "model"
             })
-            .when("/search", {
-                templateUrl: "views/patient/search.view.client.html"
-                // controllers: SearchController
-            })
-            .when("/doctor", {
+
+            .when("/doctor/:uid", {
                 templateUrl: "views/doctor/doctor-profile.view.client.html",
                 controller: "DoctorProfileController",
                 controllerAs: "model"
             })
-            .when("/doctor-register", {
-                templateUrl: "views/doctor/doctor-register.view.client.html",
-                controller: "DoctorRegisterController",
-                controllerAs: "model"
+
+            .when("/search", {
+                templateUrl: "views/patient/search.view.client.html"
             })
+
             .when("/", {
-                templateUrl: "views/home.view.client.html"
+                templateUrl: "views/user/home.view.client.html"
             })
             .when("/404", {
                 templateUrl: "views/404.view.client.html"

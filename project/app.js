@@ -1,6 +1,6 @@
 module.exports = function (app) {
 
-    var mongoose = require('mongoose');
+    var mongoose = require("mongoose");
 
     var connectionString = 'mongodb://127.0.0.1:27017/projectdb';
 
@@ -12,20 +12,15 @@ module.exports = function (app) {
             process.env.MLAB_APP_NAME;
     }
 
-    console.log("connecting to project db");
 
     mongoose.connect(connectionString, function (err, db) {
         if(err){
             console.log(err);
         }
     });
-    console.log("connected");
+    var model = require('./model/models.server')(mongoose);
 
-    var model = require("./model/models.server")(mongoose);
-
-    console.log("app.js reached wtf is going on?");
-    require("./services/patient.service.server")(app, model.patientModel);
-    require("./services/doctor.service.server")(app, model.doctorModel);
+    require("./services/user.service.server")(app, model.userModel);
     require("./services/school.service.server")(app, model.schoolModel);
     require("./services/medicine.service.server")(app, model.medicineModel);
 
