@@ -4,12 +4,11 @@
         .controller("HomeController", HomeController);
 
 
-    function HomeController($routeParams) {
+    function HomeController($modal) {
 
         var vm = this;
-        console.log("Home Controller");
-
-        // create module for urgent care appointment
+        vm.showModal = showModal;
 
     }
+
 })();

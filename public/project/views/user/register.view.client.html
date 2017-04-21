@@ -1,10 +1,20 @@
 <div class="container">
-    <div class="row ">
-        <strong>Select one </strong>
-        <label class="radio-inline"><input type="radio" value="Doctor" ng-model="user.role">Doctor</label>
-        <label class="radio-inline"><input type="radio" value="Patient" ng-model="user.role">Patient</label>
+    <br>
+    <br>
+    <div class="navbar">
+        <!--<strong>Select one </strong>-->
+        <!--<label class="radio-inline"><input type="radio" value="Doctor" ng-model="model.role">Doctor</label>-->
+        <!--<label class="radio-inline"><input type="radio" value="Patient" ng-model="model.role">Patient</label>-->
+        <button class="btn btn-primary" ng-click="patient=!patient">Change User Type</button>
+
     </div>
     <div class="row">
+        <div class="title" ng-show="patient">
+            <h3>Patient Registration</h3>
+        </div>
+        <div class="title" ng-hide="patient">
+            <h3>Doctor Registration</h3>
+        </div>
         <section>
             <div class="wizard">
                 <div class="wizard-inner">
@@ -20,23 +30,15 @@
                         </li>
 
                         <li role="presentation" class="disabled" ng-class="{active:tab===2}">
-                            <a ng-click="tab = 2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2"
-                               ng-switch="role">
-                            <span class="round-tab" ng-switch-when="doctor">
+                            <a ng-click="tab = 2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
                                 <i class="glyphicon glyphicon-bookmark"></i>
-                            </span>
-                                <span class="round-tab" ng-switch-when="patient">
-                                <i class="glyphicon glyphicon-globe"></i>
                             </span>
                             </a>
                         </li>
                         <li role="presentation" class="disabled" ng-class="{active:tab===3}">
-                            <a ng-click="tab = 3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3"
-                               ng-switch="role">
-                            <span class="round-tab" ng-switch-when="doctor">
-                                <i class="glyphicon glyphicon-cloud-upload"></i>
-                            </span>
-                                <span class="round-tab" ng-switch-when="patient">
+                            <a ng-click="tab = 3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
                                 <i class="glyphicon glyphicon-cloud-upload"></i>
                             </span>
                             </a>
@@ -62,7 +64,7 @@
                                     <div class="col-md-6">
                                         <label for="firstName">First Name</label>
                                         <input type="text" class="form-control" id="firstName"
-                                               ng-model="doctor.firstName"
+                                               ng-model="user.firstName"
                                                placeholder="First Name"/>
                                     </div>
                                     <div class="col-md-6">
@@ -104,23 +106,13 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-6" ng-show="model.doctor">
-                                        <label for="phoneNum">Office Phone Number</label>
+                                    <div class="col-md-6">
+                                        <label for="phoneNum">Primary Phone Number</label>
                                         <input type="text" class="form-control" id="phoneNum"
-                                               ng-model="user.workPhone"/>
-                                    </div>
-                                    <div class="col-md-3" ng-show="model.patient">
-                                        <label for="cellPhone"> Cell Phone</label>
-                                        <input type="tel" class="form-control" id="cellPhone">
-                                    </div>
-                                    <div class="col-md-3" ng-show="model.patient">
-                                        <label for="workPhone"> Work Phone </label>
-                                        <input type="tel" class="form-control" id="workPhone">
+                                               ng-model="user.phone"/>
                                     </div>
                                 </div>
                             </div>
-
-
                             <ul class="list-inline pull-right">
                                 <li>
                                     <button type="button" class="btn btn-primary next-step" ng-click="tab = 2">
@@ -129,14 +121,12 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="tab-pane active" role="tabpanel" ng-show="tab === 2" ng-switch="model.user.role">
-                            <div ng-switch-when="doctor">
-                                <ng-include src="./doctor/credentials.view.client.html"></ng-include>
+                        <div class="tab-pane active" role="tabpanel" ng-show="tab === 2">
+                            <div ng-show="!patient">
+                                <ng-include src="'views/doctor/credentials.view.client.html'"></ng-include>
                             </div>
-                            <div ng-switch-when="patient">
-                                <div ng-switch-when="patient">
-                                    <ng-include src="./patient/demographics.view.client.html"></ng-include>
-                                </div>
+                            <div ng-show="patient">
+                                <ng-include src="'views/patient/demographics.view.client.html'"></ng-include>
                             </div>
                             <ul class="list-inline pull-right">
                                 <li>
@@ -148,8 +138,8 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="tab-pane active" role="tabpanel" ng-show="tab === 3" ng-switch="model.user.role">
-                            <div ng-switch-when="doctor">
+                        <div class="tab-pane active" role="tabpanel" ng-show="tab === 3">
+                            <div ng-show="!patient">
                                 <div class="step3">
                                     <div class="row">
                                         <div class="col-md-5">
@@ -162,10 +152,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-switch-when="patient">
-                                <ng-include src="./patient/medical.view.client.html"></ng-include>
+                            <div ng-show="patient">
+                                <ng-include src="'views/patient/medical.view.client.html'"></ng-include>
                             </div>
-                        </div>
                             <ul class="list-inline pull-right">
                                 <li>
                                     <button type="button" class="btn btn-info" ng-click="tab = 2">Previous</button>
@@ -186,7 +175,7 @@
                                    class="btn btn-success pull-right">Submit</a>
                             </div>
                         </div>
-                        <div class="clearfix"></div>
+                    </div>
                 </form>
             </div>
         </section>

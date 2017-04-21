@@ -3,8 +3,8 @@
     <hr>
     <div class="row">
         <div class="col-sm-6 col-md-6 col-lg-6"> 
-            <label class="radio-inline">  <input type="radio" name="sex"> Smoker </label> 
-            <label class="radio-inline"> <input type="radio" name="sex"> Non-smoker</label> 
+            <label class="radio-inline">  <input type="radio" value="Smoker"> Smoker </label> 
+            <label class="radio-inline"> <input type="radio" name="Non-Smoker"> Non-smoker</label> 
         </div>
     </div>
 
@@ -47,7 +47,7 @@
         <div class="col-sm-8">
             <label>Please check to indicate if you have been diagnosed with the following 
                 conditions</label>
-            <select multiple size="15">
+            <select multiple size="15" ng-model="user.disease">
                 <option value="anxiety">Anxiety</option>
                 <option value="asthma">Asthma</option>
                 <option value="cancer">Cancer</option>

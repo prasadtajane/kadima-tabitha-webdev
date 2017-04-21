@@ -7,7 +7,7 @@ module.exports = function (mongoose) {
         firstName: String,
         lastName: String,
         email: String,
-        workPhone: String,
+        phone: String,
 
         // Doctor specific attributes
         specialty: String,
@@ -16,24 +16,22 @@ module.exports = function (mongoose) {
         //patients: [{type: mongoose.Schema.ObjectId, ref: 'UserModel'}],
 
         // Patient Specific attributes
-        cellPhone: String,
-        homePhone: String,
         dob: {type: Date},
-        sex: ['female', 'male'],
-        race: ['American Indian/ Alaska Native', 'Asian', 'Black', 'Native Hawaii or Other Pacific Islander',
-            'Other or Multiracial'],
+        sex: String,
+        race: [{type: String}],
+        hispanic: Boolean,
         heightFeet: Number,
         heightInches: Number,
         weight: Number,
-        maritalStatus: ['single', 'In a domestic Partnership', 'married'],
-        sexualOrientation: ['heterosexual', 'homosexual', 'bisexual', 'pansexual', 'asexual', 'other'],
         medication: [{type: mongoose.Schema.ObjectId, ref: 'MedicineModel'}],
-        diseases: ['Anxiety', 'Asthma', 'Cancer', 'Coagulation Problem', 'Coronary Artery Disease', 'Diabetes',
-            'Depression', 'Emphysema', 'Heart Attack', 'Hepatitis', 'High Blood Pressure', 'Kidney Disease',
-            'Sexually Transmitted Disease', 'Stroke', 'Thyroid Disease', 'Tuberculosis']
+        diseases : [{type: String}]
+        // diseases: ['Anxiety', 'Asthma', 'Cancer', 'Coagulation Problem', 'Coronary Artery Disease', 'Diabetes',
+        //     'Depression', 'Emphysema', 'Heart Attack', 'Hepatitis', 'High Blood Pressure', 'Kidney Disease',
+        //     'Sexually Transmitted Disease', 'Stroke', 'Thyroid Disease', 'Tuberculosis']
 
 
-    }, {collection: 'yser'});
+
+    }, {collection: 'user'});
 
     return UserSchema;
 

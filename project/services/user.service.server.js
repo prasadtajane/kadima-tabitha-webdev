@@ -30,21 +30,22 @@ module.exports = function (app, userModel) {
     }
 
     function findUserByUsername(req, res) {
+        console.log("$http reached server");
         var username = req.query["username"];
         userModel
             .findUserByUsername(username)
             .then(function (user) {
                 if (user.length != 0) {
                     res.json(user);
-
+                    console.log("Sending positive response to client");
                 } else {
                     res.sendStatus(500).send('err');
+                    console.log("Failed to send response to client : 1");
                 }
             }, function (err) {
                 res.sendStatus(500).send('err');
-
+                console.log("Failed to send response to client : 1");
             });
-
     }
 
     function findUserByCredentials(req, res) {

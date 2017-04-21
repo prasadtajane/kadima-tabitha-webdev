@@ -34,6 +34,7 @@ module.exports = function (mongoose, q) {
             .find({username: username}, function (err, user) {
                 if (err) {
                     deferred.reject(err);
+                    console.log("Found! ")
                 } else {
                     deferred.resolve(user);
                 }
