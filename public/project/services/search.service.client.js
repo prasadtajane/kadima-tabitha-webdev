@@ -20,7 +20,7 @@
 
 
         function findAllBostonDoctors() {
-            var resource_url = "https://api.betterdoctor.com/2016-03-01/doctors?location=42.3601%2C-71.0589%2C200&sort=full-name-asc&skip=0&limit=500&user_key=3326b29298617f06799b6f3677e57396";
+            var resource_url = "https://api.betterdoctor.com/2016-03-01/doctors?location=37.773%2C-122.413%2C100&skip=0&limit=100&user_key=3326b29298617f06799b6f3677e57396";
             return $http.get(resource_url);
             console.log(resource_url);
         }
