@@ -1,8 +1,11 @@
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var mongoose     = require('mongoose');
+var cors         = require('cors');
 
 var app = express();
+
+app.use(cors());
 
 mongoose.Promise = global.Promise;
 //mongoose.createConnection('mongodb://127.0.0.1:27017/cs4550');

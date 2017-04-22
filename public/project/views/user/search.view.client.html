@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/home">Boston<span class="color">Health</span></a>
+        </div>
+        <div class="navbar ">
+            <ul class="nav navbar-nav pull-right">
+
+                <li><a href="#/home">Home</a></li>
+                <li class="active"><a href="#/search">Find Doctor</a></li>
+                <li><a href="#/patient">Profile</a></li>
+                <li><a href="#/login">Login</a></li>
+            </ul>
+        </div>
+        <div id="custom-search-input">
+            <div class="input-group col-md-12">
+                <input type="text" class="form-control input-lg"
+                       placeholder="Search Doctor By Name"
+                       ng-model="searchDoctor"/>
+                <span class="input-group-btn">
+                <button class="btn btn-info btn-lg" type="button">
+                <i class="glyphicon glyphicon-search"></i>
+                </button>
+                </span>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container search-results">
+    <div class="row">
+        <ul class="thumbnails list-unstyled">
+            <li class="span5 clearfix" ng-repeat="doc in model.doctors">
+                <div class="thumbnail clearfix">
+                    <img ng-src="{{doc.profile.image_url='N/A' ? 'http://placehold.it/300x200' : doc.profile.image_url}}"
+                         class="pull-left  clearfix">
+                    <div class="caption" class="pull-left">
+                        <button class="btn btn-info pull-right" data-toggle="modal">
+                            Make An Appointment
+                        </button>
+                        <h4>
+                            <a href="#/doctor/">{{doc.profile.first_name}} {{doc.profile.last_name}}</a>
+                        </h4>
+                        <p ng-repeat="p in doc.practices">
+                            {{p.name}}
+                        </p>
+                        <div class="tags">
+                            <a href="#">Neurology</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+

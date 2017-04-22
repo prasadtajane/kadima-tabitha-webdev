@@ -29,7 +29,8 @@
         }
 
         function findUserByCredentials(username, password) {
-            return $http.get("/api/user?username=" + username + '&password=' + password);
+            return $http.get("/api/user?username=" + username + "&password=" + password);
+
         }
 
         function updateUser(userId, newUser) {

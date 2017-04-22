@@ -59,14 +59,17 @@ module.exports = function (mongoose, q) {
     function findUserByCredentials(username, password) {
         var deferred = q.defer();
 
-        userModel
-            .find({$and: [{username: username}, {password: password}]}, function (err, user) {
-                if (err) {
-                    deferred.reject(new Error(err));
-                } else {
-                    deferred.resolve(user);
-                }
-            });
+        console.log("Editing Model");
+        userModel.find({$and: [{username: username}, {password: password}]}, function (err, user) {
+            if(err){
+                deferred.reject(err);
+                console.log("could not find user in db")
+            }
+            else {
+                deferred.resolve(user);
+                console.log("found user in db")
+            }
+        });
         return deferred.promise;
     }
 

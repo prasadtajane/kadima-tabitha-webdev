@@ -36,7 +36,9 @@
             })
 
             .when("/search", {
-                templateUrl: "views/patient/search.view.client.html"
+                templateUrl: "views/user/search.view.client.html",
+                controller: "SearchController",
+                controllerAs: "model"
             })
 
             .when("/", {

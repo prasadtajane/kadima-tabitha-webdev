@@ -4,24 +4,37 @@
         .controller("LoginController", LoginController);
 
 
-    function LoginController() {
+    function LoginController($location, UserService) {
 
         var vm = this;
+        vm.login = login;
 
-        function login(username, password) {
-            UserService
-                .findDoctorByCredentials(username, password)
-                .then(function (response) {
-                    var user = response.data;
-                    if(user === null){
-                        vm.error = "User not found";
+        function init() {
+
+        }
+
+        init();
+
+
+        function login(user) {
+
+            var promise = UserService.findUserByCredentials(user.username, user.password);
+
+            promise.success(function (user) {
+                if (user) {
+
+                    if (user.role === "doctor") {
+                        console.log("Logging in doctor");
+                        $location.url("/doctor/" + user._id);
+                    } else {
+                        console.log("Logging in patient");
+                        $location.url("/patient/" + user._id);
                     }
-                    else{
-                        $location.url("/doctor/" + doctor._id);
-                    }
-                }, function (error) {
-                    vm.error = "Error: " + error;
-                })
+                } else {
+                    vm.error = "User not found";
+                    console.log(vm.error);
+                }
+            });
         }
 
     }

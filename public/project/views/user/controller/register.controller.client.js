@@ -7,7 +7,6 @@
     function RegisterController($location, UserService) {
         var vm = this;
         vm.register = register;
-        vm.login = login;
         vm.patient = true;
 
 
@@ -20,22 +19,6 @@
         }
 
         init();
-
-        function login(username, password) {
-            UserService
-                .findUserByCredentials(username, password)
-                .then(function (response) {
-                    var user = response.data;
-                    if (user === null) {
-                        vm.error = "User not found";
-                    }
-                    else {
-                        $location.url("/doctor/" + user._id);
-                    }
-                }, function (error) {
-                    vm.error = "Error: " + error;
-                })
-        }
 
 
         function register(user) {

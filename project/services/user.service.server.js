@@ -13,7 +13,6 @@ module.exports = function (app, userModel) {
             .then(function (user) {
                 res.json(user);
             }, function (err) {
-                console.log("Could not create user : ");
                 console.log(err);
                 res.sendStatus(500).send(err);
             });
@@ -23,40 +22,39 @@ module.exports = function (app, userModel) {
         var username = req.query["username"];
         var password = req.query["password"];
         if (username && password) {
-            findUserByCredentials(username, password, res);
+            findUserByCredentials(req, res);
         } else if (username) {
             findUserByUsername(req, res);
         }
     }
 
     function findUserByUsername(req, res) {
-        console.log("$http reached server");
         var username = req.query["username"];
         userModel
             .findUserByUsername(username)
             .then(function (user) {
                 if (user.length != 0) {
                     res.json(user);
-                    console.log("Sending positive response to client");
                 } else {
                     res.sendStatus(500).send('err');
-                    console.log("Failed to send response to client : 1");
                 }
             }, function (err) {
                 res.sendStatus(500).send('err');
-                console.log("Failed to send response to client : 1");
             });
     }
 
     function findUserByCredentials(req, res) {
-        var username = req.query['username'];
-        var password = req.query['password'];
+        var username = req.query["username"];
+        var password = req.query["password"];
         userModel
             .findUserByCredentials(req.body)
             .then(function (user) {
                 res.send(user);
+                console.log("found user, sending response");
+
             }, function (err) {
                 res.sendStatus(500).send(err);
+                console.log("Unable to find users with these credentials");
             });
     }
 

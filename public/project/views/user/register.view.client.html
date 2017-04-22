@@ -12,7 +12,7 @@
         <div class="title" ng-show="patient">
             <h3>Patient Registration</h3>
         </div>
-        <div class="title" ng-hide="patient">
+        <div class="title" ng-show="!patient">
             <h3>Doctor Registration</h3>
         </div>
         <section>
@@ -31,15 +31,22 @@
 
                         <li role="presentation" class="disabled" ng-class="{active:tab===2}">
                             <a ng-click="tab = 2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                            <span class="round-tab">
+                            <span class="round-tab" ng-show="!patient">
                                 <i class="glyphicon glyphicon-bookmark"></i>
+                            </span>
+                                <span class="round-tab" ng-show="patient">
+                                <i class="glyphicon glyphicon-globe"></i>
                             </span>
                             </a>
                         </li>
                         <li role="presentation" class="disabled" ng-class="{active:tab===3}">
                             <a ng-click="tab = 3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                            <span class="round-tab">
+                            <span class="round-tab" ng-show="!patient">
                                 <i class="glyphicon glyphicon-cloud-upload"></i>
+                            </span>
+                                </span>
+                                <span class="round-tab" ng-show="patient">
+                                <i class="glyphicon glyphicon-heart"></i>
                             </span>
                             </a>
                         </li>
