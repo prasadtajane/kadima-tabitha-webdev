@@ -20,7 +20,7 @@
     <div class="container">
         <br>
         <br>
-        <div class="row" ng-show="doctor.role == doctor">
+        <div class="row" ng-show="user.role == doctor">
             <br>
             <div class="col-sm-3">
                 <ul class="nav nav-pills nav-stacked nav-email shadow mb-20">
@@ -40,7 +40,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-sm-12 profile"> <!--TODO set to 9 when it's the doctors profile -->
+        <div class="col-sm-9 profile">
             <div class="panel panel-default">
                 <div class="panel-heading ">
                     <div class="row">
@@ -53,18 +53,31 @@
                             </div>
                             <div class="col-xs-12 col-sm-8">
                                 <ul class="list-group">
-                                    <li class="list-group-item">{{model.user.firstName}}
-                                        {{model.user.lastName}}</li>
-                                    <li class="list-group-item">{{model.user.specialty}}</li>
-                                    <li class="list-group-item">{{model.user.facility}}</li>
-                                    <li class="list-group-item"><i class="fa fa-phone"></i> {{model.user.workPhone}}
+                                    <li class="list-group-item">
+                                        <input class="form-control" type="text" ng-model="model.user.firstName"/>
                                     </li>
-                                    <li class="list-group-item"><i class="fa fa-envelope"></i> {{model.user.email}}</li>
+                                    <li class="list-group-item">
+                                        <input class="form-control" type="text" ng-model="model.user.lastName"/>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input class="form-control" type="text" ng-model="model.user.specialty"/>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input class="form-control" type="text" ng-model="model.user.facility"/>
+                                    </li>
+                                    <li class="list-group-item"><i class="fa fa-phone"></i>
+                                        <input class="form-control" type="text" ng-model="model.user.phone"/>
+                                    </li>
+                                    <li class="list-group-item"><i class="fa fa-envelope"></i>
+                                        <input class="form-control" type="text" ng-model="model.user.email"/>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="pull-right">
-                            <span class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i></span>
+                            <span class="btn btn-warning" ng-click="model.editProfile(model.user)">
+                                <i class="glyphicon glyphicon-edit">Update</i>
+                            </span>
                         </div>
                     </div>
 
@@ -81,18 +94,6 @@
                             <th>CGPA</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>Masters in Computer Science and Engineering</td>
-                            <td>2014</td>
-                            <td> 3.50</td>
-                        </tr>
-                        <tr>
-                            <td>BSc. in Computer Science and Engineering</td>
-                            <td>2011</td>
-                            <td> 3.25</td>
-                        </tr>
-                        </tbody>
                     </table>
                 </div>
             </div>

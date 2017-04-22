@@ -16,9 +16,9 @@
             <div class="input-group col-md-12">
                 <input type="text" class="form-control input-lg"
                        placeholder="Search Doctor By Name"
-                       ng-model="searchDoctor"/>
+                       ng-model="searchText"/>
                 <span class="input-group-btn">
-                <button class="btn btn-info btn-lg" type="button">
+                <button class="btn btn-info btn-lg" type="button" ng-click="model.searchDoctors(searchText)">
                 <i class="glyphicon glyphicon-search"></i>
                 </button>
                 </span>
@@ -28,29 +28,15 @@
 </div>
 <div class="container search-results">
     <div class="row">
-        <ul class="thumbnails list-unstyled">
-            <li class="span5 clearfix" ng-repeat="doc in model.doctors">
-                <div class="thumbnail clearfix">
-                    <img ng-src="{{doc.profile.image_url='N/A' ? 'http://placehold.it/300x200' : doc.profile.image_url}}"
-                         class="pull-left  clearfix">
-                    <div class="caption" class="pull-left">
-                        <button class="btn btn-info pull-right" data-toggle="modal">
-                            Make An Appointment
-                        </button>
-                        <h4>
-                            <a href="#/doctor/">{{doc.profile.first_name}} {{doc.profile.last_name}}</a>
-                        </h4>
-                        <p ng-repeat="p in doc.practices">
-                            {{p.name}}
-                        </p>
-                        <div class="tags">
-                            <a href="#">Neurology</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <div ng-repeat="doc in model.doctors">
+            <div ng-class="row">
+            <div>
+                <ng-include class="col-sm-4" src="'views/user/search-template.view.client.html'"></ng-include>
+            </div>
+        </div>
+
+
     </div>
 </div>
 
-
+</div>

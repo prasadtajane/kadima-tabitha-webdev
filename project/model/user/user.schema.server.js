@@ -1,13 +1,13 @@
 module.exports = function (mongoose) {
 
     var UserSchema = mongoose.Schema({
-        role: ['patient', 'doctor'],
         username: String,
         password: String,
         firstName: String,
         lastName: String,
         email: String,
         phone: String,
+        role: String,
 
         // Doctor specific attributes
         specialty: String,
@@ -24,10 +24,8 @@ module.exports = function (mongoose) {
         heightInches: Number,
         weight: Number,
         medication: [{type: mongoose.Schema.ObjectId, ref: 'MedicineModel'}],
-        diseases : [{type: String}]
-        // diseases: ['Anxiety', 'Asthma', 'Cancer', 'Coagulation Problem', 'Coronary Artery Disease', 'Diabetes',
-        //     'Depression', 'Emphysema', 'Heart Attack', 'Hepatitis', 'High Blood Pressure', 'Kidney Disease',
-        //     'Sexually Transmitted Disease', 'Stroke', 'Thyroid Disease', 'Tuberculosis']
+        diseases : [{type: String}],
+        smokerStatus : String
 
 
 

@@ -7,15 +7,13 @@
     function SearchController(SearchService) {
 
         var vm = this;
-        vm.selectedDoctor;
-        vm.searchDoctors = searchDoctors ;
+        vm.searchDoctors = searchDoctors;
 
         function init() {
             console.log("initializing search");
             var promise = SearchService.findAllBostonDoctors();
             promise.success(function (response) {
                 vm.doctors = response.data;
-
             })
 
         }
@@ -26,9 +24,11 @@
             SearchService
                 .findDoctorByName(docName)
                 .then(function (response) {
-                    data = JSON.parse(data);
-                    console.log(data);
-                })
+                    vm.doctors = response.data.results;
+                    console.log(vm.doctors);
+                }, function (err) {
+                    vm.error = err;
+                });
         }
     }
 })();

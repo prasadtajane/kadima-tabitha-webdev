@@ -3,34 +3,29 @@
         .module("BostonHealth")
         .controller("DoctorProfileController", DoctorProfileController);
 
-    function DoctorProfileController($location, $routeParams, DoctorService) {
+    function DoctorProfileController($routeParams,UserService) {
         var vm = this;
         vm.editProfile = editProfile;
-        vm.doctorId = $routeParams['doctorId'];
+        vm.userId = $routeParams['uid'];
 
         function init() {
-            var promise = DoctorService.findDoctorById(vm.doctorId);
-            promise.success(function (doctor) {
-                vm.doctor = doctor;
+            var promise = UserService.findUserById(vm.userId);
+            promise.success(function (user) {
+                vm.user = user;
             });
-
-
-
-            // TODO findSchoolsByUser(doctorId)
-            vm.schools = [];
         }
         init();
 
 
 
-        function editProfile(newDoctor) {
-            DoctorService
-                .updateUser(userId, newDoctor)
+        function editProfile(user) {
+            UserService
+                .updateUser(vm.userId, user)
                 .success(function (updateUser) {
                     if(updateUser === null) {
                         vm.error = "Error: unable to update user";
                     } else {
-                        vm.message = "User successfully update";
+                        vm.message = "User successfully updated";
                     }
                 });
 
