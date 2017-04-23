@@ -4,11 +4,12 @@
         .controller("PatientAccountController", PatientAccountController);
 
 
-    function PatientAccountController($routeParams, UserService) {
+    function PatientAccountController($routeParams, UserService, $location) {
 
         var vm = this;
         vm.userId = $routeParams["uid"];
         vm.editProfile = editProfile;
+        vm.deleteUser = deleteUser;
 
         function init() {
             var promise = UserService.findUserById(vm.userId);
@@ -30,6 +31,17 @@
                     }
                 });
 
+        }
+
+        function deleteUser(user) {
+            UserService
+                .deleteUser(user._id)
+                .success(function () {
+                    $location.url("/home");
+                })
+                .error (function () {
+                    vm.error = "Unable to remover user."
+                })
         }
 
     }

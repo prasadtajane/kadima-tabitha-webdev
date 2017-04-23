@@ -3,9 +3,10 @@
         .module("BostonHealth")
         .controller("DoctorProfileController", DoctorProfileController);
 
-    function DoctorProfileController($routeParams,UserService) {
+    function DoctorProfileController($routeParams,UserService, $location) {
         var vm = this;
         vm.editProfile = editProfile;
+        vm.deleteUser = deleteUser;
         vm.userId = $routeParams['uid'];
 
         function init() {
@@ -29,6 +30,17 @@
                     }
                 });
 
+        }
+
+        function deleteUser(user) {
+            UserService
+                .deleteUser(user._id)
+                .success(function () {
+                    $location.url("/home");
+                })
+                .error (function () {
+                    vm.error = "Unable to remover user."
+                })
         }
 
 

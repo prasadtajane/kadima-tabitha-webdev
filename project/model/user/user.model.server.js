@@ -95,10 +95,11 @@ module.exports = function (mongoose, q) {
     }
 
     function deleteUser(userId) {
+        console.log("Deleting user" + userId);
         var deferred = q.defer();
         userModel.remove({_id: userId}, function (err, status) {
             if (err) {
-                deferred.reject(new Error(err));
+                deferred.reject(err);
             } else {
                 deferred.resolve(status);
             }

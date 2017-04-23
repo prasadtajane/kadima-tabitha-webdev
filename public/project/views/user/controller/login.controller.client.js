@@ -17,24 +17,14 @@
 
 
         function login(user) {
-
-            var promise = UserService.findUserByCredentials(user.username, user.password);
-
-            promise.success(function (user) {
-                if (user) {
-
-                    if (user.role === "doctor") {
-                        console.log("Logging in doctor");
-                        $location.url("/doctor/" + user._id);
-                    } else {
-                        console.log("Logging in patient");
-                        $location.url("/patient/" + user._id);
-                    }
-                } else {
-                    vm.error = "User not found";
-                    console.log(vm.error);
-                }
-            });
+            UserService
+                .findUserByCredentials(user.username, user.password)
+                .success(function (user) {
+                    $location.url("/" + user[0].role + "/" + user[0]._id);
+                })
+                .error(function () {
+                    vm.error = "Could not find user with those credentials"
+                })
         }
 
     }

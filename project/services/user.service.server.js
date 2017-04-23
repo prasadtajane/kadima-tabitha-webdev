@@ -47,10 +47,14 @@ module.exports = function (app, userModel) {
         var username = req.query["username"];
         var password = req.query["password"];
         userModel
-            .findUserByCredentials(req.body)
+            .findUserByCredentials(username, password)
             .then(function (user) {
-                res.send(user);
-                console.log("found user, sending response");
+                if(user.length != 0) {
+                    res.send(user);
+                    console.log("found user, sending response");
+                }else{
+                    res.sendStatus(500).send('err');
+                }
 
             }, function (err) {
                 res.sendStatus(500).send(err);
@@ -83,10 +87,13 @@ module.exports = function (app, userModel) {
     }
 
     function deleteUser(req, res) {
+        console.log("deleting user in server...");
+        var userId = req.params['userId'];
         userModel
-            .deleteUser(req.params['userId'])
-            .then(function (status) {
-                res.send(status);
+            .deleteUser(userId)
+            .then(function (user) {
+                res.sendStatus(200);
+                console.log("delete successful. sending response");
             }, function (err) {
                 res.sendStatus(500).send(err);
             });
