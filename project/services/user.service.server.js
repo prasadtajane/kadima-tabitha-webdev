@@ -1,10 +1,36 @@
 module.exports = function (app, userModel) {
+    var passport = require('passport');
+    var auth = authorized;
+
+    app.post("/api/login", passport.authenticate('local'), login);
+    app.post('/api/logout', logout);
+    app.post('/api/register', createUser);
     app.get("/api/user", findUser);
     app.get("/api/user/:userId", findUserById);
     app.put("/api/user/:userId", updateUser);
-    app.post("/api/user", createUser);
-    app.delete("/api/user/:userId", deleteUser);
+    app.post("/api/user", auth, createUser);
+    app.delete("/api/user/:userId", auth, deleteUser);
     app.put("/api/user/:userId/school/:schoolId", addSchool);
+
+    function authorized (req, res, next) {
+        if (!req.isAuthenticated()) {
+            res.send(401);
+        } else {
+            next();
+        }
+    }
+
+    function login(req, res) {
+        res.send(200);
+    }
+
+    function logout(req, res) {
+        res.send(200);
+    }
+
+    function register(req,res) {
+        res.send(200);
+    }
 
     function createUser(req, res) {
         var newUser = req.body;
