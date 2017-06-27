@@ -12,6 +12,7 @@
             </label>
         </div>
     </div>
+
     <div class="row">
         <div class="title text-center" ng-show="model.type == 'patient'" ng-model="user.role" value="patient">
             <h3>Patient Registration</h3>
@@ -65,54 +66,55 @@
                     </ul>
                 </div>
 
-                <form role="form">
+                <form role="form" name="register-form">
                     <div class="tab-content">
                         <div class="tab-pane active" role="tabpanel" ng-show="tab === 1">
                             <div class="step1">
                                 <h5>Contact Information</h5>
+                                <p class="help-block">Required</p>
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="firstName">First Name</label>
                                         <input type="text" class="form-control" id="firstName"
                                                ng-model="user.firstName"
-                                               placeholder="First Name"/>
+                                               placeholder="First Name" required/>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="lastName">Last Name</label>
                                         <input type="text" class="form-control" id="lastName" placeholder="Last Name"
-                                               ng-model="user.lastName">
+                                               ng-model="user.lastName" required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="email">Email address</label>
                                         <input type="email" class="form-control" id="email" placeholder="Email"
-                                               ng-model="user.email">
+                                               ng-model="user.email" required>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="confirmEmail">Confirm Email address</label>
                                         <input type="email" class="form-control" id="confirmEmail"
-                                               placeholder="Confirm Email" ng-model="user.email">
+                                               placeholder="Confirm Email" ng-model="user.email" required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="userName">Choose a Username</label>
                                         <input type="text" class="form-control" id="userName" placeholder="username"
-                                               ng-model="user.username"/>
+                                               ng-model="user.username" required/>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label for="password">Password</label>
                                         <input type="password" class="form-control" id="password"
-                                               ng-model="user.password"/>
+                                               ng-model="user.password" required/>
                                     </div>
                                     <div class="col-md-3">
                                         <label for="cpassword">Confirm Password</label>
                                         <input type="password" class="form-control" id="cpassword"
-                                               ng-model="user.password"/>
+                                               ng-model="user.password" required/>
                                     </div>
                                 </div>
 
@@ -158,7 +160,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <label for="med_license">Required: Upload Medical License</label>
-                                            <input id="med_license" class="form-control" type="file">
+                                            <input id="med_license" class="form-control" type="file" required>
                                         </div>
                                     </div>
                                 </div>
@@ -179,11 +181,12 @@
                         </div>
                         <div class="tab-pane active" role="tabpanel" ng-show="tab === 4">
                             <div class="step4">
-                                <h5>Registration Completed!</h5>
+                                <h5>Submit Registration Form!</h5>
+                                <p ng-show="register-form.$invalid" class="invalidRegister">Missing required information. Please check tab 1</p>
                                 <hr>
                                 <a ng-click="tab = 3" class="btn btn-info">Previous</a>
-                                <a ng-click="model.register(user)"
-                                   class="btn btn-success pull-right">Submit</a>
+                                <button type="submit" ng-click="model.register(user)"
+                                   class="btn btn-success pull-right">Submit</button>
                             </div>
                         </div>
                     </div>

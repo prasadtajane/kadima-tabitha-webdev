@@ -7,12 +7,19 @@
     function RegisterController($location, UserService) {
         var vm = this;
         vm.register = register;
-        vm.type;
+        vm.submitForm = submitForm;
 
         function init() {
+            vm.type= "patient";
         }
 
         init();
+
+        function submitForm(isValid) {
+            if (isValid) {
+                alert('our form is amazing');
+            }
+        }
 
 
         function register(user) {
